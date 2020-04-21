@@ -3,11 +3,6 @@ pentru a fi mai usor de schimbat
 recomand asta si pentru celelalte CSS files*/
 :root{
     --culoare-titlu: #fff;
-    /*
-    --culoare-gradient1: #141e30;
-    --culoare-gradient2: #243b55;
-    --culoare-iluminare: #03e9f4;
-    */
     --culoare-gradient1: #251b22;
     --culoare-gradient2: #523a52;
     --culoare-iluminare: #ff84eb;
