@@ -7,8 +7,8 @@
   <link rel="icon" type="image/png" href="images/icon.png" /> 
   <link rel="stylesheet" type="text/css" href="css/filtre.css">
   <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+  <link rel="stylesheet" type="text/css" href="css/new-account.css">
   <script src="js/lightbox-plus-jquery.min.js"></script>
-    <link rel="stylesheet" href="login_css/style.css" type="text/css" >
     
 </head>
 <body>
@@ -51,42 +51,33 @@
   </nav>
 
 
-    <div id="container">
-        <div id="login-container">
-            <form action="#" method="POST" id="form">
-                
-                <div class="title">
-                    Log in
-                </div>
-                
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter username...">
-                
-                </div>
+  <div class="account-box">
+    <h2>Autentificare</h2>
+    <form action = "login.php" method="POST" id="form">
+      <div class="user-box">
+        <input type="text" name="username" required>
+        <label>Username</label>
+      </div>
 
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="text" id="password" name="password" class="form-control" placeholder="Enter password...">
-                
-                </div>
+      <div class="user-box">
+        <input type="password" name="password" required>
+        <label>Parola</label>
+      </div>
 
-                <div class="form-group">
-                
-                    <input type="button" value="Login >>" id="submit" onclick="authorize()" class="form-control" class="form-btn">
-                
-                </div>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+          <input type="submit" name="submit" > 
+      </a>
 
-                <div class="form-group">
-                
-                    <a href="new-account.html">
-                    <input type="button" value="New account" id="submit"  class="form-control" class="form-btn">
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
-    <script src="js/login_js/index.js"></script>
+      <a href="new-account.html">
+        Cont nou
+      </a>
+
+    </form>
+  </div>
 
 </body>
 </html>

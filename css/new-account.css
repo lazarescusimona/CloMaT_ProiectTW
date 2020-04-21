@@ -176,3 +176,20 @@ html {
     }
   }
   
+
+  .account-box form a input {
+    border: none;
+    position: relative;
+    display: inline-block;
+    color: var(--culoare-iluminare);
+    background-color: var(--culoare-gradient1);
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: .5s;
+    letter-spacing: 4px
+    
+  }
+
+  .account-box:hover form:hover a input:hover {
+    background-color: var(--culoare-iluminare);
+  }
