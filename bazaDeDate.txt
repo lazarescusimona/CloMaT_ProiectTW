@@ -1,0 +1,22 @@
+--asa arata tabela utilizatorilor in pl/sql, v-ar putea ajuta
+
+create table utilizatori(username varchar2(30) NOT NULL PRIMARY KEY,
+                        parola varchar2(30),
+                        email varchar2(50),
+                        data_nasterii date,
+                        sex varchar2(10));
+                      
+/
+insert into utilizatori (username,
+                        parola,
+                        email,
+                        data_nasterii,
+                        sex) 
+            values ('username',
+                    'username',
+                    'andreeaiulia@iahoo.com',
+                    TO_DATE('2003/05/13', yyyy/mm/dd),
+                    'Female');
+commit;
+
+select * from utilizatori;

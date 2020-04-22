@@ -54,35 +54,35 @@
 
   <div class="account-box">
     <h2>Cont nou</h2>
-    <form>
+    <form action="new-account.php" method="POST" id="from">
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="username" required="">
         <label>Username</label>
       </div>
 
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" name="parola" required="">
         <label>Parola</label>
       </div>
 
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" name="repeta_parola" required="">
         <label>Repeta parola</label>
       </div>
 
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="email" required="">
         <label>Email</label>
       </div>
 
       <div class="user-box">
-        <input type="text" name="" required="">
-        <label>Sex</label>
+        <input type="text" name="sex" required="">
+        <label>Sex (Female/Male/Other)</label>
       </div>
 
       <div class="user-box">
-        <input type="text" name="" required="">
-        <label>Varsta (ani)</label>
+        <input type="text" name="data" required="">
+        <label>Data nasterii (YYYY/MM/DD)</label>
       </div>
 
       <a href="#">
@@ -90,7 +90,7 @@
         <span></span>
         <span></span>
         <span></span>
-        Submit
+          <input type="submit" name="submit"> 
       </a>
 
     </form>
