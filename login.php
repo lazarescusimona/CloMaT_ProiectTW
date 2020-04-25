@@ -1,39 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloMatchTool</title>
+  <link rel="icon" type="image/png" href="images/icon.png" /> 
+  <link rel="stylesheet" type="text/css" href="css/filtre.css">
+  <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+  <link rel="stylesheet" type="text/css" href="css/new-account.css">
+  <script src="js/lightbox-plus-jquery.min.js"></script>
+    
+</head>
+<body>
 
-<?php
-        session_start();
-        global $conn;
-        //$conn = oci_connect('clomat', 'clomat', 'localhost/XE', 'Clomat');
-        //$conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
-        $conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
-        if(isset($_POST['submit'])){
-            $user = $_POST['username'];
-            $pass = $_POST['password'];
-            $query = oci_parse($conn, "SELECT * FROM utilizatori WHERE username = '$user' AND parola = '$pass'");
-            oci_execute($query);
-            if( $rows = oci_fetch_array($query) ){
-              //... set session variables, login, etc...
-              $_SESSION['username']=$user;
-              $_SESSION['password']=$pass;
-              //$_SESSION['time_start_login'] = time();
-              header("location: filtre.html");
-            }
-            else{
-            echo "wrong password or username ";
-            $rows = oci_fetch_array($query);
-            echo "$user $pass";
-            session_destroy();
-            }
-            /*oci_execute($s);
-            $row = oci_fetch($s);
-            if($row>0){
-                    $_SESSION['username']=$user;
-                    //$_SESSION['time_start_login'] = time();
-                    header("location: filtre.html");
-            }else{
-                echo "wrong password or username";
-                session_destroy();
-            }*/
+    
+  <nav>
+
+    <div class="logo">
+      <h4>OOTD</h4>
+    </div>
+
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+          Acasa
+        </a>
+      </li>
+      <li>
+        <a href="filtre.html">
+          Creeaza Outfit
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Inspiratie
+        </a>
+      </li>
+      <li>
+        <a href="login.php">
+          Login
+        </a>
+      </li>
+    </ul>
+
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+
+  <div class="account-box">
+    <h2>Autentificare</h2>
+    <form action = "login.inc.php" method="POST" id="form">
+      <div class="user-box">
+        <input type="text" name="username" required>
+        <label>Username</label>
+      </div>
+
+      <div class="user-box">
+        <input type="password" name="password" required>
+        <label>Parola</label>
+      </div>
+
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+          <input type="submit" name="submit"> 
+      </a>
+
+      <a href="new-account.php">
+        Cont nou
+      </a>
+
+    </form>
+  </div>
+
+ 
+  <?php
+        //aici afiseaza
+        $fullUrl = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        //aici afiseaza
+        if(strpos($fullUrl, "signup=notexists") == true)
+        {
+          echo "<div class=\"error-message\">
+          <h2>
+          Utilizatorul nu este inregistrat
+          </h2>
+          </div>
+              ";
+          exit();
         }
+  ?>
 
-
- ?>
+</body>
+</html>
