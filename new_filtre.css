@@ -1,0 +1,229 @@
+* {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  
+  .menu-filtre {
+      position: left;
+      width: 90%;	
+      padding-left:  10px;
+      padding-right: 10px;
+  margin:auto;
+  height: 45px;
+  background-color: #ffffff;
+ /* border: 3px solid #73AD21;*/
+  font-family:"Apple Chancery", cursive;	
+  }
+
+  .text-menu{
+    position: center;
+    font-size:50px;
+    width:60%;
+    height:100px;
+    margin-left: 250px;
+    padding-left: 20px;
+    padding-top: 20px;
+   background-color: #ffffff;
+   /* border: 3px solid #73AD21;*/
+    font-family: 'Dancing Script', cursive;
+    color: rgb(211, 84, 91);
+  }
+
+.afisare-articole{
+    padding-left:  40px;
+      padding-right: 10px;
+    font-size:40px;
+    width:90%;
+    margin-top: 200px;
+    /*border: 3px solid #73AD21;*/
+}
+
+
+
+ #container:after {
+      content: "";
+      display: block;
+      clear: both;
+      height: 0;
+  }
+
+  #menu {
+      position: center;
+      float: left;
+      width: 100%;
+      padding: 0 20px;
+      border-radius: 3px;
+     /* box-shadow: inset 0 1px 1px rgba(255,255,255,.5), inset 0 -1px 0 rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.15);*/
+  }
+
+  #menu, #menu ul {
+      list-style: none;
+  }
+
+  #menu > li {
+      float: left;
+      position: center;
+      border-right: 1px solid rgba(0,0,0,.1);
+      box-shadow: 1px 0 0 rgba(255,255,255,.25);
+      perspective: 1000px;
+      
+  }
+
+  #menu > li:first-child {
+      border-left: 1px solid rgba(255,255,255,.25);
+      box-shadow: -1px 0 0 rgba(0,0,0,.1), 1px 0 0 rgba(255,255,255,.25);
+  }
+
+  #menu a {
+      display: block;
+      position: relative;
+      z-index: 10;
+      padding: 13px 20px 13px 20px;
+      text-decoration: none;
+      color: 	rgb(0,0,0);
+      line-height: 1;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -.05em;
+      background: transparent;		
+      /*text-shadow: 0 1px 1px rgba(255,255,255,.9);*/
+      transition: all .25s ease-in-out;
+  
+  }
+
+  #menu > li:hover > a {
+      background: #333;
+      color: rgba(0,223,252,1);
+      text-shadow: none;
+  }
+
+  #menu li ul  {
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      width: 200px;
+      padding: 0;
+      opacity: 0;
+      visibility: hidden;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background: transparent;
+      overflow: hidden;
+      transform-origin: 50% 0%;
+  }
+
+
+  #menu li:hover ul {
+      
+      padding: 15px 0;
+      background: rgb(211, 84, 91);
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 1px 1px 7px rgb(211, 84, 91);
+      animation-name: swingdown;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+
+  }
+
+  @keyframes swingdown {
+      0% {
+          opacity: .99999;
+          transform: rotateX(90deg);
+      }
+
+      30% {			
+          transform: rotateX(-20deg) rotateY(5deg);
+          animation-timing-function: ease-in-out;
+      }
+
+      65% {
+          transform: rotateX(20deg) rotateY(-3deg);
+          animation-timing-function: ease-in-out;
+      }
+
+      100% {
+          transform: rotateX(0);
+          animation-timing-function: ease-in-out;
+      }
+  }
+
+  #menu li li a {
+      padding-left: 15px;
+      font-weight: 400;
+      color: #ddd;
+      text-shadow: none;
+      border-top: dotted 1px transparent;
+      border-bottom: dotted 1px transparent;
+      transition: all .15s linear;
+  }
+
+  #menu li li a:hover {
+      color: rgba(0,223,252,1);
+      border-top: dotted 1px rgba(255,255,255,.15);
+      border-bottom: dotted 1px rgba(255,255,255,.15);
+      background: rgb(211, 84, 91);
+  }
+
+  .continut-pagina-top{
+    margin-right: auto; /* 1 */
+    /*position: fixed;*/
+    margin-left:  auto; /* 1 */
+    margin-top: auto;
+    width: 100%;
+    margin-bottom: auto;
+    /*border: 3px solid #73AD91;*/
+    background-color: #ffffff;
+    padding-right: 20px; /* 3 */
+    padding-left:  20px; /* 3 */
+    /*padding-top:20px;
+    padding-bottom:20px;*/
+
+  }
+  
+  .continut-pagina-bottom{
+    margin-right: auto; /* 1 */
+    margin-left:  auto; /* 1 */
+    margin-top: 227px;
+    margin-bottom: auto;
+    /*border: 3px solid #444444;*/
+    padding-right: 20px; /* 3 */
+    padding-left:  20px; /* 3 */
+    /*padding-top:20px;*/
+  }
+
+h3{
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+}
+
+.gototop{
+    width:50px;
+    height:50px;
+    line-height:50px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    text-align:center;
+    background:rgb(211, 84, 91);
+    color:#fff;
+    position:fixed;
+    bottom:20px;
+    right:30px;
+    border-radius:50%;
+    cursor: pointer;
+  }
+
+  .button-load-more-images{
+    width: 25%;
+    height: 50px;
+    position: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    text-align:center;
+    background:rgb(211, 84, 91);
+    color:#fff;
+    margin: auto;
+    border: 3px solid rgba(0,0,0,.1);
+  }
