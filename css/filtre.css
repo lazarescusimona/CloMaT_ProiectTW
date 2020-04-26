@@ -144,7 +144,7 @@
   }
 
   /*Meniul de filtrare*/
-
+/*
   input[type=checkbox] + label {
     display: block;
     margin: 0.2em;
@@ -190,9 +190,9 @@
     transform: scale(1);
     background-color: #bfb;
     border-color: #bfb;
-  }
+  }*/
 
-.buttons{
+/*.buttons{
     background: palevioletred;
     display: flex;
     flex-direction: column;
@@ -204,20 +204,20 @@
     width: 90%;
     margin-left: 5%;
     height: 15em;
-}
-
+}*/
+/*
 .butoane{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-size: 20px;
+    font-size: 10px;
 }
-
-.content{
+*/
+/*.content{
     display: flex;
     flex-direction: column;
-}
+}*/
 
-.denumire{
+/*.denumire{
     font-size: 35px;
-}
+}*/

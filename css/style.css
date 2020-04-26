@@ -6,13 +6,26 @@
   box-sizing: border-box;
 }
 
+.banner-fixed{
+  position: fixed;
+  width: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: auto;
+  margin-right: auto;
+}
 nav{
   display: flex;
+  margin-top: 0px;
   justify-content: space-evenly;
   align-items: center;
   min-height: 8vh;  /*grosimea pentru bara de navigare*/
   background-color: rgb(211, 84, 91);
   font-family:'Poppins',sans-serif;
+}
+
+.inside {
+  margin-top: 58px;
 }
 
 li{
