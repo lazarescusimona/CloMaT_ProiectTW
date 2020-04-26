@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    
+  <div class="banner-fixed">  
   <nav>
 
     <div class="logo">
@@ -50,7 +50,7 @@
       <div class="line3"></div>
     </div>
   </nav>
-
+    </div>
 
   <div class="account-box">
     <h2>Cont nou</h2>
