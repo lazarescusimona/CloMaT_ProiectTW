@@ -33,7 +33,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="filtre.html">
           Inspiratie
         </a>
       </li>

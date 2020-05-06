@@ -9,7 +9,8 @@
   <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
   <link rel="stylesheet" type="text/css" href="css/new-account.css">
   <script src="js/lightbox-plus-jquery.min.js"></script>
-    
+  <script src="js/new_filtre.js"></script>
+
 </head>
 <body>
 
@@ -28,11 +29,6 @@
       </li>
       <li>
         <a href="filtre.html">
-          Creeaza Outfit
-        </a>
-      </li>
-      <li>
-        <a href="#">
           Inspiratie
         </a>
       </li>
@@ -95,6 +91,6 @@
           exit();
         }
   ?>
-
+<script src="js/script.js"></script> 
 </body>
 </html>

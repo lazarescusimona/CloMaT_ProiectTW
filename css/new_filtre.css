@@ -227,3 +227,24 @@ h3{
     margin: auto;
     border: 3px solid rgba(0,0,0,.1);
   }
+
+  
+  @media screen 
+  and (max-width: 1482px)  {
+    .continut-pagina-top .menu-filtre #menu {
+        margin-right: 0p; 
+        margin-left:  auto; 
+        margin-top: 0px;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+        padding-right: 20px; /* 3 */
+        padding-left:  20px; /* 3 */
+        padding-top:20px;
+        padding-bottom:10px;
+      }
+
+      div.continut-pagina-bottom div.afisare-articole div.gallery h3 {
+       
+      }
+}
