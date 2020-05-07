@@ -1,147 +1,20 @@
 /*Aici incepe designul pentru bara de meniu*/
 
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-  }
-  
-  nav{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 8vh;  /*grosimea pentru bara de navigare*/
-    background-color: rgb(211, 84, 91);
-    font-family:'Poppins',sans-serif;
-  }
   
   li{
-    margin-left: 35px;
     background-color: rgb(211, 84, 91);
   }
   
-  .logo{ /*aici, ca logo putem sa punem o poza cu iconita pe care o dorim, nu neaparat numele siteului*/
-    color: rgb(239, 225, 241);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
-  }
   
   .nav-links{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
     background-color: rgb(211, 84, 91);
   }
   
-  .nav-links li{
-    list-style: none;
-  }
-
   h4{
     background-color: rgb(211, 84, 91);
   }
   
   .nav-links a{
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 19px;
-    opacity: 0.3;
-    transition: 0.3s;
     background-color: rgb(211, 84, 91);
   }
-  
-  
-  .nav-links a:hover {
-    opacity: 1;
-  }
-  
-  .burger{
-    display: none;
-    cursor: pointer;
-    background-color: rgb(211, 84, 91);
-  }
-  
-  .burger div{
-    width: 24px;
-    height: 4px;
-    color: rgb(233, 144, 118);
-    background-color: pink;
-    margin: 3px;
-    transition: all 0.3s ease;
-  }
-  
-  
-  /*sa arate  bine bara de meniu si pe telefon*/
-  
-  
-  @media screen 
-    and (max-width: 1024px)  {
-      .nav-links{
-        width: 60%;
-      }
-  
-  }
-
-  
-  @media screen 
-    and (max-width: 768px)  {
-  body{
-    overflow-x: hidden;
-  }
-      .nav-links{
-        position: absolute;
-        right: 0;
-        height: 93vh;
-        top:8vh;
-        background-color: rgb(211, 84, 91);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 40%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-      }
-  
-      .nav-links li{
-        opacity: 0;
-      }
-  
-      .burger{
-        display: block;
-      }
-  
-  }
-  
-  .nav-active{
-    transform: translateX(0%);
-  }
-  
-  @keyframes navLinkFade{
-    from{
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to{
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-  
-  /* asta face hamburgerul sa fie X*/
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px,6px);
-  }
-  
-  .toggle .line2 {
-    opacity:0;
-  }
-  
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px,-6px);
-  }
-
-  
+ 

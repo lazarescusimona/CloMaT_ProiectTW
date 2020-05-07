@@ -68,6 +68,7 @@ li{
 .burger{
   display: none;
   cursor: pointer;
+  background-color: rgb(211, 84, 91);
 }
 
 .burger div{

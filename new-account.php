@@ -54,34 +54,34 @@
 
   <div class="account-box">
     <h2>Cont nou</h2>
-    <form action="new-account.inc.php" method="POST" id="from">
+    <form action="new-account.inc.php" method="POST" id="from" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
       <div class="user-box">
-        <input type="text" name="username" required="">
+        <input type="text" name="username" required>
         <label>Username</label>
       </div>
 
       <div class="user-box">
-        <input type="password" name="parola" required="">
+        <input type="password" name="parola" required>
         <label>Parola</label>
       </div>
 
       <div class="user-box">
-        <input type="password" name="repeta_parola" required="">
+        <input type="password" name="repeta_parola" required>
         <label>Repeta parola</label>
       </div>
 
       <div class="user-box">
-        <input type="text" name="email" required="">
+        <input type="text" name="email" required>
         <label>Email</label>
       </div>
 
       <div class="user-box">
-        <input type="text" name="sex" required="">
+        <input type="text" name="sex" required>
         <label>Sex (Female/Male/Other)</label>
       </div>
 
       <div class="user-box">
-        <input type="text" name="data" required="">
+        <input type="text" name="data" required>
         <label>Data nasterii (YYYY/MM/DD)</label>
       </div>
 
