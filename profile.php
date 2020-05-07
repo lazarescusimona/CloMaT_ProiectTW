@@ -58,14 +58,14 @@
 			</div>
 		</div>
 		<div class="right_col">
-			<h2 class="name">John Doe</h2>
-			<h3 class="location">San Francisco, CA</h3>
+			<h2 class="name">Roxiii :)</h2>
+			<h3 class="location">salavastruroxanamaria@yahoo.com</h3>
 			<ul class="contact_information">
-				<li class="work">CEO</li>
-				<li class="website"><a class="nostyle" href="#">www.apple.com</a></li>
-				<li class="mail">john.doe@apple.com</li>
-				<li class="phone">1-(732)-757-2923</li>
-				<li class="resume"><a href="#" class="nostyle">download resume</a></li>
+                <li class="work">Preferinte</li>
+                <li class="work">Preferinte</li>
+                <li class="work">Preferinte</li>
+                <li class="work">Preferinte</li>
+                <li class="work">Preferinte</li>
 			</ul>
 		</div>
         </div>

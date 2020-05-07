@@ -79,17 +79,19 @@ body{
       margin:-5px 10px 10px 30px;
   }
   div.portfoliocard ul.contact_information{
+      background-color: rgba(245,245,245,1);
       margin-top:20px;
       padding-left:30px;
       list-style-type:none;
   }
   div.portfoliocard ul.contact_information li{
+      background-color: rgba(245,245,245,1);
       height:25px;
       width:180px;
       line-height:25px;
       font-weight:300;
       font-size:15px;
-      color:rgba(140,140,140,1);
+      color:rgb(43, 42, 42);
       text-shadow:1px 1px 1px rgba(255,255,255,0.8);
       padding:5px 0px;
       background-repeat:no-repeat;
