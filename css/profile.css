@@ -1,7 +1,8 @@
 body{
-      background-color: rgb(36, 35, 34);
+      background-color: rgb(54, 54, 53);
       background-size:100% 100%;
       font-family:"Open Sans", sans-serif;
+      overflow: auto;
   }
   a.nostyle{
       color:inherit;
@@ -18,9 +19,8 @@ body{
       box-shadow:0px -1px 3px rgba(0,0,0,0.1),
                   0px 2px 6px rgba(0,0,0,0.5);
       border-radius:6px;
-      margin:10% auto;
-      overflow:hidden;
-      z-index:100;
+      margin:2% ;
+      margin-bottom: 2%;
   }
   div.portfoliocard div.coverphoto{
       width:100%;
@@ -29,7 +29,7 @@ body{
       background-position:center center;
       border-top-right-radius:5px;
       border-top-left-radius:5px;
-      border-bottom:1px solid rgba(0,0,0,0.1);
+      border-bottom:3px solid rgba(0,0,0,0.1);
       box-shadow:inset 0px 3px 20px rgba(255,255,255,0.3),
                   1px 0px 2px rgba(255,255,255,0.7);
       z-index:99;
@@ -45,6 +45,8 @@ body{
   }
   div.portfoliocard div.right_col{
       width:60%;
+      position: relative;
+      height: 70%;
       background:rgba(245,245,245,1);
       border-left:1px solid rgba(230,230,230,1);
       box-shadow:inset 0px 1px 1px rgba(255,255,255,0.7);
@@ -70,6 +72,7 @@ body{
       color: rgba(30,30,30,1);
       padding:0;
       margin:20px 10px 0px 30px;
+      position: relative;
   }
   div.portfoliocard div.right_col h3.location{
       font-size:15px;
@@ -77,12 +80,14 @@ body{
       color:rgba(170,170,170,1);
       padding:0;
       margin:-5px 10px 10px 30px;
+      position: relative;
   }
   div.portfoliocard ul.contact_information{
       background-color: rgba(245,245,245,1);
       margin-top:20px;
       padding-left:30px;
       list-style-type:none;
+      position: relative;
   }
   div.portfoliocard ul.contact_information li{
       background-color: rgba(245,245,245,1);
@@ -112,24 +117,7 @@ body{
       margin-right:5px;
       opacity:0.7;
   }
-  div.portfoliocard ul.contact_information li:hover:before{
-      opacity:1;
-  }
-  div.portfoliocard ul.contact_information li.work:before{
-      background-image: url('http://schulzmarcel.de/x/icons/case_24.png');
-  }
-  div.portfoliocard ul.contact_information li.website:before{
-      background-image: url('http://schulzmarcel.de/x/icons/globe_24.png');
-  }
-  div.portfoliocard ul.contact_information li.mail:before{
-      background-image: url('http://schulzmarcel.de/x/icons/paper_plane_24.png');
-  }
-  div.portfoliocard ul.contact_information li.phone:before{
-      background-image: url('http://schulzmarcel.de/x/icons/phone_24.png');
-  }
-  div.portfoliocard ul.contact_information li.resume:before{
-      background-image: url('http://schulzmarcel.de/x/icons/inbox_24.png');
-  }
+  
   div.portfoliocard div.followers, div.portfoliocard div.following{
       margin:15px 0px 0px 35px;
       font-weight:300;
