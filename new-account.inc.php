@@ -198,7 +198,14 @@
         oci_bind_by_name($insert, ':format', $format);
 
         $r = oci_execute($insert); //executa inserarea + commit
-        header("Location: ../CloMaT_ProiectTW/new-account.php?account=succes"); //  account=succes va fi preluata in new-account.php
+        //header("Location: new-account.php?account=succes"); //  account=succes va fi preluata in new-account.php
+        session_start();
+        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
+        $_SESSION['birthday'] = $data;
+        $_SESSION['sex'] = $sex;
+
+        header("location: profile.php");
         exit();
         }
     }

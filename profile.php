@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <html>
   <head>
         <meta charset="UTF-8">
@@ -20,12 +24,12 @@
 
     <ul class="nav-links">
       <li>
-        <a href="index.html">
+        <a href="index.php">
           Acasa
         </a>
       </li>
       <li>
-        <a href="filtre.html">
+        <a href="filtre.php">
           Inspiratie
         </a>
       </li>
@@ -48,27 +52,78 @@
 		<div class="coverphoto"></div>
 		<div class="profile_picture"></div>
 		<div class="left_col">
-			<div class="followers">
-				<div class="follow_count">18,541</div>
-				Followers
-			</div>
 			<div class="following">
-				<div class="follow_count">181</div>
-				Following
-			</div>
+				<div class="follow_count">Username</div>
+				<?php
+        if(isset($_SESSION['username']))
+        {
+          echo($_SESSION['username']);
+        }
+        else
+        {
+          echo("necunoscut");
+        }
+        ?>
+      </div>
+      <div class="following">
+				<div class="follow_count">Email</div>
+				<?php
+        if(isset($_SESSION['email']))
+        {
+          echo($_SESSION['email']);
+        }
+        else
+        {
+          echo("necunoscut");
+        }
+        ?>
+      </div>
+      <div class="following">
+				<div class="follow_count">Data nasterii</div>
+				<?php
+        if(isset($_SESSION['birthday']))
+        {
+          echo($_SESSION['birthday']);
+        }
+        else
+        {
+          echo("necunoscut");
+        }
+        ?>
+      </div>
+      <div class="following">
+				<div class="follow_count">Gender</div>
+				<?php
+        if(isset($_SESSION['sex']))
+        {
+          echo($_SESSION['sex']);
+        }
+        else
+        {
+          echo("necunoscut");
+        }
+        ?>
+      </div>
 		</div>
 		<div class="right_col">
-			<h2 class="name">Roxiii :)</h2>
-			<h3 class="location">salavastruroxanamaria@yahoo.com</h3>
-			<ul class="contact_information">
-                <li class="work">Preferinte</li>
-                <li class="work">Preferinte</li>
-                <li class="work">Preferinte</li>
-                <li class="work">Preferinte</li>
-                <li class="work">Preferinte</li>
-			</ul>
+
+			<h2 class="name">
+        <?php
+        if(isset($_SESSION['username']))
+        {
+          echo($_SESSION['username']);
+        }
+        else
+        {
+          echo("necunoscut");
+        }
+        ?>
+      </h2>
+
+      <h3 class="location">Poze salvate</h3>
+      
 		</div>
-        </div>
+    </div>
 
 
         <script src="js/script.js"></script> 

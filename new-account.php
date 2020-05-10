@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,17 +27,17 @@
 
     <ul class="nav-links">
       <li>
-        <a href="index.html">
+        <a href="index.php">
           Acasa
         </a>
       </li>
       <li>
-        <a href="filtre.html">
+        <a href="filtre.php">
           Creeaza Outfit
         </a>
       </li>
       <li>
-        <a href="filtre.html">
+        <a href="filtre.php">
           Inspiratie
         </a>
       </li>
