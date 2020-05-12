@@ -21,7 +21,7 @@
         $rows1 = oci_fetch_array($query);
         if( $rows1 > 0 )
         {
-            header("Location: ../CloMaT_ProiectTW/new-account.php?account=usernameExistent"); // eroarea account=usernameExistent va fi preluata in new-account.php
+            header("Location: new-account.php?account=usernameExistent"); // eroarea account=usernameExistent va fi preluata in new-account.php
             exit();
         }
         $query = oci_parse($conn, "SELECT * FROM utilizatori WHERE email ='$email'");
@@ -30,7 +30,7 @@
         if( $rows2 > 0 )
         {
             echo "email deja folosit \n ";
-            header("Location: ../CloMaT_ProiectTW/new-account.php?account=emailExistent"); // eroarea account=emailExistent va fi preluata in new-account.php
+            header("Location: new-account.php?account=emailExistent"); // eroarea account=emailExistent va fi preluata in new-account.php
             exit();
         }
 
@@ -38,7 +38,7 @@
         if($parola != $repeta_parola)
         {
             $ok1 = 0;
-            header("Location: ../CloMaT_ProiectTW/new-account.php?account=paroleDiferite"); // eroarea account=paroleDiferite va fi preluata in new-account.php
+            header("Location: new-account.php?account=paroleDiferite"); // eroarea account=paroleDiferite va fi preluata in new-account.php
             exit();
         }
 
@@ -48,7 +48,7 @@
         {
             $ok2 = 0;
             echo "sexul introdus nu este ca in specificatii ";
-            header("Location: ../CloMaT_ProiectTW/new-account.php?account=sex"); // eroarea account=sex va fi preluata in new-account.php
+            header("Location: new-account.php?account=sex"); // eroarea account=sex va fi preluata in new-account.php
             exit();
         }
 
@@ -85,7 +85,7 @@
 
                     if ($an > $anAcutual)
                     {
-                        header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                        header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                         exit();
                     }
                  //urmeaza o cifra sau doua '/' o cifra sau doua
@@ -101,7 +101,7 @@
                          {
                             $ok3=0;
                             echo "data de nastere nu este in trecut ";
-                            header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                            header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                             exit();
                          }
                      }
@@ -109,7 +109,7 @@
                      {
                         $ok3=0;
                         echo "data de nastere nu respecta formatul din specificatii ";
-                        header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                        header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                         exit();
                      }
                  }
@@ -125,7 +125,7 @@
                         ($an == $anAcutual && $luna > $lunaActual)|| $luna >12 || $zi > 31)
                         {
                            $ok3=0;
-                           header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                           header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                            exit();
                         }
                     }
@@ -140,14 +140,14 @@
                         || $luna >12 || $zi > 31)
                         {
                            $ok3=0;
-                           header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                           header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                            exit();
                         }
                     }
                     else
                     {
                         $ok3=0;
-                        header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                        header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                         exit();
                     }
                  }
@@ -162,7 +162,7 @@
                     else
                     {
                         $ok3=0;
-                        header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                        header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                         exit();
                     }
                  }
@@ -171,7 +171,7 @@
              else
              {
                  $ok3=0;
-                 header("Location: ../CloMaT_ProiectTW/new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
+                 header("Location: new-account.php?account=formatdata"); // eroarea account=formatdata va fi preluata in new-account.php
                  exit();
              }
 
@@ -182,13 +182,28 @@
                                                         parola,
                                                         email,
                                                         data_nasterii,
-                                                        sex) 
+                                                        sex,
+                                                        verification_key,
+                                                        confirmed_mail) 
                                                         values 
                                                         (:username,
                                                         :parola,
                                                         :email,
                                                         TO_DATE(:data_nasterii,:format),
-                                                        :sex)');
+                                                        :sex,
+                                                        :validation_key,
+                                                        :confirmed)');
+        
+        //generez o cheie unica de confirmare a emailului
+        // o introduc in tabel si astept ca utilizatorul sa introduca cheia
+        $validation_key = md5(time().$username);
+        $confirmed = 0;
+
+        //folosesc o functie hash pt a securiza parola
+        $parola = md5($parola);
+        
+        oci_bind_by_name($insert, ':validation_key', $validation_key);
+        oci_bind_by_name($insert, ':confirmed', $confirmed);
         oci_bind_by_name($insert, ':username', $username);
         oci_bind_by_name($insert, ':parola', $parola);
         oci_bind_by_name($insert, ':email', $email);
@@ -205,7 +220,18 @@
         $_SESSION['birthday'] = $data;
         $_SESSION['sex'] = $sex;
 
-        header("location: profile.php");
+        //trimitere mail de confirmare
+        $destinatar = "joshuaiancu2013@gmail.com";
+        $subiect = "email verification";
+        $message = "<a herf='http://localhost/CloMaT_ProiectTW-3/verify.php?vkey=$validation_key'>Register Account </a>";
+        $headers = "From: salavastruroxanamariagm@gmail.com \r\n";
+        $headers .= "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+        for($i = 1; $i <=100; $i++)
+        mail($destinatar, $subiect, $message, $headers);
+
+        header("location: thankyou.php");
         exit();
         }
     }

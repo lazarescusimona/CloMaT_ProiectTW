@@ -9,6 +9,7 @@
             $pass = $_POST['password'];
             if((!empty($user)) && (!empty($pass)))
             {
+              $pass = md5($pass);
               $query = oci_parse($conn, "SELECT * FROM utilizatori WHERE username = '$user' AND parola = '$pass'");
               oci_execute($query);
               if( $rows = oci_fetch_array($query) ){
