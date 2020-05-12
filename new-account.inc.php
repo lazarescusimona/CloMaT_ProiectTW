@@ -221,14 +221,13 @@
         $_SESSION['sex'] = $sex;
 
         //trimitere mail de confirmare
-        $destinatar = "joshuaiancu2013@gmail.com";
+        $destinatar = $email;
         $subiect = "email verification";
         $message = "<a herf='http://localhost/CloMaT_ProiectTW-3/verify.php?vkey=$validation_key'>Register Account </a>";
         $headers = "From: salavastruroxanamariagm@gmail.com \r\n";
         $headers .= "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        for($i = 1; $i <=100; $i++)
         mail($destinatar, $subiect, $message, $headers);
 
         header("location: thankyou.php");
