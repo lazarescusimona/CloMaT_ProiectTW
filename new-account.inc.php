@@ -223,7 +223,10 @@
         //trimitere mail de confirmare
         $destinatar = $email;
         $subiect = "email verification";
-        $message = "<a herf='http://localhost/CloMaT_ProiectTW-3/verify.php?vkey=$validation_key'>Register Account </a>";
+        //SENSITIVE LINK
+        //<a href ="http://www.example.com">www.example.com</a>
+        $message = "<a href='http://localhost/CloMaT_ProiectTW-3/verify.php?vkey=$validation_key'>Register Account </a>";
+
         $headers = "From: salavastruroxanamariagm@gmail.com \r\n";
         $headers .= "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";

@@ -1,7 +1,6 @@
 <?php
   session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +34,7 @@
         </a>
       </li>
       <li>
-        <a href="login.php">
+        <a href="login-switch.php">
           Login
         </a>
       </li>

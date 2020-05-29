@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="images/icon.png" /> 
   <link rel="stylesheet" type="text/css" href="css/filtre.css">
   <link rel="stylesheet" type="text/css" href="login_css/style.css">
-  <link rel="stylesheet" type="text/CSS" href="css/profile.css" />
+  <link rel="stylesheet" type="text/CSS" href="css/profile.css">
 	</head>
 	<body>
 
@@ -34,7 +34,7 @@
         </a>
       </li>
       <li>
-        <a href="login.php">
+        <a href="login-switch.php">
           Login
         </a>
       </li>
@@ -104,7 +104,14 @@
         }
         ?>
       </div>
+
+      <div class= "following">
+      <a href="deconectare.php" type="button" name="deconectare">
+          DECONECTARE
+      </a>
+      </div>
 		</div>
+
 		<div class="right_col">
 
 			<h2 class="name">
@@ -124,7 +131,6 @@
       
 		</div>
     </div>
-
 
         <script src="js/script.js"></script> 
         
