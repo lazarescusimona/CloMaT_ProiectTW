@@ -106,9 +106,7 @@
       </div>
 
       <div class= "following">
-      <a href="deconectare.php" type="button" name="deconectare">
-          DECONECTARE
-      </a>
+      <button onclick="window.location.href='deconectare.php';">Logout</button>
       </div>
 		</div>
 
