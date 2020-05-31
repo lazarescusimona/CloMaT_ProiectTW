@@ -19,7 +19,7 @@ if(isset($_GET['vkey']))
         $_SESSION['birthday'] = $rows1[3];
         $_SESSION['sex'] = $rows1[4];
 
-        header("location: profile.php");
+        header("location: profile-back.php");
 
     }
     else

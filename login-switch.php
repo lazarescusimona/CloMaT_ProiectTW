@@ -3,7 +3,7 @@
   if(isset($_SESSION['username']))
   {
       echo"username set";
-      header("Location: profile.php");
+      header("Location: profile-back.php");
   }
   else
   {

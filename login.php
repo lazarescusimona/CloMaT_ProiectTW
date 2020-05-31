@@ -32,13 +32,19 @@
         </a>
       </li>
       <li>
-        <a href="filtre.php">
+        <a href="filtre-back.php">
           Inspiratie
         </a>
       </li>
       <li>
         <a href="login-switch.php">
-          Login
+        <?php
+            if (isset($_SESSION['username'])) {
+              echo 'Profil';
+            } else {
+              echo 'Login';
+            }
+            ?>
         </a>
       </li>
     </ul>

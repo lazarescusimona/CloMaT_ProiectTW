@@ -5,7 +5,8 @@
 
         //$conn = oci_connect('clomat', 'clomat', 'localhost/XE', 'Clomat');
         //$conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
-        $conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+        $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+
         
         if(isset($_POST['submit'])){
 
@@ -225,7 +226,7 @@
         $subiect = "email verification";
         //SENSITIVE LINK
         //<a href ="http://www.example.com">www.example.com</a>
-        $message = "<a href='http://localhost/CloMaT_ProiectTW-3/verify.php?vkey=$validation_key'>Register Account </a>";
+         $message = "<a href='http://localhost/Clomat1.0/verify.php?vkey=$validation_key'>Register Account </a>";
 
         $headers = "From: salavastruroxanamariagm@gmail.com \r\n";
         $headers .= "MIME-Version: 1.0" . "\r\n";

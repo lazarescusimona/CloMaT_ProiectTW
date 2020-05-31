@@ -52,7 +52,9 @@ body{
       box-shadow:inset 0px 1px 1px rgba(255,255,255,0.7);
       margin-left:-1px;
       border-bottom-right-radius:5px;
+      overflow: auto;
   }
+  
   div.portfoliocard div.profile_picture{
       width:9em;
       height:9em;

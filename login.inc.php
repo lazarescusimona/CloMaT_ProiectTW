@@ -19,7 +19,7 @@
                 $_SESSION['email'] = $rows[2];
                 $_SESSION['birthday'] = $rows[3];
                 $_SESSION['sex'] = $rows[4];
-                header("location: profile.php");
+                header("location: profile-back.php");
               }
               else{
               //Redirectionam pe login.php?signup
