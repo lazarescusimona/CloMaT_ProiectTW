@@ -11,6 +11,7 @@ body{
       margin:0;
   }
   div.portfoliocard{
+     /* margin-top: 100px;*/
       position:relative;
       height: 95%;
       width:95%;
@@ -39,12 +40,12 @@ body{
       height:340px;
   }
   div.portfoliocard div.left_col{
-      width:40%;
+      width:30%;
       padding-top:9em;
       box-sizing:border-box;
   }
   div.portfoliocard div.right_col{
-      width:60%;
+      width:70%;
       position: relative;
       height: 70%;
       background:rgba(245,245,245,1);
@@ -111,3 +112,52 @@ body{
 	color: #FFF;
 	text-decoration: none;	
 }
+
+.img-cell{
+    display: flex;
+    flex-direction: column;
+  }
+  .delete-btn{
+    width: 5em;
+    display: flex;
+    align-self: center;
+  }
+
+  .favs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .favs img{
+    transition: 1s;
+    padding: 0px;
+    width: 180px;
+    height: 180px;
+    margin: 1em;
+  }
+  
+  .favs img:hover{
+    filter: contrast(100%);
+    transform: scale(1.1);
+  }
+
+/*#container-articole-preferate{
+    width: 80%;
+    border: solid;
+    border-color: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+#container-articole-preferate img{
+  transition: 1s;
+  padding: 0px;
+  width: 180px;
+  height: 180px;
+  margin: 1em;
+}
+#container-articole-preferate img:hover{
+  filter: contrast(100%);
+  transform: scale(1.1);
+}*/

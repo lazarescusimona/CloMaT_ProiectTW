@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CloMatchTool</title>
   <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/filtre.css">
   <link rel="stylesheet" type="text/css" href="login_css/style.css">
   <link rel="stylesheet" type="text/CSS" href="css/profile.css">
@@ -117,17 +118,24 @@
         ?>
       </h2>
 
-      <h3 class="location">Poze salvate</h3>
-      <div class="favs">
+      <h3 class="location">Articole salvate</h3>
         <?php
+        echo '<form method="post"';
+        echo '<div class = "favs">';
         if (isset($_SESSION['username'])) {
           foreach ($favs as &$value) {
+            echo '<div class = "img-cell">';
             echo '<a href="' . $value . '" data-lightbox = "mygallery"><img src="' . $value . '"></a> ';
+            $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value);
+            $temp = str_replace(".jpg", "", $temp);
+            echo '<input type="checkbox" class="delete-btn" name="' . $temp . '">';    
+            echo '</div>';
           }
+          echo '<input type="submit" value="delete" class="delete-btn"/>';
         }
+        echo '</div>';
+        echo '</form>';
         ?>
-
-      </div>
 
     </div>
   </div>

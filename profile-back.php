@@ -32,5 +32,35 @@ function indexFV()
     }
 }
 
+function deleteArticleToDB($username, $artPath)
+{
+    $query = "delete from ARTICOLE_PREFERATE where username ='$username' and articol_path = '$artPath'";
+    $qr = oci_parse(getConnection(), $query);
+    oci_execute($qr);
+}
+
+function deleteArticles()
+{
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+    }
+    //$username = $_SESSION['username']
+    foreach (getFavs($username) as &$art) {
+        $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $art);
+        $temp = str_replace(".jpg", "", $temp);
+        if (isset($_POST[$temp])) {
+            deleteArticleToDB($username, $art);
+            $page = $_SERVER['PHP_SELF'];
+            echo '<meta http-equiv="Refresh" content="0;' . $page . '">';
+        }
+    }
+    //header("location: profile-back.php");
+    //header('Location: '.$_SERVER['PHP_SELF']);
+   
+}
+
+ 
 
 indexFV();
+deleteArticles();
+//header('Location: '.$_SERVER['PHP_SELF']);
