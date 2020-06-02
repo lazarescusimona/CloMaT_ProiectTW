@@ -226,7 +226,7 @@
         $subiect = "email verification";
         //SENSITIVE LINK
         //<a href ="http://www.example.com">www.example.com</a>
-         $message = "<a href='http://localhost/Clomat1.0/verify.php?vkey=$validation_key'>Register Account </a>";
+         $message = "<a href='http://localhost/CloMaT_ProiectTW/verify.php?vkey=$validation_key'>Register Account </a>";
 
         $headers = "From: salavastruroxanamariagm@gmail.com \r\n";
         $headers .= "MIME-Version: 1.0" . "\r\n";

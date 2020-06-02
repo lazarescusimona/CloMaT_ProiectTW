@@ -55,7 +55,7 @@
       echo '<div class = "img-cell">';
       echo '<a href="' . $value . '" data-lightbox = "mygallery"><img src="' . $value . '"></a> ';
       if (isset($_SESSION['username'])) {
-        $temp = str_replace("http://localhost/Clomat1.0/images/", "", $value);
+        $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value);
         $temp = str_replace(".jpg", "", $temp);
         echo '<input type="checkbox" class="add-btn" name="' . $temp . '">';
       }

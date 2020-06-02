@@ -110,7 +110,7 @@ function addArticles()
     }
     //$username = $_SESSION['username']
     foreach (performSelect(getConnection()) as &$art) {
-        $temp = str_replace("http://localhost/Clomat1.0/images/", "", $art);
+        $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $art);
         $temp = str_replace(".jpg", "", $temp);
         if (isset($_POST[$temp])) {
             addArticleToDB($username, $art);
