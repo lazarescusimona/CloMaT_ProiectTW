@@ -43,6 +43,7 @@
 }
 
 #main-articole{
+  margin-top: 58px;
     display: flex;
     flex-direction: row;
   }

@@ -18,7 +18,45 @@
 <script src="js/script.js"></script>
 
 <body>
+<div class="banner-fixed">
+    <nav>
 
+      <div class="logo">
+        <h4>OOTD</h4>
+      </div>
+
+      <ul class="nav-links">
+        <li>
+          <a href="index.php">
+            Acasa
+          </a>
+        </li>
+        <li>
+          <a href="filtre-back.php">
+            Inspiratie
+          </a>
+        </li>
+        <li>
+          <a href="login-switch.php">
+            <?php
+            if (isset($_SESSION['username'])) {
+              echo 'Profil';
+            } else {
+              echo 'Login';
+            }
+            ?>
+          </a>
+        </li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </div>
+  <!--------------------------------->
+<br>
   <!--------------------------------->
 
   <div id="main-articole">
