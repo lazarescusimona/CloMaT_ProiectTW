@@ -63,7 +63,10 @@
 
             <form method="post" action="php_code_export.php" name="upload_excel" enctype="multipart/form-data">
                 <div class="input-group">
-                    <input type="submit" name="Export" class="btn btn-success" value="Export filtre in format csv"/>
+                    <input type="submit" name="ExportFiltre" class="btn btn-success" value="Export filtre in format csv"/>
+                </div>
+                <div class="input-group">
+                    <input type="submit" name="ExportUtilizatori" class="btn btn-success" value="Export utilizatori in format csv"/>
                 </div>
                 
             </form>
