@@ -1,0 +1,30 @@
+ID, NUME_FILTRU, SUBCATEGORII
+1,Sexul,Femei
+2,Sexul,Barbati
+3,Eveniment,Iesire casual
+4,Eveniment,Inmormantare
+5,Eveniment,Botez
+6,Eveniment,Plimbare pe plaja
+7,Eveniment,Petrecere de Revelion
+8,Culoare,Alb
+9,Culoare,Albastru
+10,Culoare,Bordo
+11,Culoare,Galben
+12,Culoare,Lavanda
+13,Culoare,Magenta
+14,Culoare,Maro
+15,Culoare,Negru
+16,Culoare,Portocaliu
+17,Culoare,Rosu
+18,Culoare,Verde
+19,Culoare,Visisniu
+20,Tip_Piesa,Imbracaminte
+21,Tip_Piesa,Incaltaminte
+22,Tip_Piesa,Accesorii
+23,Anotimp,Primavara
+24,Anotimp,Vara
+25,Anotimp,Toamna
+26,Anotimp,Iarna
+27,Stil,Elegant
+28,Stil,Sportiv
+29,Stil,Casual

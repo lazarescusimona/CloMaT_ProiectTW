@@ -1,3 +1,5 @@
+<?php  include('php_code_export.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +19,12 @@
 
             <ul id="menu">
 
-                <li><a href="">Home</a></li>
+                <li><a href="admin.php">Home</a></li>
                 <li><a href="">Statistici</a></li>
-                <li><a href="admin/index.php">Users</a></li>
+                <li><a href="users.php">Users</a></li>
                 <li><a href="">Galerii</a></li>
-                <li><a href="">Altceva</a></li>
-                <li><a href="">Altceva</a></li>
+                <li><a href="admin_filtre.php">Filtre</a></li>
+                <li><a href="export.php">Export</a></li>
 
             </ul>
 
@@ -46,6 +48,25 @@
             </div>
 
         </main>
+
+
+
+        <div id="user">
+                <?php if (isset($_SESSION['message'])): ?>
+                <div class="msg">
+                    <?php 
+                        echo $_SESSION['message']; 
+                        unset($_SESSION['message']);
+                    ?>
+                </div>
+                <?php endif ?>
+
+            <form method="post" action="php_code_export.php" name="upload_excel" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="submit" name="Export" class="btn btn-success" value="Export filtre in format csv"/>
+                </div>
+                
+            </form>
 
 
     </div>
