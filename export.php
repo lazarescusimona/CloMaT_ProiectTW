@@ -68,6 +68,12 @@
                 <div class="input-group">
                     <input type="submit" name="ExportUtilizatori" class="btn btn-success" value="Export utilizatori in format csv"/>
                 </div>
+                <div class="input-group">
+                    <input type="submit" name="ExportPreferinte" class="btn btn-success" value="Export preferinte in format csv"/>
+                </div>
+                <div class="input-group">
+                    <input type="submit" name="ExportArticole" class="btn btn-success" value="Export articole in format csv"/>
+                </div>
                 
             </form>
 

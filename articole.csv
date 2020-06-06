@@ -1,0 +1,10 @@
+ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP
+1,Femei,Petrecere de RevelionCasual,http://localhost/CloMaT_ProiectTW/images/photo5.jpg,RosuIncaltaminte
+2,Femei,Petrecere de RevelionSportiv,http://localhost/CloMaT_ProiectTW/images/photo3.jpg,MagentaIncaltaminte
+3,Barbati,BotezElegant,http://localhost/CloMaT_ProiectTW/images/photo2.jpg,AlbAccesorii
+4,Barbati,InmormantareSportiv,http://localhost/CloMaT_ProiectTW/images/photo11.jpg,BordoAccesorii
+5,Femei,InmormantareSportiv,http://localhost/CloMaT_ProiectTW/images/photo6.jpg,BordoAccesorii
+10,Femei,BotezSportiv,http://localhost/CloMaT_ProiectTW/images/photo7.jpg,RosuIncaltaminte
+15,Barbati,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/photo10.jpg,MagentaAccesorii
+17,Barbati,Plimbare pe plajaCasual,http://localhost/CloMaT_ProiectTW/images/photo4.jpg,VerdeAccesorii
+18,Femei,Petrecere de RevelionSportiv,http://localhost/CloMaT_ProiectTW/images/photo9.jpg,MaroImbracaminte
