@@ -75,7 +75,7 @@
                 </div>
                 <?php endif ?>
 
-            <form method="post" action="php_code_articole.php" >
+            <form method="post" action="php_code_articole.php" enctype="multipart/form-data" >
             <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-group">
                     <label>Sexul</label>
@@ -91,7 +91,10 @@
                 </div>
                 <div class="input-group">
                     <label>Articol Path</label>
-                    <input type="text" name="articol_path" value="<?php echo $articol_path; ?>">
+                </div>
+                <input type="file" name="file_img" id="file_img" style="margin: 1% auto;" onchange="document.getElementById('articol_path').value = 'http://localhost/CloMaT_ProiectTW/images/' + this.value.split('\\').pop().split('/').pop()">
+                <div class="input-group">
+                    <input type="text" name="articol_path" id="articol_path" value="<?php echo $articol_path; ?>">
                 </div>
                 <div class="input-group">
                     <label>Culoare</label>

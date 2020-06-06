@@ -23,9 +23,13 @@
         $culoare = $_POST['culoare'];
         $tip_piesa = $_POST['tip_piesa'];
         $anotimp = $_POST['anotimp'];
+
+        move_uploaded_file($_FILES["file_img"]["tmp_name"], "images/" . $_FILES["file_img"]["name"]);
+
+
         $query = oci_parse($conn,"Insert into STUDENT.ARTICOLE (SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP) values ('$sexul', '$eveniment', '$stil', '$articol_path', '$culoare', '$tip_piesa', '$anotimp')"); 
         oci_execute($query);
-		$_SESSION['message'] = "Object saved"; 
+		$_SESSION['message'] = "Object saved!";
 		header('location: articole.php');
     }
 
