@@ -15,7 +15,7 @@
 
 	if (isset($_POST['save'])) {
 		$username = $_POST['username'];
-        $parola = $_POST['parola'];
+        $parola = md5($_POST['parola']);
         $email = $_POST['email'];
         $data_nasterii = $_POST['data_nasterii'];
         $sex = $_POST['sex'];
@@ -33,7 +33,7 @@
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
         $username = $_POST['username'];
-        $parola = $_POST['parola'];
+        $parola = md5($_POST['parola']);
         $email = $_POST['email'];
         $data_nasterii = $_POST['data_nasterii'];
         $sex = $_POST['sex'];
