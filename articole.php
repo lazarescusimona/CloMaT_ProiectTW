@@ -1,13 +1,18 @@
-<?php  include('php_code_filtre.php');
+<?php  include('php_code_articole.php');
 
 	if (isset($_GET['edit'])) {
 		$id = $_GET['edit'];
 		$update = true;
-		$record = oci_parse($conn, "SELECT * FROM STUDENT.MENIU_FILTRARE WHERE ID=$id");
+		$record = oci_parse($conn, "SELECT * FROM STUDENT.ARTICOLE WHERE ID=$id");
         oci_execute($record);
         $n = oci_fetch_array($record);
-		$nume_filtru = $n['NUME_FILTRU'];
-        $subcategorii = $n['SUBCATEGORII'];
+		$sexul = $n['SEXUL'];
+        $eveniment = $n['EVENIMENT'];
+        $stil = $n['STIL'];
+        $articol_path = $n['ARTICOL_PATH'];
+        $culoare = $n['CULOARE'];
+        $tip_piesa = $n['TIP_PIESA'];
+        $anotimp = $n['ANOTIMP'];
         $id=$n['ID'];
 
 	}
@@ -70,15 +75,35 @@
                 </div>
                 <?php endif ?>
 
-            <form method="post" action="php_code_filtre.php" >
+            <form method="post" action="php_code_articole.php" >
             <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-group">
-                    <label>Nume filtru</label>
-                    <input type="text" name="nume_filtru" value="<?php echo $nume_filtru; ?>">
+                    <label>Sexul</label>
+                    <input type="text" name="sexul" value="<?php echo $sexul; ?>">
                 </div>
                 <div class="input-group">
-                    <label>Subcategorii</label>
-                    <input type="text" name="subcategorii" value="<?php echo $subcategorii; ?>">
+                    <label>Eveniment</label>
+                    <input type="text" name="eveniment" value="<?php echo $eveniment; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Stil</label>
+                    <input type="text" name="stil" value="<?php echo $stil; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Articol Path</label>
+                    <input type="text" name="articol_path" value="<?php echo $articol_path; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Culoare</label>
+                    <input type="text" name="culoare" value="<?php echo $culoare; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Tip piesa</label>
+                    <input type="text" name="tip_piesa" value="<?php echo $tip_piesa; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Anotimp</label>
+                    <input type="text" name="anotimp" value="<?php echo $anotimp; ?>">
                 </div>
                 
                 <div class="input-group">
@@ -96,21 +121,31 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Nume</th>
-                            <th>Subcategorie</th>
+                            <th>Sexul</th>
+                            <th>Eveniment</th>
+                            <th>Stil</th>
+                            <th>Articol path</th>
+                            <th>Culoare</th>
+                            <th>Tip piesa</th>
+                            <th>Anotimp</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     
                     <?php while ($row = oci_fetch_array($stid, OCI_ASSOC)) { ?>
                         <tr>
-                            <td><?php echo $row['NUME_FILTRU']; ?></td>
-                            <td><?php echo $row['SUBCATEGORII']; ?></td>
+                            <td><?php echo $row['SEXUL']; ?></td>
+                            <td><?php echo $row['EVENIMENT']; ?></td>
+                            <td><?php echo $row['STIL']; ?></td>
+                            <td><?php echo $row['ARTICOL_PATH']; ?></td>
+                            <td><?php echo $row['CULOARE']; ?></td>
+                            <td><?php echo $row['TIP_PIESA']; ?></td>
+                            <td><?php echo $row['ANOTIMP']; ?></td>
                             <td>
-                                <a href="admin_filtre.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
+                                <a href="articole.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
                             </td>
                             <td>
-                                <a href="php_code_filtre.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
+                                <a href="php_code_articole.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
