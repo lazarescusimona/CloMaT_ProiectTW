@@ -4,7 +4,16 @@
 --------------------------------------------------------
 --  DDL for Table UTILIZATORI
 --------------------------------------------------------
+drop table articole_preferate CASCADE CONSTRAINTS;
+/
+ drop table rude CASCADE CONSTRAINTS;
+  /
 drop table utilizatori CASCADE CONSTRAINTS;
+/
+drop table articole CASCADE CONSTRAINTS;
+/
+
+drop table meniu_filtrare CASCADE CONSTRAINTS;
 /
 
 
@@ -49,7 +58,7 @@ commit;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-
+/*
 drop trigger users_after_insert;
 
 CREATE OR REPLACE TRIGGER users_after_insert
@@ -58,26 +67,17 @@ AFTER INSERT
 DECLARE
    v_max int;
 BEGIN
-
     select max(id) into v_max from STUDENT.UTILIZATORI;
-    
     update STUDENT.UTILIZATORI set id=v_max+1 where id is null;
-
-END;
-
-
-
-
-
+END users_after_insert;
 --------------------------------------------------------
 --  File created - Sunday-May-31-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ARTICOLE
 --------------------------------------------------------
-drop table articole CASCADE CONSTRAINTS;
-/
 
+*/
 
   CREATE TABLE "STUDENT"."ARTICOLE" 
    (	"ID" int, 
@@ -128,7 +128,7 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
 
-
+/*
 drop trigger articole_after_insert;
 
 CREATE OR REPLACE TRIGGER articole_after_insert
@@ -145,7 +145,7 @@ BEGIN
 END;
 
 
-
+*/
 
 --------------------------------------------------------
 --  File created - Sunday-May-31-2020   
@@ -154,8 +154,7 @@ END;
 --  DDL for Table ARTICOLE_PREFERATE
 --------------------------------------------------------
 
-drop table articole_preferate CASCADE CONSTRAINTS;
-/
+
 
   CREATE TABLE "STUDENT"."ARTICOLE_PREFERATE" 
    (	"USERNAME" VARCHAR2(30 BYTE), 
@@ -195,8 +194,7 @@ Insert into STUDENT.ARTICOLE_PREFERATE (USERNAME,ARTICOL_PATH) values ('Anamaria
 --------------------------------------------------------
 --  DDL for Table MENIU_FILTRARE
 --------------------------------------------------------
-drop table meniu_filtrare CASCADE CONSTRAINTS;
-/
+
 
   CREATE TABLE "STUDENT"."MENIU_FILTRARE" 
    (	"ID" int,
@@ -250,7 +248,7 @@ commit;
   
   
   
-  drop trigger filtre_after_insert;
+ /* drop trigger filtre_after_insert;
 
 CREATE OR REPLACE TRIGGER filtre_after_insert
 AFTER INSERT
@@ -264,16 +262,14 @@ BEGIN
     update STUDENT.MENIU_FILTRARE set id=v_max+1 where id is null;
 
 END;
-
-
-  
-  delete from utilizatori where id=3;
-  
-  select * from utilizatori;
-  select * from meniu_filtrare;
-  
-  
-  drop table rude;
-  
+*/
   create table rude ( userUtilizator varchar2(50) not null,
                       ruda varchar2(50) not null);
+
+
+select * from articole;
+select * from articole_preferate;
+select * from meniu_filtrare;
+select * from rude;
+select * from utilizatori;
+

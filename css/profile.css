@@ -118,9 +118,14 @@ body{
     flex-direction: column;
   }
   .delete-btn{
-    width: 5em;
-    display: flex;
-    align-self: center;
+  width: 10em;
+  display: flex;
+  align-self: center;
+  text-align: center;
+  background:rgb(211, 84, 91);
+  color:#fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 23px;
   }
 
   .favs{
