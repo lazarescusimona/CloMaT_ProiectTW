@@ -271,3 +271,9 @@ END;
   
   select * from utilizatori;
   select * from meniu_filtrare;
+  
+  
+  drop table rude;
+  
+  create table rude ( userUtilizator varchar2(50) not null,
+                      ruda varchar2(50) not null);
