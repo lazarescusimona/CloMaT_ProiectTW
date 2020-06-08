@@ -1,0 +1,19 @@
+{"articol":[
+    {
+    "sexul":"Female",
+    "eveniment":"Aniversare",
+    "stil":"casual",
+    "articol_path":"C:/Users/Simona/Desktop/photo900.jpg",
+    "culoare":"roz",
+    "tip_piesa":"accesoriu",
+    "anotimp":"primavara"},
+    {
+        "sexul":"Female",
+        "eveniment":"Aniversare",
+        "stil":"casual",
+        "articol_path":"C:/Users/Simona/Desktop/photo80.jpg",
+        "culoare":"roz",
+        "tip_piesa":"accesoriu",
+        "anotimp":"primavara"}
+]
+}

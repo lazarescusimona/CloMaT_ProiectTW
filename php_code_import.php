@@ -1,18 +1,5 @@
 <?php 
 
-$n=6; 
-function getName($n) { 
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
-    $randomString = ''; 
-  
-    for ($i = 0; $i < $n; $i++) { 
-        $index = rand(0, strlen($characters) - 1); 
-        $randomString .= $characters[$index]; 
-    } 
-  
-    return $randomString; 
-} 
-
     session_start();
     global $conn;
 	$conn = oci_connect('student', 'student', 'localhost/XE');
@@ -31,7 +18,7 @@ function getName($n) {
 
     if(isset($_POST["ImportXml"])){
         $xml = simplexml_load_file($_FILES['file']['tmp_name']) or die("Error: Cannot create object");
-
+        //$_SESSION['message'] = $_FILES['file']['tmp_name'];
         foreach ($xml->children() as $row) {
             $sexul = $row->sexul;
             $eveniment = $row->eveniment;
@@ -64,6 +51,46 @@ function getName($n) {
         header('location: import.php');
     }
 }
+
+if(isset($_POST["ImportJson"])){
+    $fisier = file_get_contents($_FILES['file']['tmp_name']);
+    $data = json_decode($fisier,true);
+    $array_data = $data['articol'];
+    foreach ($array_data as $row) {
+        $sexul = $row['sexul'];
+        $eveniment = $row['eveniment'];
+        $stil = $row['stil'];
+        $articol_path = $row['articol_path'];
+        $culoare = $row['culoare'];
+        $tip_piesa = $row['tip_piesa'];
+        $anotimp = $row['anotimp'];
+        
+
+        $path=strval($articol_path);
+        //$path= str_replace('\\', '/',$path); // fac replace la \ cu /
+        
+        $nume = explode('/', $path);  //iau numele imaginii
+
+        $cale = 'http://localhost/CloMaT_ProiectTW/images/' . end($nume);
+
+
+       //$sql = "INSERT INTO tbl_tutorials(title,link,description,keywords) VALUES ('" . $title . "','" . $link . "','" . $description . "','" . $keywords . "')";
+        $sql="INSERT INTO STUDENT.ARTICOLE (SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP) VALUES ('" . $sexul . "','" . $eveniment . "','" . $stil . "','" . $cale . "','" . $culoare . "','" . $tip_piesa . "','" . $anotimp . "')";
+    $query = oci_parse($conn,$sql); 
+    oci_execute($query);
+    $data = file_get_contents($articol_path);
+    //$new = "" + getName($n) + ".jpg";
+    
+    $new = 'C:/xampp/htdocs/CloMaT_ProiectTW/images/' . end($nume);
+    file_put_contents($new, $data);
+
+    $_SESSION['message'] = "Date json incarcate cu succes!";
+    header('location: import.php');
+    }
+
+}
+
+
 
     $sql = 'SELECT * FROM STUDENT.ARTICOLE';
     $stid = oci_parse($conn, $sql);
