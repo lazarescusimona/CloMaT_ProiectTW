@@ -9,7 +9,8 @@
   <title>CloMatchTool</title>
   <link rel="icon" type="image/png" href="images/icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&display=swap" rel="stylesheet">   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&display=swap" rel="stylesheet">   
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
   <link rel="stylesheet" type="text/css" href="css/new-new-filtre.css">
   <script src="js/lightbox-plus-jquery.min.js"></script>
@@ -76,7 +77,7 @@
             </div>
             ';
           }
-          echo '</div><br>';
+          echo '</div>';
         }
 
         ?>
