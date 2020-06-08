@@ -59,9 +59,12 @@
   <!--------------------------------->
 <br>
   <!--------------------------------->
-
+  <div id ="text-articole">Aici puteti cauta articole, piese vestimentare, garderobe.
+    Cautati mai usor folosind meniul de filtrare.
+  </div>
+  <br>
   <div id="main-articole">
-
+     
     <div id="filter-bar">
       <form name="form-filter" method="post">
 

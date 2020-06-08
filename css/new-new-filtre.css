@@ -86,8 +86,16 @@
     font-size: 23px;
 }
 
-#main-articole{
+#text-articole{
   margin-top: 58px;
+  color:rgb(211, 84, 91);
+  font-family: 'Bellota', cursive;
+  font-size: 25px;
+  text-indent: 3em;
+}
+
+#main-articole{
+  /*margin-top: 58px;*/
     display: flex;
     flex-direction: row;
   }
