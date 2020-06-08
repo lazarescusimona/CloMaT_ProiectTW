@@ -9,7 +9,7 @@
   <title>CloMatchTool</title>
   <link rel="icon" type="image/png" href="images/icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&display=swap" rel="stylesheet">   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
   <link rel="stylesheet" type="text/css" href="css/new-new-filtre.css">
   <script src="js/lightbox-plus-jquery.min.js"></script>
@@ -76,11 +76,12 @@
             </div>
             ';
           }
-          echo '</div>';
+          echo '</div><br>';
         }
 
         ?>
-        <input type="submit" value="submit" id="submit-btn" />
+
+        <input type="submit" value=" Cauta articole " id="submit-btn" />
       </form>
 
     </div>
@@ -99,14 +100,12 @@
       }
       echo '</div>';
     }
-    echo '<br>';
     if (isset($_SESSION['username'])) {
       echo '<input type="submit" value=" Salveaza articolele selectate " class="add-btn"/>';
     }
     echo '</form>';
     ?>
-    <br>
-    <br>
+    
 
   </div>
   <br>

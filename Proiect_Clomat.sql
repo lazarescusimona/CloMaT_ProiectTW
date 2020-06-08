@@ -58,7 +58,7 @@ commit;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-/*
+
 drop trigger users_after_insert;
 
 CREATE OR REPLACE TRIGGER users_after_insert
@@ -77,7 +77,7 @@ END users_after_insert;
 --  DDL for Table ARTICOLE
 --------------------------------------------------------
 
-*/
+
 
   CREATE TABLE "STUDENT"."ARTICOLE" 
    (	"ID" int, 
@@ -128,7 +128,7 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
 
-/*
+
 drop trigger articole_after_insert;
 
 CREATE OR REPLACE TRIGGER articole_after_insert
@@ -145,7 +145,7 @@ BEGIN
 END;
 
 
-*/
+
 
 --------------------------------------------------------
 --  File created - Sunday-May-31-2020   
@@ -248,7 +248,7 @@ commit;
   
   
   
- /* drop trigger filtre_after_insert;
+  drop trigger filtre_after_insert;
 
 CREATE OR REPLACE TRIGGER filtre_after_insert
 AFTER INSERT
@@ -262,7 +262,7 @@ BEGIN
     update STUDENT.MENIU_FILTRARE set id=v_max+1 where id is null;
 
 END;
-*/
+
   create table rude ( userUtilizator varchar2(50) not null,
                       ruda varchar2(50) not null);
 
@@ -272,4 +272,4 @@ select * from articole_preferate;
 select * from meniu_filtrare;
 select * from rude;
 select * from utilizatori;
-
+commit;

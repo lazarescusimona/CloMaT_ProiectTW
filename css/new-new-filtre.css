@@ -1,5 +1,5 @@
 #filter-bar{
-    width: 20%;
+    width: 17%;
     border: solid;
     border-color: red;
 
@@ -8,9 +8,15 @@
 .filter-cell{
     display: flex;
     flex-direction: column;
+    text-indent: 1em;
+    font-size: 20px;
+    background:rgb(211, 84, 91);
+  color:#fff;
+    
 }
 
 #container-articole{
+    margin: 1.5em 1.5em;
     width: 80%;
     border: solid;
     border-color: red;
@@ -32,19 +38,32 @@
   transform: scale(1.1);
 }
 
+#submit-btn{
+  text-align: center;
+  align-self: center;
+  width: 8em;
+  height: 2.5em;
+  font-size: 23px;
+  background:#000000;
+  color:#fff;
+  font-family: 'Bellota', cursive;
+  border: none;
+  margin: 0.3em 1.3em;
+  border-radius: 2.5em;
+}
+
 .img-cell{
   display: flex;
   flex-direction: column;
 }
 .add-btn{
-  width: 11em;
   display: flex;
   align-self: center;
-  text-align: center;
+  flex-direction: row;
   background:rgb(211, 84, 91);
   color:#fff;
   font-family: 'Dancing Script', cursive;
-  font-size: 23px;
+    font-size: 23px;
 }
 
 #main-articole{
@@ -55,6 +74,12 @@
   .radio-input{
     display: flex;
     flex-direction: row;
+    font-family: 'Bellota', cursive;
+  font-size: 16px;
+  text-indent: 0.5em;
+  padding-left: 1em;
+  background:#fff;
+  color:#000000;
   }
 
 
@@ -65,8 +90,8 @@
     font-family: 'Dancing Script', cursive;
     font-size: 20px;
     text-align:center;
-    background:rgb(211, 84, 91);
-    color:#fff;
+    background:#000000;
+  color:#fff;
     position:fixed;
     bottom:20px;
     right:30px;
