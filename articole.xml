@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <articole> 
+	 <articol>
+	  <sexul>Female</sexul>
+	  <eveniment>Aniversare</eveniment>
+	  <stil>Casual</stil>
+	  <articol_path>C:\Users\Simona\Desktop\photo80.jpg</articol_path>
+	  <culoare>Rosu</culoare>
+	  <tip_piesa>Imbracaminte</tip_piesa>
+	  <anotimp>Vara</anotimp>
+	 </articol>
+</articole>

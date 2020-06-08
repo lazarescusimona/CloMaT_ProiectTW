@@ -1,4 +1,4 @@
-<?php  include('php_code_articole.php');
+<?php  include('php_code_import.php');
 
 	if (isset($_GET['edit'])) {
 		$id = $_GET['edit'];
@@ -76,8 +76,18 @@
                 </div>
                 <?php endif ?>
 
-            <form method="post" action="php_code_articole.php" enctype="multipart/form-data" >
+            <form method="post" action="php_code_import.php" enctype="multipart/form-data" >
             <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <div class="input-group">
+                    <label>Selecteaza fisierul XML</label>
+                    <input type="file" name="file" id="file" />
+                </div>
+                <div class="input-group">
+                    <input type="submit" name="ImportXml" class="btn btn-success" value="Import date in format xml"/>
+                </div>
+                <div class="input-group">
+                    <input type="submit" name="ImportJson" class="btn btn-success" value="Import date in format json"/>
+                </div>
                 <div class="input-group">
                     <label>Sexul</label>
                     <input type="text" name="sexul" value="<?php echo $sexul; ?>">
@@ -113,8 +123,6 @@
                 <div class="input-group">
                     <?php if ($update == true): ?>
                         <button class="btn" type="submit" name="update" style="background: #556B2F;" >Update</button>
-                    <?php else: ?>
-                        <button class="btn" type="submit" name="save" >Save</button>
                     <?php endif ?>		
                 </div>
                 
@@ -146,10 +154,10 @@
                             <td><?php echo $row['TIP_PIESA']; ?></td>
                             <td><?php echo $row['ANOTIMP']; ?></td>
                             <td>
-                                <a href="articole.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
+                                <a href="import.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
                             </td>
                             <td>
-                                <a href="php_code_articole.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
+                                <a href="php_code_import.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -162,6 +170,7 @@
 
 
     <script src="js/login_js/admin.js"></script>
+    
 
 </body>
 </html>

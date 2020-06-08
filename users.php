@@ -39,6 +39,7 @@
                 <li><a href="articole.php">Articole</a></li>
                 <li><a href="admin_filtre.php">Filtre</a></li>
                 <li><a href="export.php">Export</a></li>
+                <li><a href="import.php">Import</a></li>
 
             </ul>
 
