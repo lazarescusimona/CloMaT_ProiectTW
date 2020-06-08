@@ -99,14 +99,17 @@
       }
       echo '</div>';
     }
+    echo '<br>';
     if (isset($_SESSION['username'])) {
-      echo '<input type="submit" value="add" class="add-btn"/>';
+      echo '<input type="submit" value=" Salveaza articolele selectate " class="add-btn"/>';
     }
     echo '</form>';
     ?>
-
+    <br>
+    <br>
 
   </div>
+  <br>
 
 
 

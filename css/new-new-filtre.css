@@ -37,9 +37,14 @@
   flex-direction: column;
 }
 .add-btn{
-  width: 5em;
+  width: 11em;
   display: flex;
   align-self: center;
+  text-align: center;
+  background:rgb(211, 84, 91);
+  color:#fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 23px;
 }
 
 #main-articole{

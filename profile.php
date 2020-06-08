@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>CloMatchTool</title>
       <link rel="icon" type="image/png" href="images/icon.png" />
+      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/filtre.css">
       <link rel="stylesheet" type="text/css" href="login_css/style.css">
@@ -159,7 +160,8 @@
                    echo '<input type="checkbox" class="delete-btn" name="' . $temp . '">';    
                    echo '</div>';
                  }
-                 echo '<input type="submit" value="delete" class="delete-btn"/>';
+                 echo '<br>';
+                 echo '<input type="submit" value=" Sterge articolele selectate " class="delete-btn"/>';
                }
                echo '</div>';
                echo '</form>';
