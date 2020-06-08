@@ -16,9 +16,9 @@
 
                 session_start();
                 $_SESSION['username']=$user;
-                $_SESSION['email'] = $rows[2];
-                $_SESSION['birthday'] = $rows[3];
-                $_SESSION['sex'] = $rows[4];
+                $_SESSION['email'] = $rows[3];
+                $_SESSION['birthday'] = $rows[4];
+                $_SESSION['sex'] = $rows[5];
                 header("location: profile-back.php");
               }
               else{
