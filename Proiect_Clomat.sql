@@ -80,7 +80,7 @@ drop table articole CASCADE CONSTRAINTS;
 
 
   CREATE TABLE "STUDENT"."ARTICOLE" 
-   (	"ID" NUMBER(10,0), 
+   (	"ID" int, 
 	"SEXUL" VARCHAR2(100 BYTE) DEFAULT NULL, 
 	"EVENIMENT" VARCHAR2(100 BYTE) DEFAULT NULL, 
 	"STIL" VARCHAR2(100 BYTE) DEFAULT NULL, 
@@ -106,6 +106,7 @@ Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_P
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP) values (15,'Barbati','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/photo10.jpg','Magenta','Accesorii','Iarna');
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP) values (17,'Barbati','Plimbare pe plaja','Casual','http://localhost/CloMaT_ProiectTW/images/photo4.jpg','Verde','Accesorii','Vara');
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP) values (18,'Femei','Petrecere de Revelion','Sportiv','http://localhost/CloMaT_ProiectTW/images/photo9.jpg','Maro','Imbracaminte','Vara');
+commit;
 --------------------------------------------------------
 --  DDL for Index PK
 --------------------------------------------------------
@@ -126,6 +127,23 @@ Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_P
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
+
+
+drop trigger articole_after_insert;
+
+CREATE OR REPLACE TRIGGER articole_after_insert
+AFTER INSERT
+   ON STUDENT.ARTICOLE
+DECLARE
+   v_max int;
+BEGIN
+
+    select max(id) into v_max from STUDENT.ARTICOLE;
+    
+    update STUDENT.ARTICOLE set id=v_max+1 where id is null;
+
+END;
+
 
 
 
@@ -182,7 +200,7 @@ drop table meniu_filtrare CASCADE CONSTRAINTS;
 
   CREATE TABLE "STUDENT"."MENIU_FILTRARE" 
    (	"ID" int,
-   "NUMEFILTRU" VARCHAR2(50 BYTE), 
+   "NUME_FILTRU" VARCHAR2(50 BYTE), 
 	"SUBCATEGORII" VARCHAR2(500 BYTE)
    ) SEGMENT CREATION IMMEDIATE 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
@@ -193,42 +211,42 @@ drop table meniu_filtrare CASCADE CONSTRAINTS;
   TABLESPACE "USERS" ;
 REM INSERTING into STUDENT.MENIU_FILTRARE
 SET DEFINE OFF;
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (1,'Sexul','Femei');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (2,'Sexul','Barbati');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (3,'Eveniment','Iesire casual');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (4,'Eveniment','Inmormantare');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (5,'Eveniment','Botez');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (6,'Eveniment','Plimbare pe plaja');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (7,'Eveniment','Petrecere de Revelion');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (8,'Culoare','Alb');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (9,'Culoare','Albastru');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (10,'Culoare','Bordo');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (11,'Culoare','Galben');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (12,'Culoare','Lavanda');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (13,'Culoare','Magenta');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (14,'Culoare','Maro');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (15,'Culoare','Negru');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (16,'Culoare','Portocaliu');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (17,'Culoare','Rosu');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (18,'Culoare','Verde');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (19,'Culoare','Visisniu');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (20,'Tip_Piesa','Imbracaminte');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (21,'Tip_Piesa','Incaltaminte');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (22,'Tip_Piesa','Accesorii');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (23,'Anotimp','Primavara');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (24,'Anotimp','Vara');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (25,'Anotimp','Toamna');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (26,'Anotimp','Iarna');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (27,'Stil','Elegant');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (28,'Stil','Sportiv');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUMEFILTRU,SUBCATEGORII) values (29,'Stil','Casual');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (1,'Sexul','Femei');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (2,'Sexul','Barbati');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (3,'Eveniment','Iesire casual');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (4,'Eveniment','Inmormantare');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (5,'Eveniment','Botez');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (6,'Eveniment','Plimbare pe plaja');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (7,'Eveniment','Petrecere de Revelion');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (8,'Culoare','Alb');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (9,'Culoare','Albastru');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (10,'Culoare','Bordo');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (11,'Culoare','Galben');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (12,'Culoare','Lavanda');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (13,'Culoare','Magenta');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (14,'Culoare','Maro');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (15,'Culoare','Negru');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (16,'Culoare','Portocaliu');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (17,'Culoare','Rosu');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (18,'Culoare','Verde');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (19,'Culoare','Visisniu');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (20,'Tip_Piesa','Imbracaminte');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (21,'Tip_Piesa','Incaltaminte');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (22,'Tip_Piesa','Accesorii');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (23,'Anotimp','Primavara');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (24,'Anotimp','Vara');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (25,'Anotimp','Toamna');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (26,'Anotimp','Iarna');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (27,'Stil','Elegant');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (28,'Stil','Sportiv');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (29,'Stil','Casual');
 commit;
 --------------------------------------------------------
 --  Constraints for Table MENIU_FILTRARE
 --------------------------------------------------------
 
   ALTER TABLE "STUDENT"."MENIU_FILTRARE" MODIFY ("SUBCATEGORII" NOT NULL ENABLE);
-  ALTER TABLE "STUDENT"."MENIU_FILTRARE" MODIFY ("NUMEFILTRU" NOT NULL ENABLE);
+  ALTER TABLE "STUDENT"."MENIU_FILTRARE" MODIFY ("NUME_FILTRU" NOT NULL ENABLE);
   
   
   
@@ -249,7 +267,7 @@ END;
 
 
   
+  delete from utilizatori where id=3;
   
-  
-  select id from utilizatori;
+  select * from utilizatori;
   select * from meniu_filtrare;
