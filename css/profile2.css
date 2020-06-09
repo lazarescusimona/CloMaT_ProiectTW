@@ -215,7 +215,7 @@ div.portfoliocard div.coverphoto{
 }
 div.portfoliocard div.left_col, div.portfoliocard div.right_col{
     float:left;
-    height:340px;
+    height:80%;
 }
 div.portfoliocard div.left_col{
     width:30%;
