@@ -18,6 +18,8 @@ drop table match_cromatic CASCADE CONSTRAINTS;
 /
 drop table match_material CASCADE CONSTRAINTS;
 /
+drop table statistica_vizitatori cascade Constraints;
+/
 
  CREATE TABLE "STUDENT"."UTILIZATORI" 
    (	"ID" int,
@@ -316,6 +318,20 @@ Insert into STUDENT.MATCH_MATERIAL (ID,MATERIAL,MATERIAL_MATCH) values (2,'Casmi
 commit;
 
 
+
+CREATE TABLE "STUDENT"."STATISTICA_VIZITATORI" 
+   (	"ID" int,
+    "ZIUA" DATE, 
+	"NR_UTILIZATORI" int default 0 not null
+   );
+   
+   insert into "STUDENT"."STATISTICA_VIZITATORI"(ID,ZIUA,NR_UTILIZATORI) values(1,to_date('06-JUN-20','DD-MON-RR'),15);
+   insert into "STUDENT"."STATISTICA_VIZITATORI"(ID,ZIUA,NR_UTILIZATORI) values(2,to_date('07-JUN-20','DD-MON-RR'),25);
+   insert into "STUDENT"."STATISTICA_VIZITATORI"(ID,ZIUA,NR_UTILIZATORI) values(3,to_date('08-JUN-20','DD-MON-RR'),10);
+   insert into "STUDENT"."STATISTICA_VIZITATORI"(ID,ZIUA,NR_UTILIZATORI) values(4,to_date('09-JUN-20','DD-MON-RR'),30);
+   --insert into "STUDENT"."STATISTICA_VIZITATORI"(ID,ZIUA,NR_UTILIZATORI) values(5,to_date('10-JUN-20','DD-MON-RR'),5);
+   commit;
+
 drop trigger users_after_insert;
 CREATE OR REPLACE TRIGGER users_after_insert
 AFTER INSERT
@@ -378,8 +394,21 @@ BEGIN
     update STUDENT.MATCH_MATERIAL set id=v_max+1 where id is null;
 END;
 /
+drop trigger vizitatori_after_insert;
+CREATE OR REPLACE TRIGGER vizitatori_after_insert
+AFTER INSERT
+   ON STUDENT.STATISTICA_VIZITATORI
+DECLARE
+   v_max int;
+BEGIN
+    select max(id) into v_max from STUDENT.STATISTICA_VIZITATORI;
+    update STUDENT.STATISTICA_VIZITATORI set id=v_max+1 where id is null;
+END;
+/
 
 
+   
+   
 select * from articole;
 select * from articole_preferate;
 select * from meniu_filtrare;
@@ -387,5 +416,6 @@ select * from rude;
 select * from utilizatori;
 select * from match_cromatic;
 select * from match_material;
+select * from statistica_vizitatori;
 
 commit;

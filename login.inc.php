@@ -33,11 +33,26 @@
                 }
                 $_SESSION['tip_utilizator'] = $rows[8];
 
-                if($rows[8] == 'user')
+                if($rows[8] == 'user'){
+                  $zi=strtoupper(date("d-M-y"));
+                  $query_zi=oci_parse($conn, "SELECT * FROM STUDENT.STATISTICA_VIZITATORI WHERE ZIUA = '$zi'");
+                  oci_execute($query_zi);
+                  if( ! oci_fetch_array($query_zi) ){
+                    $new_query= oci_parse($conn, "INSERT INTO STUDENT.STATISTICA_VIZITATORI(ZIUA,NR_UTILIZATORI) VALUES ('$zi',1)");
+                    oci_execute($new_query);
+                  }
+                  else{
+                    $new_query= oci_parse($conn, "UPDATE STUDENT.STATISTICA_VIZITATORI SET NR_UTILIZATORI=NR_UTILIZATORI+1 WHERE ZIUA = '$zi'");
+                    oci_execute($new_query);
+                  }
+
+
                   header("location: profile-back.php");
-                else
+                }
+                else{
                   if($rows[8] == 'admin')
                     header("location: admin.php");
+                }
               }
               else{
               //Redirectionam pe login.php?signup
