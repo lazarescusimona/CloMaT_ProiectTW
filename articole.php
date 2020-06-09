@@ -11,6 +11,7 @@
         $stil = $n['STIL'];
         $articol_path = $n['ARTICOL_PATH'];
         $culoare = $n['CULOARE'];
+        $material = $n['MATERIAL'];
         $tip_piesa = $n['TIP_PIESA'];
         $anotimp = $n['ANOTIMP'];
         $id=$n['ID'];
@@ -42,6 +43,8 @@
                 <li><a href="admin_filtre.php">Filtre</a></li>
                 <li><a href="export.php">Export</a></li>
                 <li><a href="import.php">Import</a></li>
+                <li><a href="match_culori.php">Match culori</a></li>
+                <li><a href="match_material.php">Match material</a></li>
 
             </ul>
 
@@ -102,6 +105,10 @@
                     <input type="text" name="culoare" value="<?php echo $culoare; ?>">
                 </div>
                 <div class="input-group">
+                    <label>Material</label>
+                    <input type="text" name="material" value="<?php echo $material; ?>">
+                </div>
+                <div class="input-group">
                     <label>Tip piesa</label>
                     <input type="text" name="tip_piesa" value="<?php echo $tip_piesa; ?>">
                 </div>
@@ -130,6 +137,7 @@
                             <th>Stil</th>
                             <th>Articol path</th>
                             <th>Culoare</th>
+                            <th>Material</th>
                             <th>Tip piesa</th>
                             <th>Anotimp</th>
                             <th colspan="2">Action</th>
@@ -143,6 +151,7 @@
                             <td><?php echo $row['STIL']; ?></td>
                             <td><?php echo $row['ARTICOL_PATH']; ?></td>
                             <td><?php echo $row['CULOARE']; ?></td>
+                            <td><?php echo $row['MATERIAL']; ?></td>
                             <td><?php echo $row['TIP_PIESA']; ?></td>
                             <td><?php echo $row['ANOTIMP']; ?></td>
                             <td>

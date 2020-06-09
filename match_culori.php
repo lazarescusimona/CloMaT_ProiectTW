@@ -1,17 +1,13 @@
-<?php  include('php_code_users.php');
+<?php  include('php_code_culori.php');
 
 	if (isset($_GET['edit'])) {
 		$id = $_GET['edit'];
 		$update = true;
-		$record = oci_parse($conn, "SELECT * FROM STUDENT.UTILIZATORI WHERE id=$id");
+		$record = oci_parse($conn, "SELECT * FROM STUDENT.MATCH_CROMATIC WHERE ID=$id");
         oci_execute($record);
         $n = oci_fetch_array($record);
-		$username = $n['USERNAME'];
-        $parola = $n['PAROLA'];
-        $email = $n['EMAIL'];
-        $data_nasterii = $n['DATA_NASTERII'];
-        $sex = $n['SEX'];
-        $tip_utilizator = $n['TIP_UTILIZATOR'];
+		$culoare = $n['CULOARE'];
+        $culoare_match = $n['CULOARE_MATCH'];
         $id=$n['ID'];
 
 	}
@@ -34,7 +30,7 @@
 
             <ul id="menu">
 
-            <li><a href="admin.php">Home</a></li>
+                <li><a href="admin.php">Home</a></li>
                 <li><a href="">Statistici</a></li>
                 <li><a href="users.php">Users</a></li>
                 <li><a href="articole.php">Articole</a></li>
@@ -77,32 +73,17 @@
                 </div>
                 <?php endif ?>
 
-            <form method="post" action="php_code_users.php" >
+            <form method="post" action="php_code_culori.php" >
             <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-group">
-                    <label>Username</label>
-                    <input type="text" name="username" value="<?php echo $username; ?>">
+                    <label>Culoare</label>
+                    <input type="text" name="culoare" value="<?php echo $culoare; ?>">
                 </div>
                 <div class="input-group">
-                    <label>Parola</label>
-                    <input type="text" name="parola" value="<?php echo $parola; ?>">
+                    <label>Culoare match</label>
+                    <input type="text" name="culoare_match" value="<?php echo $culoare_match; ?>">
                 </div>
-                <div class="input-group">
-                    <label>Email</label>
-                    <input type="text" name="email" value="<?php echo $email; ?>">
-                </div>
-                <div class="input-group">
-                    <label>Data nastere</label>
-                    <input type="text" name="data_nasterii" value="<?php echo $data_nasterii; ?>">
-                </div>
-                <div class="input-group">
-                    <label>Sex</label>
-                    <input type="text" name="sex" value="<?php echo $sex; ?>">
-                </div>
-                <div class="input-group">
-                    <label>Tip utilizator</label>
-                    <input type="text" name="tip_utilizator" value="<?php echo $tip_utilizator; ?>">
-                </div>
+                
                 <div class="input-group">
                     <?php if ($update == true): ?>
                         <button class="btn" type="submit" name="update" style="background: #556B2F;" >Update</button>
@@ -118,29 +99,21 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Username</th>
-                            <th>Parola</th>
-                            <th>Email</th>
-                            <th>Data nastere</th>
-                            <th>Sex</th>
-                            <th>Tip utilizator </th>
+                            <th>Culoare</th>
+                            <th>Culoare match</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     
                     <?php while ($row = oci_fetch_array($stid, OCI_ASSOC)) { ?>
                         <tr>
-                            <td><?php echo $row['USERNAME']; ?></td>
-                            <td><?php echo $row['PAROLA']; ?></td>
-                            <td><?php echo $row['EMAIL']; ?></td>
-                            <td><?php echo $row['DATA_NASTERII']; ?></td>
-                            <td><?php echo $row['SEX']; ?></td>
-                            <td><?php echo $row['TIP_UTILIZATOR']; ?></td>
+                            <td><?php echo $row['CULOARE']; ?></td>
+                            <td><?php echo $row['CULOARE_MATCH']; ?></td>
                             <td>
-                                <a href="users.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
+                                <a href="match_culori.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
                             </td>
                             <td>
-                                <a href="php_code_users.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
+                                <a href="php_code_culori.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
