@@ -2,8 +2,8 @@
 session_start();
 function getConnection()
 {
-    //$connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
-    $connection = oci_connect('student', 'student', 'localhost:1521/xe'); //Asta e pentru , Simona
+    $connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+   //$connection = oci_connect('student', 'student', 'localhost:1521/xe'); //Asta e pentru , Simona
     return $connection;
 }
 

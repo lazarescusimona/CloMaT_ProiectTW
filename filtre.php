@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +7,7 @@
   <title>CloMatchTool</title>
   <link rel="icon" type="image/png" href="images/icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&display=swap" rel="stylesheet">   
+  <link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
   <link rel="stylesheet" type="text/css" href="css/new-new-filtre.css">
@@ -19,7 +17,7 @@
 <script src="js/script.js"></script>
 
 <body>
-<div class="banner-fixed">
+  <div class="banner-fixed">
     <nav>
 
       <div class="logo">
@@ -57,14 +55,14 @@
     </nav>
   </div>
   <!--------------------------------->
-<br>
+  <br>
   <!--------------------------------->
-  <div id ="text-articole">Aici puteti cauta articole, piese vestimentare, garderobe.
+  <div id="text-articole">Aici puteti cauta articole, piese vestimentare, garderobe.
     Cautati mai usor folosind meniul de filtrare.
   </div>
   <br>
   <div id="main-articole">
-     
+
     <div id="filter-bar">
       <form name="form-filter" method="post">
 
@@ -94,11 +92,25 @@
 
     <?php
     echo '<form method="post" id = "container-articole" >';
-    foreach ($imgList as &$value) {
+    if (isset($_SESSION['username']) && isset($_SESSION['areRuda']) &&!empty($imgListRelatives)) {
+      echo '<div class="text-despre-articole">Rude</div>';
+      foreach ($imgListRelatives as &$value) {
+        echo '<div class = "img-cell">';
+        echo '<a href="' . $value . '" data-lightbox = "mygallery"><img src="' . $value . '"></a> ';
+        if (isset($_SESSION['username'])) {
+          $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value);
+          $temp = str_replace(".jpg", "", $temp);
+          echo '<input type="checkbox" class="add-btn" name="' . $temp . '">';
+        }
+        echo '</div>';
+      }
+    }
+    echo '<div class="text-despre-articole">Restul</div>';
+    foreach ($imgListOther as &$value1) {
       echo '<div class = "img-cell">';
-      echo '<a href="' . $value . '" data-lightbox = "mygallery"><img src="' . $value . '"></a> ';
+      echo '<a href="' . $value1 . '" data-lightbox = "mygallery"><img src="' . $value1 . '"></a> ';
       if (isset($_SESSION['username'])) {
-        $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value);
+        $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value1);
         $temp = str_replace(".jpg", "", $temp);
         echo '<input type="checkbox" class="add-btn" name="' . $temp . '">';
       }
@@ -109,7 +121,7 @@
     }
     echo '</form>';
     ?>
-    
+
 
   </div>
   <br>

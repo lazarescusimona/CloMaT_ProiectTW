@@ -1,5 +1,5 @@
 <?php
-session_start();  
+session_start();
 class Filter
 {
     public $nume_filtru;
@@ -33,7 +33,7 @@ function getFilters($connection)
 }
 
 
-function view($data = [], $imgList = [])
+function view($data = [], $imgListRelatives = [], $imgListOther = [])
 {
     require_once 'filtre.php';
 }
@@ -91,8 +91,53 @@ function getNumeFiltre($connection)
 function index()
 {
     $param = getFilters(getConnection());
+
     $param2 = performSelect(getConnection());
-    view($param, $param2);
+    $param2Copy = $param2;
+    // in param2 e lista cu toate imaginile
+    $param3 = getFavoriteRelatives(getConnection(), $param2Copy); //pe asta il trimiti
+    $param3Copy = $param3;
+    //param3 - lista cu favoritele rudelor
+
+    $param4 = array_filter($param2Copy, function ($item) use (&$param3Copy) {
+        $idx = array_search($item, $param3Copy);
+        // remove it from $b if found
+        if ($idx !== false) unset($param3Copy[$idx]);
+        // keep the item if not found
+        return $idx === false;
+    });
+
+    view($param, $param3, $param4);
+}
+
+function getFavoriteRelatives($connection, $imgList = [])
+{
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+    }
+
+    $lista_favorite_rude = [];
+
+    if (isset($_SESSION['areRuda'])) {
+        $query = "select RUDA from rude where USERUTILIZATOR = '$username'";
+        $qr = oci_parse(getConnection(), $query);
+        oci_execute($qr);
+        while ($row = oci_fetch_array($qr)) {
+            $ruda_name = $row['RUDA'];
+            foreach ($imgList as &$value) {
+                $query1 = " select * from articole_preferate where USERNAME ='$ruda_name' and ARTICOL_PATH ='$value'";
+                $qr1 = oci_parse(getConnection(), $query1);
+                oci_execute($qr1);
+                if (!oci_fetch_array($qr1)) {
+                    //nu faci nic
+                } else {
+                    array_push($lista_favorite_rude, $value);
+                }
+            }
+        }
+    }
+    $lista_favorite_rude=array_unique($lista_favorite_rude);
+    return $lista_favorite_rude;
 }
 
 

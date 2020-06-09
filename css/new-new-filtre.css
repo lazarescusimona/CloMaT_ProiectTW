@@ -67,6 +67,19 @@
   flex-direction: column;
 }
 
+.text-despre-articole{
+  margin: 1em 1.5em;
+  height: 3em;
+    width: 95%;
+    border: solid;
+    border-color: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Bellota', cursive;
+    font-size: 23px;
+}
+
 /*.add-btn{
   display: flex;
   align-self: center;
