@@ -35,13 +35,15 @@
 
             <ul id="menu">
 
-                <li><a href="admin.php">Home</a></li>
+            <li><a href="admin.php">Home</a></li>
                 <li><a href="">Statistici</a></li>
                 <li><a href="users.php">Users</a></li>
                 <li><a href="articole.php">Articole</a></li>
                 <li><a href="admin_filtre.php">Filtre</a></li>
                 <li><a href="export.php">Export</a></li>
                 <li><a href="import.php">Import</a></li>
+                <li><a href="match_culori.php">Match culori</a></li>
+                <li><a href="match_material.php">Match material</a></li>
 
             </ul>
 

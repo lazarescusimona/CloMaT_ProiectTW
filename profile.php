@@ -98,8 +98,8 @@
                <?php require_once 'addRuda.php';?>
                <?php       
                   global $conn;
-                  $conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); 
-                  //$conn = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
+                  //$conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); 
+                  $conn = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
                   $user = $_SESSION['username'];
                        $query = oci_parse($conn, "SELECT * FROM rude where  userUtilizator = '$user'");
                        oci_execute($query);

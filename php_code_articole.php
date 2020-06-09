@@ -1,8 +1,8 @@
 <?php 
     session_start();
     global $conn;
-    $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
-    //$conn = oci_connect('student', 'student', 'localhost/XE');
+    //$conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
+    $conn = oci_connect('student', 'student', 'localhost/XE');
 
 	// initialize variables
 	$sexul = "";
@@ -10,6 +10,7 @@
     $stil = "";
     $articol_path = "";
     $culoare = "";
+    $material = "";
     $tip_piesa = "";
     $anotimp = "";
    
@@ -22,13 +23,14 @@
         $stil = $_POST['stil'];
         $articol_path = $_POST['articol_path'];
         $culoare = $_POST['culoare'];
+        $material = $_POST['material'];
         $tip_piesa = $_POST['tip_piesa'];
         $anotimp = $_POST['anotimp'];
 
         move_uploaded_file($_FILES["file_img"]["tmp_name"], "images/" . $_FILES["file_img"]["name"]);
 
 
-        $query = oci_parse($conn,"Insert into STUDENT.ARTICOLE (SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP) values ('$sexul', '$eveniment', '$stil', '$articol_path', '$culoare', '$tip_piesa', '$anotimp')"); 
+        $query = oci_parse($conn,"Insert into STUDENT.ARTICOLE (SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values ('$sexul', '$eveniment', '$stil', '$articol_path', '$culoare', '$material', '$tip_piesa', '$anotimp')"); 
         oci_execute($query);
 		$_SESSION['message'] = "Object saved!";
 		header('location: articole.php');
@@ -46,9 +48,10 @@
         $stil = $_POST['stil'];
         $articol_path = $_POST['articol_path'];
         $culoare = $_POST['culoare'];
+        $material = $_POST['material'];
         $tip_piesa = $_POST['tip_piesa'];
         $anotimp = $_POST['anotimp'];
-        $query=oci_parse($conn, "UPDATE STUDENT.ARTICOLE SET SEXUL='$sexul', EVENIMENT='$eveniment', STIL='$stil', ARTICOL_PATH='$articol_path', CULOARE='$culoare', TIP_PIESA='$tip_piesa', ANOTIMP='$anotimp' WHERE id=$id");
+        $query=oci_parse($conn, "UPDATE STUDENT.ARTICOLE SET SEXUL='$sexul', EVENIMENT='$eveniment', STIL='$stil', ARTICOL_PATH='$articol_path', CULOARE='$culoare', MATERIAL='$material', TIP_PIESA='$tip_piesa', ANOTIMP='$anotimp' WHERE id=$id");
         oci_execute($query);
         $_SESSION['message'] = "Object updated!"; 
         header('location: articole.php');
