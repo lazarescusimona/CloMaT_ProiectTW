@@ -59,17 +59,7 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
 
-drop trigger users_after_insert;
 
-CREATE OR REPLACE TRIGGER users_after_insert
-AFTER INSERT
-   ON STUDENT.UTILIZATORI
-DECLARE
-   v_max int;
-BEGIN
-    select max(id) into v_max from STUDENT.UTILIZATORI;
-    update STUDENT.UTILIZATORI set id=v_max+1 where id is null;
-END users_after_insert;
 --------------------------------------------------------
 --  File created - Sunday-May-31-2020   
 --------------------------------------------------------
@@ -129,20 +119,7 @@ commit;
   TABLESPACE "USERS"  ENABLE;
 
 
-drop trigger articole_after_insert;
 
-CREATE OR REPLACE TRIGGER articole_after_insert
-AFTER INSERT
-   ON STUDENT.ARTICOLE
-DECLARE
-   v_max int;
-BEGIN
-
-    select max(id) into v_max from STUDENT.ARTICOLE;
-    
-    update STUDENT.ARTICOLE set id=v_max+1 where id is null;
-
-END;
 
 
 
@@ -218,19 +195,25 @@ Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (6,'Even
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (7,'Eveniment','Petrecere de Revelion');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (8,'Culoare','Alb');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (9,'Culoare','Albastru');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (10,'Culoare','Bej');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (10,'Culoare','Bordo');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (11,'Culoare','Galben');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (11,'Culoare','Gri');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (12,'Culoare','Lavanda');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (13,'Culoare','Magenta');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (14,'Culoare','Maro');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (15,'Culoare','Negru');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (16,'Culoare','Portocaliu');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (17,'Culoare','Rosu');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (17,'Culoare','Roz');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (19,'Culoare','Trabuc deschis');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (18,'Culoare','Verde');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (19,'Culoare','Visisniu');
-Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (20,'Tip_Piesa','Imbracaminte');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (20,'Tip_Piesa','Imbracaminte top');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (20,'Tip_Piesa','Imbracaminte bottom');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (21,'Tip_Piesa','Incaltaminte');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (22,'Tip_Piesa','Accesorii');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (21,'Tip_Piesa','Outfit complet');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (23,'Anotimp','Primavara');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (24,'Anotimp','Vara');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (25,'Anotimp','Toamna');
@@ -238,6 +221,8 @@ Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (26,'Ano
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (27,'Stil','Elegant');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (28,'Stil','Sportiv');
 Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (29,'Stil','Casual');
+Insert into STUDENT.MENIU_FILTRARE (ID,NUME_FILTRU,SUBCATEGORII) values (30,'Culoare','Mov');
+
 commit;
 --------------------------------------------------------
 --  Constraints for Table MENIU_FILTRARE
@@ -248,23 +233,48 @@ commit;
   
   
   
-  drop trigger filtre_after_insert;
 
+
+  create table rude ( userUtilizator varchar2(50) not null,
+                      ruda varchar2(50) not null);
+
+
+drop trigger users_after_insert;
+CREATE OR REPLACE TRIGGER users_after_insert
+AFTER INSERT
+   ON STUDENT.UTILIZATORI
+DECLARE
+   v_max int;
+BEGIN
+    select max(id) into v_max from STUDENT.UTILIZATORI;
+    update STUDENT.UTILIZATORI set id=v_max+1 where id is null;
+END users_after_insert;
+/
+
+
+drop trigger articole_after_insert;
+CREATE OR REPLACE TRIGGER articole_after_insert
+AFTER INSERT
+   ON STUDENT.ARTICOLE
+DECLARE
+   v_max int;
+BEGIN
+    select max(id) into v_max from STUDENT.ARTICOLE;
+    update STUDENT.ARTICOLE set id=v_max+1 where id is null;
+END;
+/
+
+  drop trigger filtre_after_insert;
 CREATE OR REPLACE TRIGGER filtre_after_insert
 AFTER INSERT
    ON STUDENT.MENIU_FILTRARE
 DECLARE
    v_max int;
 BEGIN
-
     select max(id) into v_max from STUDENT.MENIU_FILTRARE;
-    
     update STUDENT.MENIU_FILTRARE set id=v_max+1 where id is null;
-
 END;
-
-  create table rude ( userUtilizator varchar2(50) not null,
-                      ruda varchar2(50) not null);
+/
 
 
 select * from articole;
@@ -272,4 +282,7 @@ select * from articole_preferate;
 select * from meniu_filtrare;
 select * from rude;
 select * from utilizatori;
+
+
+
 commit;

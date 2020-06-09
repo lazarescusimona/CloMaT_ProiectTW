@@ -2,7 +2,8 @@
 
     session_start();
     global $conn;
-	$conn = oci_connect('student', 'student', 'localhost/XE');
+    $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
+    //$conn = oci_connect('student', 'student', 'localhost/XE');
 
 	// initialize variables
 	$sexul = "";
