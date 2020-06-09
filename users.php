@@ -11,6 +11,7 @@
         $email = $n['EMAIL'];
         $data_nasterii = $n['DATA_NASTERII'];
         $sex = $n['SEX'];
+        $tip_utilizator = $n['TIP_UTILIZATOR'];
         $id=$n['ID'];
 
 	}
@@ -97,6 +98,10 @@
                     <input type="text" name="sex" value="<?php echo $sex; ?>">
                 </div>
                 <div class="input-group">
+                    <label>Tip utilizator</label>
+                    <input type="text" name="tip_utilizator" value="<?php echo $tip_utilizator; ?>">
+                </div>
+                <div class="input-group">
                     <?php if ($update == true): ?>
                         <button class="btn" type="submit" name="update" style="background: #556B2F;" >Update</button>
                     <?php else: ?>
@@ -116,6 +121,7 @@
                             <th>Email</th>
                             <th>Data nastere</th>
                             <th>Sex</th>
+                            <th>Tip utilizator </th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
@@ -127,6 +133,7 @@
                             <td><?php echo $row['EMAIL']; ?></td>
                             <td><?php echo $row['DATA_NASTERII']; ?></td>
                             <td><?php echo $row['SEX']; ?></td>
+                            <td><?php echo $row['TIP_UTILIZATOR']; ?></td>
                             <td>
                                 <a href="users.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
                             </td>

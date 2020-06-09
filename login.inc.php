@@ -2,8 +2,8 @@
 <?php       
          global $conn;
         //$conn = oci_connect('clomat', 'clomat', 'localhost/XE', 'Clomat');
-        //$conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
-        $conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+        $conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
+        //$conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
         if(isset($_POST['submit'])){
             $user = $_POST['username'];
             $pass = $_POST['password'];
@@ -19,6 +19,7 @@
                 $_SESSION['email'] = $rows[3];
                 $_SESSION['birthday'] = $rows[4];
                 $_SESSION['sex'] = $rows[5];
+              
                 //verific existenta rudelor 
                 $userul = $_SESSION['username'];
                 $query = oci_parse($conn, "SELECT * FROM rude WHERE userutilizator = '$userul'");
@@ -30,7 +31,13 @@
                 {
                   $_SESSION['areRuda']=1;
                 }
-                header("location: profile-back.php");
+                $_SESSION['tip_utilizator'] = $rows[8];
+
+                if($rows[8] == 'user')
+                  header("location: profile-back.php");
+                else
+                  if($rows[8] == 'admin')
+                    header("location: admin.php");
               }
               else{
               //Redirectionam pe login.php?signup

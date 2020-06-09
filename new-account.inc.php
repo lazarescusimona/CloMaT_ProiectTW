@@ -4,8 +4,8 @@
         global $conn;
 
         //$conn = oci_connect('clomat', 'clomat', 'localhost/XE', 'Clomat');
-        //$conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
-        $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+        $conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
+        //$conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
 
         
         if(isset($_POST['submit'])){
@@ -185,7 +185,8 @@
                                                         data_nasterii,
                                                         sex,
                                                         verification_key,
-                                                        confirmed_mail) 
+                                                        confirmed_mail,
+                                                        tip_utilizator) 
                                                         values 
                                                         (:username,
                                                         :parola,
@@ -193,16 +194,19 @@
                                                         TO_DATE(:data_nasterii,:format),
                                                         :sex,
                                                         :validation_key,
-                                                        :confirmed)');
+                                                        :confirmed,
+                                                        :tip_utilizator)');
         
         //generez o cheie unica de confirmare a emailului
         // o introduc in tabel si astept ca utilizatorul sa introduca cheia
         $validation_key = md5(time().$username);
         $confirmed = 0;
+        $tip_utilizator ='user';
 
         //folosesc o functie hash pt a securiza parola
         $parola = md5($parola);
         
+        oci_bind_by_name($insert, ':tip_utilizator', $tip_utilizator);
         oci_bind_by_name($insert, ':validation_key', $validation_key);
         oci_bind_by_name($insert, ':confirmed', $confirmed);
         oci_bind_by_name($insert, ':username', $username);
@@ -220,6 +224,7 @@
         $_SESSION['email'] = $email;
         $_SESSION['birthday'] = $data;
         $_SESSION['sex'] = $sex;
+        $_SESSION['tip_utilizator']=$tip_utilizator;
         //verific existenta rudelor 
         $query = oci_parse($conn, "SELECT * FROM rude WHERE userutilizator = '$username'");
                 oci_execute($query);

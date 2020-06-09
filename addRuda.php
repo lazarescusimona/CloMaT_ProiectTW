@@ -1,6 +1,7 @@
 <?php       
    global $conn;
-   $conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); 
+   //$conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); 
+   $conn = oci_connect('student', 'student', 'localhost:1521/xe'); 
    if(isset($_POST['save'])){
       $userRuda = $_POST['name'];
       if((!empty($userRuda)))
