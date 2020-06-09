@@ -220,7 +220,16 @@
         $_SESSION['email'] = $email;
         $_SESSION['birthday'] = $data;
         $_SESSION['sex'] = $sex;
-
+        //verific existenta rudelor 
+        $query = oci_parse($conn, "SELECT * FROM rude WHERE userutilizator = '$username'");
+                oci_execute($query);
+                if( ! oci_fetch_array($query) ){
+                  unset($_SESSION['areRuda']);
+                }
+                else
+                {
+                  $_SESSION['areRuda']=1;
+                }
         //trimitere mail de confirmare
         $destinatar = $email;
         $subiect = "email verification";

@@ -21,7 +21,8 @@
             oci_bind_by_name($insert, ':userUsername', $userRuda);
             oci_bind_by_name($insert, ':rudaUsername', $userul);
             $r = oci_execute($insert); //executa inserarea + commit
-        }
+            $_SESSION['areRuda'] = 1;
         }
    }
    }
+}

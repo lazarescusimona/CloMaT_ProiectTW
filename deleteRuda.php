@@ -15,5 +15,12 @@ if(isset($_GET['delete']))
     oci_bind_by_name($query, ':username', $id);
     oci_bind_by_name($query, ':ruda', $userul);
     oci_execute($query);
+    //daca nu mai are rude, acest utilizator, fac unset la $_SESSION['areRude']
+    $query = oci_parse($conn, "SELECT * FROM rude WHERE userutilizator = '$userul'");
+    oci_execute($query);
+    if( ! oci_fetch_array($query) ){
+        unset($_SESSION['areRuda']);
+    }
+
     header("Location: profile-back.php?");
 }

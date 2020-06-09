@@ -19,6 +19,17 @@
                 $_SESSION['email'] = $rows[3];
                 $_SESSION['birthday'] = $rows[4];
                 $_SESSION['sex'] = $rows[5];
+                //verific existenta rudelor 
+                $userul = $_SESSION['username'];
+                $query = oci_parse($conn, "SELECT * FROM rude WHERE userutilizator = '$userul'");
+                oci_execute($query);
+                if( ! oci_fetch_array($query) ){
+                  unset($_SESSION['areRuda']);
+                }
+                else
+                {
+                  $_SESSION['areRuda']=1;
+                }
                 header("location: profile-back.php");
               }
               else{
