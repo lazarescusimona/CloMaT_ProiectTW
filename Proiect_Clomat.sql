@@ -255,6 +255,8 @@ commit;
   TABLESPACE "USERS" ;
 REM INSERTING into STUDENT.RUDE
 SET DEFINE OFF;
+Insert into STUDENT.RUDE (USERUTILIZATOR,RUDA) values ('Anamaria','Roxana');
+Insert into STUDENT.RUDE (USERUTILIZATOR,RUDA) values ('Roxana','Anamaria');
 --------------------------------------------------------
 --  Constraints for Table RUDE
 --------------------------------------------------------
