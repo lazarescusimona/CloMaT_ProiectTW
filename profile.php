@@ -6,10 +6,7 @@
       <title>CloMatchTool</title>
       <link rel="icon" type="image/png" href="images/icon.png" />
       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <link rel="stylesheet" type="text/css" href="css/filtre.css">
-      <link rel="stylesheet" type="text/css" href="login_css/style.css">
-      <link rel="stylesheet" type="text/CSS" href="css/profile.css">
+      <link rel="stylesheet" type="text/CSS" href="css/profile2.css">
       <script src="js/lightbox-plus-jquery.min.js"></script>
       <script src="js/new_filtre.js"></script>
       <script src="js/script.js"></script>

@@ -1,0 +1,369 @@
+/*Aici incepe designul pentru bara de meniu*/
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+  .banner-fixed{
+    position: fixed;
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: auto;
+    margin-right: auto;
+  }
+  nav{
+    display: flex;
+    margin-top: 0px;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 8vh;  /*grosimea pentru bara de navigare*/
+    background-color: rgb(211, 84, 91);
+    font-family:'Poppins',sans-serif;
+  }
+  
+  .inside {
+    margin-top: 58px;
+  }
+  
+  li{
+    margin-left: 35px;
+  }
+  
+  .logo{ /*aici, ca logo putem sa punem o poza cu iconita pe care o dorim, nu neaparat numele siteului*/
+    color: rgb(239, 225, 241);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+  }
+  
+  .nav-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+  }
+  
+  .nav-links li{
+    list-style: none;
+  }
+  
+  .nav-links a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 19px;
+    opacity: 0.3;
+    transition: 0.3s;
+  }
+  
+  
+  .nav-links a:hover {
+    opacity: 1;
+  }
+  
+  .burger{
+    display: none;
+    cursor: pointer;
+    background-color: rgb(211, 84, 91);
+  }
+  
+  .burger div{
+    width: 24px;
+    height: 4px;
+    color: rgb(233, 144, 118);
+    background-color: pink;
+    margin: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  
+  /*sa arate  bine bara de meniu si pe telefon*/
+  
+  
+  @media screen 
+    and (max-width: 1024px)  {
+      .nav-links{
+        width: 60%;
+      }
+  
+  }
+  
+  @media screen 
+    and (max-width: 768px)  {
+  body{
+    overflow-x: hidden;
+  }
+      .nav-links{
+        position: absolute;
+        right: 0;
+        height: 93vh;
+        top:8vh;
+        background-color: rgb(211, 84, 91);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+      }
+  
+      .nav-links li{
+        opacity: 0;
+      }
+  
+      .burger{
+        display: block;
+      }
+  
+  }
+  
+  .nav-active{
+    transform: translateX(0%);
+  }
+  
+  @keyframes navLinkFade{
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  
+  /* asta face hamburgerul sa fie X*/
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+  }
+  
+  .toggle .line2 {
+    opacity:0;
+  }
+  
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+  }
+  
+  /*Aici incepe partea de design pentru galeria de poze*/
+  
+  .gallery {
+    margin:100px, 100px;
+    justify-content: center;
+  }
+  
+  
+  .gallery img{
+    transition: 1s;
+    padding: 0px;
+    width: 200px;
+      max-width: 30%;
+      margin: 10px 10px;
+      min-height: 200px;
+      max-height: 200px;
+      margin-left: 2em;
+  }
+  
+  .gallery img:hover{
+    filter: contrast(100%);
+    transform: scale(1.1);
+  }
+  
+  
+  body{
+    background-color: rgb(54, 54, 53);
+    background-size:100% 100%;
+    font-family:"Open Sans", sans-serif;
+    overflow: auto;
+}
+a.nostyle{
+    color:inherit;
+    text-decoration:none;
+    padding:0;
+    margin:0;
+}
+div.portfoliocard{
+   /* margin-top: 100px;*/
+    position:relative;
+    height: 95%;
+    width:95%;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(0,0,0,0.7);
+    box-shadow:0px -1px 3px rgba(0,0,0,0.1),
+                0px 2px 6px rgba(0,0,0,0.5);
+    border-radius:6px;
+    margin:0% ;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+div.portfoliocard div.coverphoto{
+    width:100%;
+    height:120px;
+    background-color: antiquewhite;
+    background-position:center center;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    border-bottom:3px solid rgba(0,0,0,0.1);
+    box-shadow:inset 0px 3px 20px rgba(255,255,255,0.3),
+                1px 0px 2px rgba(255,255,255,0.7);
+    z-index:99;
+}
+div.portfoliocard div.left_col, div.portfoliocard div.right_col{
+    float:left;
+    height:340px;
+}
+div.portfoliocard div.left_col{
+    width:30%;
+    padding-top:15%;
+    box-sizing:border-box;
+    overflow: scroll;
+}
+div.portfoliocard div.right_col{
+    width:70%;
+    position: relative;
+    height: 70%;
+    background:rgba(245,245,245,1);
+    border-left:1px solid rgba(230,230,230,1);
+    box-shadow:inset 0px 1px 1px rgba(255,255,255,0.7);
+    margin-left:-1px;
+    border-bottom-right-radius:5px;
+    overflow: auto;
+}
+
+div.portfoliocard div.profile_picture{
+    width:9em;
+    height:9em;
+    background:rgba(255,255,255,1);
+    position:absolute;
+    top:65px;
+    left:5%;
+    border-radius:100%;
+    background-image: url('http://cache.spreadshirt.net/Public/Common/images/profile-pic-placeholder_130x130.png');
+    background-size:100% 100%;
+    padding:7px;
+    border:4px solid rgba(255,255,255,1)
+}
+div.portfoliocard div.right_col h2.name{
+    font-size:30px;
+    font-weight:300;
+    color: rgba(30,30,30,1);
+    padding:0;
+    margin:20px 10px 0px 30px;
+    position: relative;
+}
+div.portfoliocard div.right_col h3.location{
+    font-size:15px;
+    font-weight:300;
+    color:rgba(170,170,170,1);
+    padding:0;
+    margin:-5px 10px 10px 30px;
+    position: relative;
+}
+
+
+div.portfoliocard div.following{
+    margin:15px 0px 0px 35px;
+    font-weight:300;
+    font-size:16px;
+    color:rgba(30,30,30,1);
+}
+div.portfoliocard div.follow_count{
+    font-weight:400;
+    font-size:25px;
+    color:rgba(140,140,140,1);
+}
+
+
+div.following a
+{
+  position: relative;
+  padding: 10px 40px;
+margin: 0px 10px 10px 0px;
+float: left;
+  border-radius: 3px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #FFF;
+  text-decoration: none;	
+}
+
+.img-cell{
+  display: flex;
+  flex-direction: column;
+}
+.delete-btn{
+width: 10em;
+display: flex;
+align-self: center;
+text-align: center;
+background:rgb(211, 84, 91);
+color:#fff;
+font-family: 'Dancing Script', cursive;
+font-size: 23px;
+}
+
+.favs{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.favs img{
+  transition: 1s;
+  padding: 0px;
+  width: 180px;
+  height: 180px;
+  margin: 1em;
+}
+
+.favs img:hover{
+  filter: contrast(100%);
+  transform: scale(1.1);
+}
+
+@media screen and  (max-width: 1131px){
+    div.portfoliocard div.right_col{
+        width:100%;
+        margin-top: 5%;
+        background: rgba(255,255,255,1);
+        overflow:inherit;
+    }
+    div.portfoliocard div.left_col{
+        width:100%;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top: 15%;
+    }
+    div.portfoliocard {
+        border: 1px solid rgba(255,255,255,1);
+        box-shadow: 0px -1px 3px rgba(255,255,255,1), 0px 2px 6px rgba(255,255,255,1);
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+    }
+    div.portfoliocard div.left_col, div.portfoliocard div.right_col{
+        float:none;
+        height:70%;
+    }
+    div.portfoliocard div.profile_picture{
+        width:7em;
+        height:7em;
+        background:rgba(255,255,255,1);
+        position:absolute;
+        top:65px;
+        left:5%;
+        border-radius:100%;
+        background-image: url('http://cache.spreadshirt.net/Public/Common/images/profile-pic-placeholder_130x130.png');
+        background-size:100% 100%;
+        padding:7px;
+        border:4px solid rgba(255,255,255,1)
+    }
+    body{
+        background: rgba(255,255,255,1);
+    }
+}
