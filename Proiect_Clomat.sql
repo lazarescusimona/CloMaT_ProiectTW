@@ -38,6 +38,9 @@ REM INSERTING into STUDENT.UTILIZATORI
 SET DEFINE OFF;
 Insert into STUDENT.UTILIZATORI (ID,USERNAME,PAROLA,EMAIL,DATA_NASTERII,SEX,CONFIRMED_MAIL,VERIFICATION_KEY, TIP_UTILIZATOR) values (1,'Roxana','d5d4172de318d6dc6c1ca52c8dcab618','salavastruroxanamaria@yahoo.com',to_date('08-SEP-99','DD-MON-RR'),'Female',1,'cc72e74145c1d7c7a2327ee6320c5b3d','user');
 Insert into STUDENT.UTILIZATORI (ID,USERNAME,PAROLA,EMAIL,DATA_NASTERII,SEX,CONFIRMED_MAIL,VERIFICATION_KEY,TIP_UTILIZATOR) values (2,'Anamaria','276b6c4692e78d4799c12ada515bc3e4','ana.goldan@yahoo.com',to_date('10-SEP-99','DD-MON-RR'),'Female',1,'91f88f6815525bd9fdaa8f81a8cb9aba','user');
+Insert into STUDENT.UTILIZATORI (ID,USERNAME,PAROLA,EMAIL,DATA_NASTERII,SEX,CONFIRMED_MAIL,VERIFICATION_KEY,TIP_UTILIZATOR) values (3	,'admin', '21232f297a57a5a743894a0e4a801fc3','lazarescu.simona12@yahoo.com',to_date('01-JUN-00', 'DD-MON-RR'),	'Female',1,	'3fdfe7b3002cf8e4d2e9cb37e50dc9e2','admin');
+Insert into STUDENT.UTILIZATORI (ID,USERNAME,PAROLA,EMAIL,DATA_NASTERII,SEX,CONFIRMED_MAIL,VERIFICATION_KEY,TIP_UTILIZATOR) values (4	,'simona', '3506e1dff0db4e4d78412e2feb7c0a95','lazarescusimonam@gmail.com',to_date('01-JUN-00', 'DD-MON-RR'),'Female',	1	,'00e4944f42e783d314b56acd53e758bb','user');
+
 commit;
 --------------------------------------------------------
 --  DDL for Index PKK
