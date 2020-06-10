@@ -1,10 +1,67 @@
 ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,TIP_PIESA,ANOTIMP
-1,Femei,Petrecere de RevelionCasual,http://localhost/CloMaT_ProiectTW/images/photo5.jpg,RosuIncaltaminte
-2,Femei,Petrecere de RevelionSportiv,http://localhost/CloMaT_ProiectTW/images/photo3.jpg,MagentaIncaltaminte
-3,Barbati,BotezElegant,http://localhost/CloMaT_ProiectTW/images/photo2.jpg,AlbAccesorii
-4,Barbati,InmormantareSportiv,http://localhost/CloMaT_ProiectTW/images/photo11.jpg,BordoAccesorii
-5,Femei,InmormantareSportiv,http://localhost/CloMaT_ProiectTW/images/photo6.jpg,BordoAccesorii
-10,Femei,BotezSportiv,http://localhost/CloMaT_ProiectTW/images/photo7.jpg,RosuIncaltaminte
-15,Barbati,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/photo10.jpg,MagentaAccesorii
-17,Barbati,Plimbare pe plajaCasual,http://localhost/CloMaT_ProiectTW/images/photo4.jpg,VerdeAccesorii
-18,Femei,Petrecere de RevelionSportiv,http://localhost/CloMaT_ProiectTW/images/photo9.jpg,MaroImbracaminte
+4,Femei,Petrecere de RevelionSportiv,http://localhost/CloMaT_ProiectTW/images/photo3.jpg,MagentaOutfit complet
+5,Barbati,BotezElegant,http://localhost/CloMaT_ProiectTW/images/photo2.jpg,AlbOutfit complet
+6,Barbati,InmormantareSportiv,http://localhost/CloMaT_ProiectTW/images/photo11.jpg,BordoOutfit complet
+7,Femei,InmormantareSportiv,http://localhost/CloMaT_ProiectTW/images/photo6.jpg,BordoOutfit complet
+8,Femei,BotezSportiv,http://localhost/CloMaT_ProiectTW/images/photo7.jpg,RosuOutfit complet
+9,Barbati,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/photo10.jpg,MagentaOutfit complet
+10,Barbati,Plimbare pe plajaCasual,http://localhost/CloMaT_ProiectTW/images/photo4.jpg,VerdeOutfit complet
+11,Femei,Petrecere de RevelionSportiv,http://localhost/CloMaT_ProiectTW/images/photo9.jpg,MaroOutfit complet
+12,Femei,BotezElegant,http://localhost/CloMaT_ProiectTW/images/download5.jpg,NegruImbracaminte bottom
+13,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download7.jpg,VisisniuIncaltaminte
+14,Femei,InmormantareElegant,http://localhost/CloMaT_ProiectTW/images/download8.jpg,NegruIncaltaminte
+15,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imag8.jpg,VisisniuImbracaminte bottom
+16,Barbati,Plimbare pe plajaCasual,http://localhost/CloMaT_ProiectTW/images/download.jpg,VerdeImbracaminte top
+17,Femei,Plimbare pe plajaCasual,http://localhost/CloMaT_ProiectTW/images/download6.jpg,BejIncaltaminte
+18,Femei,InmormantareElegant,http://localhost/CloMaT_ProiectTW/images/download9.jpg,GriImbracaminte top
+19,Femei,InmormantareElegant,http://localhost/CloMaT_ProiectTW/images/download10.jpg,VisisniuAccesorii
+20,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images12.jpg,MaroImbracaminte top
+21,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download1.jpg,NegruImbracaminte bottom
+22,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images22.jpg,NegruAccesorii
+23,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagesd1.jpg,VisisniuIncaltaminte
+24,Femei,InmormantareElegant,http://localhost/CloMaT_ProiectTW/images/download81.jpg,VisisniuImbracaminte top
+25,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images01.jpg,VisisniuImbracaminte top
+26,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download91.jpg,NegruImbracaminte bottom
+27,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images71.jpg,NegruAccesorii
+28,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images31.jpg,BejIncaltaminte
+29,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images61.jpg,BejIncaltaminte
+30,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download188.jpg,BejImbracaminte top
+31,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images781.jpg,BejImbracaminte top
+32,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images6fd1.jpg,BejImbracaminte bottom
+33,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images18.jpg,BejIncaltaminte
+34,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images861.jpg,BejAccesorii
+35,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagess71.jpg,BejAccesorii
+36,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download888.jpg,VisisniuImbracaminte bottom
+37,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images891.jpg,BejImbracaminte top
+38,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download54.jpg,NegruIncaltaminte
+39,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download234.jpg,VisisniuAccesorii
+40,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/downloadsd1.jpg,NegruImbracaminte bottom
+41,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images7r81.jpg,AlbastruAccesorii
+42,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images671.jpg,AlbastruImbracaminte top
+43,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagh1.jpg,AlbastruAccesorii
+44,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images9981.jpg,VerdeIncaltaminte
+45,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/downloagg1.jpg,NegruImbracaminte top
+46,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/downloadas1.jpg,AlbImbracaminte top
+47,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagesss.jpg,GriImbracaminte bottom
+48,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/downloaduu1.jpg,MovImbracaminte top
+49,Femei,InmormantareElegant,http://localhost/CloMaT_ProiectTW/images/images81.jpg,VisisniuIncaltaminte
+50,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images34.jpg,NegruImbracaminte top
+51,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images3.jpg,NegruImbracaminte top
+52,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images21.jpg,AlbastruAccesorii
+53,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images91.jpg,AlbastruIncaltaminte
+54,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images881.jpg,AlbastruImbracaminte bottom
+55,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagey1.jpg,AlbastruImbracaminte bottom
+56,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imawqges71.jpg,AlbastruImbracaminte top
+57,Femei,BotezSportiv,http://localhost/CloMaT_ProiectTW/images/imagesxx1.jpg,GriIncaltaminte
+58,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/download41.jpg,NegruIncaltaminte
+59,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/images771.jpg,MovIncaltaminte
+60,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagesasd1.jpg,NegruImbracaminte top
+61,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagesss1.jpg,NegruImbracaminte bottom
+62,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/downloa7781.jpg,AlbImbracaminte bottom
+63,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagestr1.jpg,GriImbracaminte top
+64,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagesds1.jpg,Trabuc deschisImbracaminte bottom
+65,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/downloadsdd1.jpg,PortocaliuIncaltaminte
+66,Femei,Plimbare pe plajaElegant,http://localhost/CloMaT_ProiectTW/images/imagessdsd1.jpg,AlbastruIncaltaminte
+68,Female,Aniversareeeecasual,http://localhost/CloMaT_ProiectTW/images/photo900.jpg,rozaccesoriu
+69,Female,Aniversareeeeecasual,http://localhost/CloMaT_ProiectTW/images/photo80.jpg,rozaccesoriu
+70,Female,AniversareeeCasual,http://localhost/CloMaT_ProiectTW/images/photo2020.jpg,RosuImbracaminte
