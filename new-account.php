@@ -157,6 +157,15 @@
           </div>
               ";
           exit();
+        }elseif(strpos($fullUrl, "account=parolascurta") == true)
+        {
+          echo "<div class=\"error-messageNewAccount\">
+          <h2>
+          Parola este prea scurta! Minim 8 caractere
+          </h2>
+          </div>
+              ";
+          exit();
         }
   ?>
   </div>
