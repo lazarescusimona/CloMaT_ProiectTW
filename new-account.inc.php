@@ -10,12 +10,12 @@
         
         if(isset($_POST['submit'])){
 
-        $username = $_POST['username'];
-        $parola = $_POST['parola'];
-        $repeta_parola = $_POST['repeta_parola'];
-        $email = $_POST['email'];
-        $sex = $_POST['sex'];
-        $data = $_POST['data'];
+        $username = htmlspecialchars( $_POST['username']);
+        $parola = htmlspecialchars( $_POST['parola']);
+        $repeta_parola = htmlspecialchars( $_POST['repeta_parola']);
+        $email = htmlspecialchars( $_POST['email']);
+        $sex = htmlspecialchars( $_POST['sex']);
+        $data = htmlspecialchars( $_POST['data']);
 
         $query = oci_parse($conn, "SELECT * FROM utilizatori WHERE username ='$username'");
         oci_execute($query);
@@ -220,6 +220,7 @@
         $r = oci_execute($insert); //executa inserarea + commit
         //header("Location: new-account.php?account=succes"); //  account=succes va fi preluata in new-account.php
         session_start();
+        /*
         $_SESSION['username'] = $username;
         $_SESSION['email'] = $email;
         $_SESSION['birthday'] = $data;
@@ -234,7 +235,7 @@
                 else
                 {
                   $_SESSION['areRuda']=1;
-                }
+                }*/
         //trimitere mail de confirmare
         $destinatar = $email;
         $subiect = "email verification";

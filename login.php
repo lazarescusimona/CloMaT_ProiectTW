@@ -94,7 +94,7 @@
         {
           echo "<div class=\"error-message\">
           <h2>
-          Utilizatorul nu este inregistrat
+          Utilizatorul nu este inregistrat sau mailul nu este confirmat
           </h2>
           </div>
               ";
