@@ -53,6 +53,14 @@
             exit();
         }
 
+        $ok4 = 1;
+        if(strlen($parola)<8)
+        {
+            $ok2 = 0;
+            echo "sexul introdus nu este ca in specificatii ";
+            header("Location: new-account.php?account=parolascurta"); // eroarea account=parola va fi preluata in new-account.php
+            exit();
+        }
         //validare data de nastere
         // yyyy/mm/dd
         // 2021/09/09 nu este valid, data e din viitor
