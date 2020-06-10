@@ -1,7 +1,7 @@
 #filter-bar{
     width: 17%;
-    border: solid;
-    border-color: red;
+     /* border: solid;
+    border-color: red;*/
 
   }
 
@@ -28,8 +28,8 @@
 #container-articole{
     margin: 1em 1.5em;
     width: 80%;
-    border: solid;
-    border-color: red;
+    /* border: solid;
+    border-color: red;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -63,16 +63,18 @@
 }
 
 .img-cell{
+  padding-top:0 px;
   display: flex;
   flex-direction: column;
 }
 
 .text-despre-articole{
   margin: 1em 1.5em;
-  height: 3em;
+  height: 2em;
+  padding-top: 0px;
     width: 95%;
-    border: solid;
-    border-color: red;
+    /* border: solid;
+    border-color: red;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

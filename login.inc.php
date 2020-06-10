@@ -2,8 +2,8 @@
 <?php       
          global $conn;
         //$conn = oci_connect('clomat', 'clomat', 'localhost/XE', 'Clomat');
-        $conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
-        //$conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+       // $conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
+        $conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
         if(isset($_POST['submit'])){
             $user = $_POST['username'];
             $pass = $_POST['password'];
@@ -33,11 +33,26 @@
                 }
                 $_SESSION['tip_utilizator'] = $rows[8];
 
-                if($rows[8] == 'user')
+                if($rows[8] == 'user'){
+                  $zi=strtoupper(date("d-M-y"));
+                  $query_zi=oci_parse($conn, "SELECT * FROM STUDENT.STATISTICA_VIZITATORI WHERE ZIUA = '$zi'");
+                  oci_execute($query_zi);
+                  if( ! oci_fetch_array($query_zi) ){
+                    $new_query= oci_parse($conn, "INSERT INTO STUDENT.STATISTICA_VIZITATORI(ZIUA,NR_UTILIZATORI) VALUES ('$zi',1)");
+                    oci_execute($new_query);
+                  }
+                  else{
+                    $new_query= oci_parse($conn, "UPDATE STUDENT.STATISTICA_VIZITATORI SET NR_UTILIZATORI=NR_UTILIZATORI+1 WHERE ZIUA = '$zi'");
+                    oci_execute($new_query);
+                  }
+
+
                   header("location: profile-back.php");
-                else
+                }
+                else{
                   if($rows[8] == 'admin')
                     header("location: admin.php");
+                }
               }
               else{
               //Redirectionam pe login.php?signup

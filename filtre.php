@@ -92,8 +92,8 @@
 
     <?php
     echo '<form method="post" id = "container-articole" >';
-    if (isset($_SESSION['username']) && isset($_SESSION['areRuda']) &&!empty($imgListRelatives)) {
-      echo '<div class="text-despre-articole">Rude</div>';
+    if (isset($_SESSION['username']) && isset($_SESSION['areRuda']) && !empty($imgListRelatives)) {
+      echo '<div class="text-despre-articole">Rudelor tale le-au placut : </div>';
       foreach ($imgListRelatives as &$value) {
         echo '<div class = "img-cell">';
         echo '<a href="' . $value . '" data-lightbox = "mygallery"><img src="' . $value . '"></a> ';
@@ -104,20 +104,25 @@
         }
         echo '</div>';
       }
-    }
-    echo '<div class="text-despre-articole">Restul</div>';
-    foreach ($imgListOther as &$value1) {
-      echo '<div class = "img-cell">';
-      echo '<a href="' . $value1 . '" data-lightbox = "mygallery"><img src="' . $value1 . '"></a> ';
-      if (isset($_SESSION['username'])) {
-        $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value1);
-        $temp = str_replace(".jpg", "", $temp);
-        echo '<input type="checkbox" class="add-btn" name="' . $temp . '">';
+      if (isset($_SESSION['username']) && !empty($imgListRelatives)) {
+        echo '<input type="submit" value=" Salveaza articolele selectate " class="add-btn"/>';
       }
-      echo '</div>';
     }
-    if (isset($_SESSION['username'])) {
-      echo '<input type="submit" value=" Salveaza articolele selectate " class="add-btn"/>';
+    if (!empty($imgListOther)) {
+      echo '<div class="text-despre-articole">Celelate artciole : </div>';
+      foreach ($imgListOther as &$value1) {
+        echo '<div class = "img-cell">';
+        echo '<a href="' . $value1 . '" data-lightbox = "mygallery"><img src="' . $value1 . '"></a> ';
+        if (isset($_SESSION['username'])) {
+          $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value1);
+          $temp = str_replace(".jpg", "", $temp);
+          echo '<input type="checkbox" class="add-btn" name="' . $temp . '">';
+        }
+        echo '</div>';
+      }
+      if (isset($_SESSION['username']) && !empty($imgListOther)) {
+        echo '<input type="submit" value=" Salveaza articolele selectate " class="add-btn"/>';
+      }
     }
     echo '</form>';
     ?>

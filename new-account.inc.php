@@ -4,8 +4,8 @@
         global $conn;
 
         //$conn = oci_connect('clomat', 'clomat', 'localhost/XE', 'Clomat');
-        $conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
-        //$conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+       // $conn = oci_connect('student', 'student', 'localhost/XE'); //Asta e pentru , Simona
+        $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
 
         
         if(isset($_POST['submit'])){
