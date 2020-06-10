@@ -34,9 +34,13 @@
             header('location: match_material.php');
         }
         else{
-            $query = oci_parse($conn,"Insert into STUDENT.MATCH_MATERIAL (MATERIAL,MATERIAL_MATCH) values ('$material', '$material_match')"); 
+            $query = oci_parse($conn,"Insert into STUDENT.MATCH_MATERIAL (MATERIAL,MATERIAL_MATCH) values (:material, :material_match)"); 
+            oci_bind_by_name($query, ':material', $material);
+            oci_bind_by_name($query, ':material_match', $material_match);
             oci_execute($query);
-            $query2 = oci_parse($conn,"Insert into STUDENT.MATCH_MATERIAL (MATERIAL,MATERIAL_MATCH) values ('$material_match', '$material')"); 
+            $query2 = oci_parse($conn,"Insert into STUDENT.MATCH_MATERIAL (MATERIAL,MATERIAL_MATCH) values (:material, :material_match)"); 
+            oci_bind_by_name($query2, ':material', $material_match);
+            oci_bind_by_name($query2, ':material_match', $material);
             oci_execute($query2);
             $_SESSION['message'] = "Match saved"; 
             header('location: match_material.php');

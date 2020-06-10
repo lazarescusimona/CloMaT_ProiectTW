@@ -35,9 +35,14 @@
             
         }
         else{
-            $query = oci_parse($conn,"Insert into STUDENT.MATCH_CROMATIC (CULOARE,CULOARE_MATCH) values ('$culoare', '$culoare_match')"); 
+            
+            $query = oci_parse($conn,"Insert into STUDENT.MATCH_CROMATIC (CULOARE,CULOARE_MATCH) values (:culoare, :culoare_match)"); 
+            oci_bind_by_name($query, ':culoare', $culoare);
+            oci_bind_by_name($query, ':culoare_match', $culoare_match);
             oci_execute($query);
-            $query2 = oci_parse($conn,"Insert into STUDENT.MATCH_CROMATIC (CULOARE,CULOARE_MATCH) values ('$culoare_match', '$culoare')"); 
+            $query2 = oci_parse($conn,"Insert into STUDENT.MATCH_CROMATIC (CULOARE,CULOARE_MATCH) values (:culoare, :culoare_match)"); 
+            oci_bind_by_name($query2, ':culoare', $culoare_match);
+            oci_bind_by_name($query2, ':culoare_match', $culoare);
             oci_execute($query2);
             $_SESSION['message'] = "Match saved"; 
             header('location: match_culori.php');

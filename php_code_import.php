@@ -83,52 +83,58 @@
         }
 }
 
-    if(isset($_POST["ImportJson"])){
+if(isset($_POST["ImportJson"])){
 
-        $filename = $_FILES['file']['name'];
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        if ($ext !== 'json') {
-            $_SESSION['message'] = "Incarcati un fisier JSON!";
-            header('location: import.php');
-        }
-        else{
-            $fisier = file_get_contents($_FILES['file']['tmp_name']);
-            $data = json_decode($fisier,true);
-            $array_data = $data['articol'];
-            foreach ($array_data as $row) {
-                $sexul = $row['sexul'];
-                $eveniment = $row['eveniment'];
-                $stil = $row['stil'];
-                $articol_path = $row['articol_path'];
-                $culoare = $row['culoare'];
-                $material = $row['material'];
-                $tip_piesa = $row['tip_piesa'];
-                $anotimp = $row['anotimp'];
-                
-
-                $path=strval($articol_path);
-                //$path= str_replace('\\', '/',$path); // fac replace la \ cu /
-                
-                $nume = explode('/', $path);  //iau numele imaginii
-
-                $cale = 'http://localhost/CloMaT_ProiectTW/images/' . end($nume);
-
-
-            //$sql = "INSERT INTO tbl_tutorials(title,link,description,keywords) VALUES ('" . $title . "','" . $link . "','" . $description . "','" . $keywords . "')";
-                $sql="INSERT INTO STUDENT.ARTICOLE (SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) VALUES ('" . $sexul . "','" . $eveniment . "','" . $stil . "','" . $cale . "','" . $culoare . "','" . $material . "', '" . $tip_piesa . "','" . $anotimp . "')";
-            $query = oci_parse($conn,$sql); 
-            oci_execute($query);
-            $data = file_get_contents($articol_path);
-            //$new = "" + getName($n) + ".jpg";
+    $filename = $_FILES['file']['name'];
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    if ($ext !== 'json') {
+        $_SESSION['message'] = "Incarcati un fisier JSON!";
+        header('location: import.php');
+    }
+    else{
+        $fisier = file_get_contents($_FILES['file']['tmp_name']);
+        $data = json_decode($fisier,true);
+        $array_data = $data['articol'];
+        foreach ($array_data as $row) {
+            $sexul = $row['sexul'];
+            $eveniment = $row['eveniment'];
+            $stil = $row['stil'];
+            $articol_path = $row['articol_path'];
+            $culoare = $row['culoare'];
+            $material = $row['material'];
+            $tip_piesa = $row['tip_piesa'];
+            $anotimp = $row['anotimp'];
             
-            $new = 'C:/xampp/htdocs/CloMaT_ProiectTW/images/' . end($nume);
-            file_put_contents($new, $data);
 
-            $_SESSION['message'] = "Date json incarcate cu succes!";
-            header('location: import.php');
-            }
+            $path=strval($articol_path);
+            //$path= str_replace('\\', '/',$path); // fac replace la \ cu /
+            
+            $nume = explode('/', $path);  //iau numele imaginii
+
+            $cale = 'http://localhost/CloMaT_ProiectTW/images/' . end($nume);
+
+
+        $query = oci_parse($conn,"INSERT INTO STUDENT.ARTICOLE (SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) VALUES (:sexul,:eveniment,:stil,:cale,:culoare,:material,:tip_piesa,:anotimp)"); 
+        oci_bind_by_name($query, ':anotimp', $anotimp);
+        oci_bind_by_name($query, ':tip_piesa', $tip_piesa);
+        oci_bind_by_name($query, ':material', $material);
+        oci_bind_by_name($query, ':culoare', $culoare);
+        oci_bind_by_name($query, ':cale', $cale);
+        oci_bind_by_name($query, ':stil', $stil);
+        oci_bind_by_name($query, ':eveniment', $eveniment);
+        oci_bind_by_name($query, ':sexul', $sexul);
+        oci_execute($query);
+        $data = file_get_contents($articol_path);
+        //$new = "" + getName($n) + ".jpg";
+        
+        $new = 'C:/xampp/htdocs/CloMaT_ProiectTW/images/' . end($nume);
+        file_put_contents($new, $data);
+
+        $_SESSION['message'] = "Date json incarcate cu succes!";
+        header('location: import.php');
         }
     }
+}
 
 
 

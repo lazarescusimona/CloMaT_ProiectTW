@@ -34,7 +34,9 @@
             
         }
         else{
-            $query = oci_parse($conn,"Insert into STUDENT.MENIU_FILTRARE (NUME_FILTRU,SUBCATEGORII) values ('$nume_filtru', '$subcategorii')"); 
+            $query = oci_parse($conn,"Insert into STUDENT.MENIU_FILTRARE (NUME_FILTRU,SUBCATEGORII) values (:nume_filtru, :subcategorii)"); 
+            oci_bind_by_name($query, ':nume_filtru', $nume_filtru);
+            oci_bind_by_name($query, ':subcategorii', $subcategorii);
             oci_execute($query);
             $_SESSION['message'] = "Filter saved"; 
             header('location: admin_filtre.php');

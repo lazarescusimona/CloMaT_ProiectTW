@@ -47,7 +47,15 @@
             
         }
         else{
-            $query = oci_parse($conn,"INSERT INTO STUDENT.UTILIZATORI (username, parola, email, data_nasterii, sex,tip_utilizator) VALUES ('$username', '$parola','$email', to_date('$data_nasterii','yyyy/mm/dd'),'$sex','$tip_utilizator')"); 
+            $query = oci_parse($conn,'INSERT INTO STUDENT.UTILIZATORI (username, parola, email, data_nasterii, sex,tip_utilizator) VALUES (:username, :parola, :email, TO_DATE(:data_nasterii,:format), :sex, :tip_utilizator)'); 
+            oci_bind_by_name($query, ':tip_utilizator', $tip_utilizator);
+            oci_bind_by_name($query, ':username', $username);
+            oci_bind_by_name($query, ':parola', $parola);
+            oci_bind_by_name($query, ':email', $email);
+            oci_bind_by_name($query, ':data_nasterii', $data_nasterii);
+            oci_bind_by_name($query, ':sex', $sex);
+            $format = 'yyyy/mm/dd';
+            oci_bind_by_name($query, ':format', $format);
             oci_execute($query);
             $_SESSION['message'] = "User saved"; 
             header('location: users.php');
