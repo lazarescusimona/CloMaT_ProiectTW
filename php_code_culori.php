@@ -12,6 +12,20 @@
 	$id = 0;
 	$update = false;
 
+    //Edit section
+    if (isset($_GET['edit'])) {
+		$id = $_GET['edit'];
+		$update = true;
+		$record = oci_parse($conn, "SELECT * FROM STUDENT.MATCH_CROMATIC WHERE ID=$id");
+        oci_execute($record);
+        $n = oci_fetch_array($record);
+		$culoare = $n['CULOARE'];
+        $culoare_match = $n['CULOARE_MATCH'];
+        $id=$n['ID'];
+
+	}
+
+    //Save section
 	if (isset($_POST['save'])) {
 		$culoare= $_POST['culoare'];
         $culoare_match = $_POST['culoare_match'];

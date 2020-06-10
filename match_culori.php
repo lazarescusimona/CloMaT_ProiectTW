@@ -1,16 +1,4 @@
 <?php  include('php_code_culori.php');
-
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = oci_parse($conn, "SELECT * FROM STUDENT.MATCH_CROMATIC WHERE ID=$id");
-        oci_execute($record);
-        $n = oci_fetch_array($record);
-		$culoare = $n['CULOARE'];
-        $culoare_match = $n['CULOARE_MATCH'];
-        $id=$n['ID'];
-
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">

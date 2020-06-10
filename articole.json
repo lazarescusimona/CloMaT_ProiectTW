@@ -1,18 +1,20 @@
 {"articol":[
     {
     "sexul":"Female",
-    "eveniment":"Aniversare",
+    "eveniment":"Aniversareeee",
     "stil":"casual",
     "articol_path":"C:/Users/Simona/Desktop/photo900.jpg",
     "culoare":"roz",
+	"material":"dantela",
     "tip_piesa":"accesoriu",
     "anotimp":"primavara"},
     {
         "sexul":"Female",
-        "eveniment":"Aniversare",
+        "eveniment":"Aniversareeeee",
         "stil":"casual",
         "articol_path":"C:/Users/Simona/Desktop/photo80.jpg",
         "culoare":"roz",
+		"material":"catifea",
         "tip_piesa":"accesoriu",
         "anotimp":"primavara"
     }

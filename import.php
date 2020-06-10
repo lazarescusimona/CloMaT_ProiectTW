@@ -1,21 +1,5 @@
 <?php  include('php_code_import.php');
 
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = oci_parse($conn, "SELECT * FROM STUDENT.ARTICOLE WHERE ID=$id");
-        oci_execute($record);
-        $n = oci_fetch_array($record);
-		$sexul = $n['SEXUL'];
-        $eveniment = $n['EVENIMENT'];
-        $stil = $n['STIL'];
-        $articol_path = $n['ARTICOL_PATH'];
-        $culoare = $n['CULOARE'];
-        $tip_piesa = $n['TIP_PIESA'];
-        $anotimp = $n['ANOTIMP'];
-        $id=$n['ID'];
-
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +66,7 @@
             <form method="post" action="php_code_import.php" enctype="multipart/form-data" >
             <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-group">
-                    <label>Selecteaza fisierul XML</label>
+                    <label>Selecteaza fisierul XML/JSON</label>
                     <input type="file" name="file" id="file" />
                 </div>
                 <div class="input-group">
@@ -115,6 +99,10 @@
                     <input type="text" name="culoare" value="<?php echo $culoare; ?>">
                 </div>
                 <div class="input-group">
+                    <label>Material</label>
+                    <input type="text" name="material" value="<?php echo $material; ?>">
+                </div>
+                <div class="input-group">
                     <label>Tip piesa</label>
                     <input type="text" name="tip_piesa" value="<?php echo $tip_piesa; ?>">
                 </div>
@@ -141,6 +129,7 @@
                             <th>Stil</th>
                             <th>Articol path</th>
                             <th>Culoare</th>
+                            <th>Material</th>
                             <th>Tip piesa</th>
                             <th>Anotimp</th>
                             <th colspan="2">Action</th>
@@ -154,6 +143,7 @@
                             <td><?php echo $row['STIL']; ?></td>
                             <td><?php echo $row['ARTICOL_PATH']; ?></td>
                             <td><?php echo $row['CULOARE']; ?></td>
+                            <td><?php echo $row['MATERIAL']; ?></td>
                             <td><?php echo $row['TIP_PIESA']; ?></td>
                             <td><?php echo $row['ANOTIMP']; ?></td>
                             <td>

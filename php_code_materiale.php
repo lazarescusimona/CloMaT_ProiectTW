@@ -11,6 +11,21 @@
 	$id = 0;
 	$update = false;
 
+
+
+    //Edit section
+    if (isset($_GET['edit'])) {
+		$id = $_GET['edit'];
+		$update = true;
+		$record = oci_parse($conn, "SELECT * FROM STUDENT.MATCH_MATERIAL WHERE ID=$id");
+        oci_execute($record);
+        $n = oci_fetch_array($record);
+		$material = $n['MATERIAL'];
+        $material_match = $n['MATERIAL_MATCH'];
+        $id=$n['ID'];
+
+	}
+
 	if (isset($_POST['save'])) {
 		$material= $_POST['material'];
         $material_match = $_POST['material_match'];

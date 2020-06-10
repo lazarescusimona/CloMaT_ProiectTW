@@ -9,8 +9,22 @@
     $subcategorii = "";
    
 	$id = 0;
-	$update = false;
+    $update = false;
+    
+    //Edit section
+    if (isset($_GET['edit'])) {
+		$id = $_GET['edit'];
+		$update = true;
+		$record = oci_parse($conn, "SELECT * FROM STUDENT.MENIU_FILTRARE WHERE ID=$id");
+        oci_execute($record);
+        $n = oci_fetch_array($record);
+		$nume_filtru = $n['NUME_FILTRU'];
+        $subcategorii = $n['SUBCATEGORII'];
+        $id=$n['ID'];
 
+	}
+
+    //Save section
 	if (isset($_POST['save'])) {
 		$nume_filtru= $_POST['nume_filtru'];
         $subcategorii = $_POST['subcategorii'];
@@ -27,7 +41,7 @@
         }
     }
 
-    $sql = 'SELECT * FROM STUDENT.MENIU_FILTRARE';
+    $sql = 'SELECT * FROM STUDENT.MENIU_FILTRARE ORDER BY ID';
     $stid = oci_parse($conn, $sql);
     oci_execute($stid);
 

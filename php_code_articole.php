@@ -17,6 +17,26 @@
 	$id = 0;
 	$update = false;
 
+    //Edit section
+    if (isset($_GET['edit'])) {
+		$id = $_GET['edit'];
+		$update = true;
+		$record = oci_parse($conn, "SELECT * FROM STUDENT.ARTICOLE WHERE ID=$id");
+        oci_execute($record);
+        $n = oci_fetch_array($record);
+		$sexul = $n['SEXUL'];
+        $eveniment = $n['EVENIMENT'];
+        $stil = $n['STIL'];
+        $articol_path = $n['ARTICOL_PATH'];
+        $culoare = $n['CULOARE'];
+        $material = $n['MATERIAL'];
+        $tip_piesa = $n['TIP_PIESA'];
+        $anotimp = $n['ANOTIMP'];
+        $id=$n['ID'];
+
+	}
+
+    //Save section
 	if (isset($_POST['save'])) {
 		$sexul = $_POST['sexul'];
         $eveniment = $_POST['eveniment'];
@@ -42,7 +62,7 @@
         }
     }
 
-    $sql = 'SELECT * FROM STUDENT.ARTICOLE';
+    $sql = 'SELECT * FROM STUDENT.ARTICOLE ORDER BY ID';
     $stid = oci_parse($conn, $sql);
     oci_execute($stid);
 

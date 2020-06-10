@@ -5,7 +5,6 @@ global $conn;
 $conn = oci_connect('student', 'student', 'localhost/XE');
  //$conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
 
-
 $query = oci_parse($conn,"SELECT * FROM STUDENT.STATISTICA_VIZITATORI ORDER BY id");
 
 oci_execute($query);

@@ -1,22 +1,4 @@
 <?php  include('php_code_articole.php');
-
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = oci_parse($conn, "SELECT * FROM STUDENT.ARTICOLE WHERE ID=$id");
-        oci_execute($record);
-        $n = oci_fetch_array($record);
-		$sexul = $n['SEXUL'];
-        $eveniment = $n['EVENIMENT'];
-        $stil = $n['STIL'];
-        $articol_path = $n['ARTICOL_PATH'];
-        $culoare = $n['CULOARE'];
-        $material = $n['MATERIAL'];
-        $tip_piesa = $n['TIP_PIESA'];
-        $anotimp = $n['ANOTIMP'];
-        $id=$n['ID'];
-
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">

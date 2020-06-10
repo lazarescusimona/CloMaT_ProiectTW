@@ -1,16 +1,5 @@
 <?php  include('php_code_materiale.php');
 
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = oci_parse($conn, "SELECT * FROM STUDENT.MATCH_MATERIAL WHERE ID=$id");
-        oci_execute($record);
-        $n = oci_fetch_array($record);
-		$material = $n['MATERIAL'];
-        $material_match = $n['MATERIAL_MATCH'];
-        $id=$n['ID'];
-
-	}
 ?>
 <!DOCTYPE html>
 <html lang="en">

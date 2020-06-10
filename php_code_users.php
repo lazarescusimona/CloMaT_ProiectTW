@@ -16,6 +16,23 @@
 	$id = 0;
 	$update = false;
 
+    //Edit section
+    if (isset($_GET['edit'])) {
+		$id = $_GET['edit'];
+		$update = true;
+		$record = oci_parse($conn, "SELECT * FROM STUDENT.UTILIZATORI WHERE id=$id");
+        oci_execute($record);
+        $n = oci_fetch_array($record);
+		$username = $n['USERNAME'];
+        $parola = "";
+        $email = $n['EMAIL'];
+        $data_nasterii = $n['DATA_NASTERII'];
+        $sex = $n['SEX'];
+        $tip_utilizator = $n['TIP_UTILIZATOR'];
+        $id=$n['ID'];
+
+	}
+
     //salvare useri
 	if (isset($_POST['save'])) {
 		$username = $_POST['username'];

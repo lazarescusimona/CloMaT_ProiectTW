@@ -175,12 +175,18 @@ main{
 
 
 table{
-    width: 50%;
+    width: 80%;
     height: 50%;
-    margin: 30px auto;
+    margin-top: 30px ;
+    margin-left: 18%;
     border-collapse: collapse;
     text-align: left;
+    display: block;
+    overflow: scroll;
+    overflow: auto; 
 }
+
+
 tr {
     border-bottom: 1px solid #cbcbcb;
 }
@@ -194,9 +200,9 @@ tr:hover {
 }
 
 form {
-    width: 45%;
+    width: 60%;
     margin-top: 5%;
-    margin-left: 30%;
+    margin-left: 20%;
     text-align: left;
     padding: 20px; 
     border: 1px solid #bbbbbb; 
