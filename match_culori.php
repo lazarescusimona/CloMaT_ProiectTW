@@ -32,6 +32,7 @@
 
                 <li><a href="admin.php">Home</a></li>
                 <li><a href="statistici.php">Statistici useri</a></li>
+                <li><a href="statistica_filtre.php">Statistici filtre</a></li>
                 <li><a href="users.php">Users</a></li>
                 <li><a href="articole.php">Articole</a></li>
                 <li><a href="admin_filtre.php">Filtre</a></li>

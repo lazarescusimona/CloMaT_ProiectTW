@@ -8,8 +8,8 @@ class Filter
 
 function getConnection()
 {
-    //$connection = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
-    $connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+    $connection = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
+    //$connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
     return $connection;
 }
 
@@ -59,6 +59,17 @@ function performSelect($connection)
     $temp = "";
     foreach (getSelectValues($connection) as  &$value) {
         $temp = $temp . $value->nume_filtru . " = " . "'" . $value->subcategorii[0] . "'" . " and ";
+        $fil=$value->subcategorii[0];
+        $query_zi=oci_parse(getConnection(), "SELECT * FROM STUDENT.STATISTICA_FILTRE WHERE FILTRU = '$fil'");
+        oci_execute($query_zi);
+        if( ! oci_fetch_array($query_zi) ){
+            $new_query= oci_parse(getConnection(), "INSERT INTO STUDENT.STATISTICA_FILTRE(FILTRU,NR_CAUTARI) VALUES ('$fil',1)");
+            oci_execute($new_query);
+        }
+        else{
+            $new_query= oci_parse(getConnection(), "UPDATE STUDENT.STATISTICA_FILTRE SET NR_CAUTARI=NR_CAUTARI+1 WHERE FILTRU = '$fil'");
+            oci_execute($new_query);
+        }
     }
     $temp = rtrim($temp, ' and ');
 
@@ -73,6 +84,8 @@ function performSelect($connection)
     while ($row = oci_fetch_array($qr)) {
         array_push($imgList, $row['ARTICOL_PATH']);
     }
+
+
     return $imgList;
 }
 

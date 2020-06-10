@@ -1,8 +1,8 @@
 <?php 
     session_start();
     global $conn;
-    //$conn = oci_connect('student', 'student', 'localhost/XE');
-    $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
+    $conn = oci_connect('student', 'student', 'localhost/XE');
+    //$conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
 
 
 	// initialize variables
@@ -16,6 +16,7 @@
 	$id = 0;
 	$update = false;
 
+    //salvare useri
 	if (isset($_POST['save'])) {
 		$username = $_POST['username'];
         $parola = md5($_POST['parola']);
@@ -23,10 +24,17 @@
         $data_nasterii = $_POST['data_nasterii'];
         $sex = $_POST['sex'];
         $tip_utilizator = $_POST['tip_utilizator'];
-        $query = oci_parse($conn,"INSERT INTO STUDENT.UTILIZATORI (username, parola, email, data_nasterii, sex,tip_utilizator) VALUES ('$username', '$parola','$email', to_date('$data_nasterii','yyyy/mm/dd'),'$sex','$tip_utilizator')"); 
-        oci_execute($query);
-		$_SESSION['message'] = "User saved"; 
-		header('location: users.php');
+        if(empty($username) || empty($parola) || empty($email) || empty($data_nasterii) || empty($sex) || empty($tip_utilizator)){
+            $_SESSION['message'] = "Toate campurile trebuie completate!"; 
+            header('location: users.php');
+            
+        }
+        else{
+            $query = oci_parse($conn,"INSERT INTO STUDENT.UTILIZATORI (username, parola, email, data_nasterii, sex,tip_utilizator) VALUES ('$username', '$parola','$email', to_date('$data_nasterii','yyyy/mm/dd'),'$sex','$tip_utilizator')"); 
+            oci_execute($query);
+            $_SESSION['message'] = "User saved"; 
+            header('location: users.php');
+        }
     }
 
     $sql = 'SELECT * FROM STUDENT.UTILIZATORI';
@@ -42,10 +50,17 @@
         $data_nasterii = $_POST['data_nasterii'];
         $sex = $_POST['sex'];
         $tip_utilizator = $_POST['tip_utilizator'];
-        $query=oci_parse($conn, "UPDATE STUDENT.UTILIZATORI SET username='$username', parola='$parola', email='$email', data_nasterii='$data_nasterii', sex='$sex', tip_utilizator='$tip_utilizator' WHERE id=$id");
-        oci_execute($query);
-        $_SESSION['message'] = "User updated!"; 
-        header('location: users.php');
+        if(empty($username) || empty($parola) || empty($email) || empty($data_nasterii) || empty($sex) || empty($tip_utilizator)){
+            $_SESSION['message'] = "Toate campurile trebuie completate!"; 
+            header('location: users.php');
+            
+        }
+        else{
+            $query=oci_parse($conn, "UPDATE STUDENT.UTILIZATORI SET username='$username', parola='$parola', email='$email', data_nasterii='$data_nasterii', sex='$sex', tip_utilizator='$tip_utilizator' WHERE id=$id");
+            oci_execute($query);
+            $_SESSION['message'] = "User updated!"; 
+            header('location: users.php');
+        }
     }
     
     //delete users

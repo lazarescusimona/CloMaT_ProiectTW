@@ -4,8 +4,8 @@ session_start();
 
 if(isset($_GET['delete']))
 {
-    //$conn = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
-    $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+    $conn = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
+    //$conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
     $id = $_GET['delete'];
     $userul = $_SESSION['username'];
     $query = oci_parse($conn, "delete from rude where userUtilizator = :username and ruda = :ruda");

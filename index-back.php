@@ -54,7 +54,8 @@
   <script src="js/script.js"></script>
   <?php
   echo '<form method="post" id = "inside" >';
-  $connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+  $connection = oci_connect('student', 'student', 'localhost:1521/xe'); //Asta e pentru , Simona
+  //$connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
   echo '<div class="text-despre-articole">
   <p> Sugestii de garderobe complete : imbracaminte (partea de sus si spartea de jos), incaltaminte si accesorii. </p>
   <p> Aici aveti cateva sugestii de garderobe pe baza asortarii cromatice si a materialelor. </p></div>';

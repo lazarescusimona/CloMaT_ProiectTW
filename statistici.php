@@ -3,7 +3,7 @@
 session_start();
 global $conn;
 $conn = oci_connect('student', 'student', 'localhost/XE');
-// $conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
+ //$conn = oci_connect('student', 'STUDENT', 'localhost:1521/xe');
 
 
 $query = oci_parse($conn,"SELECT * FROM STUDENT.STATISTICA_VIZITATORI ORDER BY id");
@@ -71,6 +71,7 @@ oci_execute($query);
 
             <li><a href="admin.php">Home</a></li>
                 <li><a href="statistici.php">Statistici useri</a></li>
+                <li><a href="statistica_filtre.php">Statistici filtre</a></li>
                 <li><a href="users.php">Users</a></li>
                 <li><a href="articole.php">Articole</a></li>
                 <li><a href="admin_filtre.php">Filtre</a></li>
