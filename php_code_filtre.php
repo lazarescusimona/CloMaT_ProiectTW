@@ -26,8 +26,8 @@
 
     //Save section
 	if (isset($_POST['save'])) {
-		$nume_filtru= $_POST['nume_filtru'];
-        $subcategorii = $_POST['subcategorii'];
+		$nume_filtru= htmlspecialchars($_POST['nume_filtru']);
+        $subcategorii = htmlspecialchars($_POST['subcategorii']);
         if(empty($nume_filtru) || empty($subcategorii)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: admin_filtre.php');
@@ -48,8 +48,8 @@
     //update filtre
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
-        $nume_filtru = $_POST['nume_filtru'];
-        $subcategorii = $_POST['subcategorii'];
+        $nume_filtru = htmlspecialchars($_POST['nume_filtru']);
+        $subcategorii = htmlspecialchars($_POST['subcategorii']);
         if(empty($nume_filtru) || empty($subcategorii)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: admin_filtre.php');

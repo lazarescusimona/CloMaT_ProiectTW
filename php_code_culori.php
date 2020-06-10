@@ -27,8 +27,8 @@
 
     //Save section
 	if (isset($_POST['save'])) {
-		$culoare= $_POST['culoare'];
-        $culoare_match = $_POST['culoare_match'];
+		$culoare= htmlspecialchars($_POST['culoare']);
+        $culoare_match = htmlspecialchars($_POST['culoare_match']);
         if(empty($culoare) || empty($culoare_match)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: match_culori.php');
@@ -51,8 +51,8 @@
     //update match
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
-        $culoare = $_POST['culoare'];
-        $culoare_match = $_POST['culoare_match'];
+        $culoare = htmlspecialchars($_POST['culoare']);
+        $culoare_match = htmlspecialchars($_POST['culoare_match']);
         if(empty($culoare) || empty($culoare_match)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: match_culori.php');

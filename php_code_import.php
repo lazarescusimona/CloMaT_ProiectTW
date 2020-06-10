@@ -139,14 +139,14 @@
     //update filtre
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
-        $sexul = $_POST['sexul'];
-        $eveniment = $_POST['eveniment'];
-        $stil = $_POST['stil'];
-        $articol_path = $_POST['articol_path'];
-        $culoare = $_POST['culoare'];
-        $material = $_POST['material'];
-        $tip_piesa = $_POST['tip_piesa'];
-        $anotimp = $_POST['anotimp'];
+        $sexul = htmlspecialchars($_POST['sexul']);
+        $eveniment = htmlspecialchars($_POST['eveniment']);
+        $stil = htmlspecialchars($_POST['stil']);
+        $articol_path = htmlspecialchars($_POST['articol_path']);
+        $culoare = htmlspecialchars($_POST['culoare']);
+        $material = htmlspecialchars($_POST['material']);
+        $tip_piesa = htmlspecialchars($_POST['tip_piesa']);
+        $anotimp = htmlspecialchars($_POST['anotimp']);
         $query=oci_parse($conn, "UPDATE STUDENT.ARTICOLE SET SEXUL='$sexul', EVENIMENT='$eveniment', STIL='$stil', ARTICOL_PATH='$articol_path', CULOARE='$culoare', MATERIAL='$material', TIP_PIESA='$tip_piesa', ANOTIMP='$anotimp' WHERE id=$id");
         oci_execute($query);
         $_SESSION['message'] = "Object updated!"; 

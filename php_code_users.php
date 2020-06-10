@@ -35,12 +35,12 @@
 
     //salvare useri
 	if (isset($_POST['save'])) {
-		$username = $_POST['username'];
-        $parola = md5($_POST['parola']);
-        $email = $_POST['email'];
-        $data_nasterii = $_POST['data_nasterii'];
-        $sex = $_POST['sex'];
-        $tip_utilizator = $_POST['tip_utilizator'];
+		$username = htmlspecialchars($_POST['username']);
+        $parola = md5(htmlspecialchars($_POST['parola']));
+        $email = htmlspecialchars($_POST['email']);
+        $data_nasterii = htmlspecialchars($_POST['data_nasterii']);
+        $sex = htmlspecialchars($_POST['sex']);
+        $tip_utilizator = htmlspecialchars($_POST['tip_utilizator']);
         if(empty($username) || empty($parola) || empty($email) || empty($data_nasterii) || empty($sex) || empty($tip_utilizator)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: users.php');
@@ -61,12 +61,12 @@
     //update users
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
-        $username = $_POST['username'];
-        $parola = md5($_POST['parola']);
-        $email = $_POST['email'];
-        $data_nasterii = $_POST['data_nasterii'];
-        $sex = $_POST['sex'];
-        $tip_utilizator = $_POST['tip_utilizator'];
+        $username = htmlspecialchars($_POST['username']);
+        $parola = md5(htmlspecialchars($_POST['parola']));
+        $email = htmlspecialchars($_POST['email']);
+        $data_nasterii = htmlspecialchars($_POST['data_nasterii']);
+        $sex = htmlspecialchars($_POST['sex']);
+        $tip_utilizator = htmlspecialchars($_POST['tip_utilizator']);
         if(empty($username) || empty($parola) || empty($email) || empty($data_nasterii) || empty($sex) || empty($tip_utilizator)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: users.php');

@@ -27,8 +27,8 @@
 	}
 
 	if (isset($_POST['save'])) {
-		$material= $_POST['material'];
-        $material_match = $_POST['material_match'];
+		$material= htmlspecialchars($_POST['material']);
+        $material_match = htmlspecialchars($_POST['material_match']);
         if(empty($material) || empty($material_match) ){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: match_material.php');
@@ -50,8 +50,8 @@
     //update match
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
-        $material = $_POST['material'];
-        $material_match = $_POST['material_match'];
+        $material = htmlspecialchars($_POST['material']);
+        $material_match = htmlspecialchars($_POST['material_match']);
         if(empty($material_match) || empty($material)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: match_material.php');

@@ -101,7 +101,7 @@
 
             </form>
 
-            <div class="tabelusers">
+            <div>
                 <table>
                     <thead>
                         <tr>

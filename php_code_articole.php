@@ -38,14 +38,14 @@
 
     //Save section
 	if (isset($_POST['save'])) {
-		$sexul = $_POST['sexul'];
-        $eveniment = $_POST['eveniment'];
-        $stil = $_POST['stil'];
-        $articol_path = $_POST['articol_path'];
-        $culoare = $_POST['culoare'];
-        $material = $_POST['material'];
-        $tip_piesa = $_POST['tip_piesa'];
-        $anotimp = $_POST['anotimp'];
+		$sexul = htmlspecialchars($_POST['sexul']);
+        $eveniment = htmlspecialchars($_POST['eveniment']);
+        $stil = htmlspecialchars($_POST['stil']);
+        $articol_path = htmlspecialchars($_POST['articol_path']);
+        $culoare = htmlspecialchars($_POST['culoare']);
+        $material = htmlspecialchars($_POST['material']);
+        $tip_piesa = htmlspecialchars($_POST['tip_piesa']);
+        $anotimp = htmlspecialchars($_POST['anotimp']);
         if(empty($sexul) || empty($eveniment) || empty($stil) || empty($articol_path) || empty($culoare) || empty($material) || empty($tip_piesa) || empty($anotimp)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: articole.php');
@@ -69,14 +69,14 @@
     //update filtre
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
-        $sexul = $_POST['sexul'];
-        $eveniment = $_POST['eveniment'];
-        $stil = $_POST['stil'];
-        $articol_path = $_POST['articol_path'];
-        $culoare = $_POST['culoare'];
-        $material = $_POST['material'];
-        $tip_piesa = $_POST['tip_piesa'];
-        $anotimp = $_POST['anotimp'];
+        $sexul = htmlspecialchars($_POST['sexul']);
+        $eveniment = htmlspecialchars($_POST['eveniment']);
+        $stil = htmlspecialchars($_POST['stil']);
+        $articol_path = htmlspecialchars($_POST['articol_path']);
+        $culoare = htmlspecialchars($_POST['culoare']);
+        $material = htmlspecialchars($_POST['material']);
+        $tip_piesa = htmlspecialchars($_POST['tip_piesa']);
+        $anotimp = htmlspecialchars($_POST['anotimp']);
         if(empty($sexul) || empty($eveniment) || empty($stil) || empty($articol_path) || empty($culoare) || empty($material) || empty($tip_piesa) || empty($anotimp)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
             header('location: articole.php');
