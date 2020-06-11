@@ -1,4 +1,4 @@
-<?php  include('php_code.php');
+<?php  include($_SERVER['DOCUMENT_ROOT']."/CloMaT_ProiectTW/Not_here/php_code.php");
 
 	if (isset($_GET['edit'])) {
 		$id = $_GET['edit'];
@@ -32,7 +32,7 @@
 	</div>
 <?php endif ?>
 
-	<form method="post" action="php_code.php" >
+	<form method="post" action="http://localhost/CloMaT_ProiectTW/Not_here/php_code.php" >
     <input type="hidden" name="id" value="<?php echo $id; ?>">
 		<div class="input-group">
 			<label>Username</label>
@@ -85,10 +85,10 @@
             <td><?php echo $row['DATA_NASTERII']; ?></td>
 			<td><?php echo $row['SEX']; ?></td>
 			<td>
-				<a href="index.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
+				<a href="http://localhost/CloMaT_ProiectTW/index.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
 			</td>
 			<td>
-				<a href="php_code.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
+				<a href="http://localhost/CloMaT_ProiectTW/Not_here/php_code.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
 			</td>
 		</tr>
 	<?php } ?>
