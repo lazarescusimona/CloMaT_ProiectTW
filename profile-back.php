@@ -2,8 +2,8 @@
 session_start();
 function getConnection()
 {
-   // $connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
-    $connection = oci_connect('student', 'student', 'localhost:1521/xe'); //Asta e pentru , Simona
+    $connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+   // $connection = oci_connect('student', 'student', 'localhost:1521/xe'); //Asta e pentru , Simona
     return $connection;
 }
 
@@ -21,7 +21,7 @@ function getFavs($username)
 
 function viewFV($favs = [])
 {
-    require_once 'profile.php';
+    require_once ($_SERVER['DOCUMENT_ROOT']."/CloMaT_ProiectTW/Not_here/profile.php");
 }
 
 function indexFV()

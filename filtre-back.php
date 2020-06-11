@@ -8,8 +8,8 @@ class Filter
 
 function getConnection()
 {
-    $connection = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
-    //$connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+    //$connection = oci_connect('student', 'student', 'localhost:1521/xe'); //simona
+    $connection = oci_connect('student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
     return $connection;
 }
 
@@ -36,7 +36,7 @@ function getFilters($connection)
 
 function view($data = [], $imgListRelatives = [], $imgListOther = [])
 {
-    require_once 'filtre.php';
+    require_once ($_SERVER['DOCUMENT_ROOT']."/CloMaT_ProiectTW/Not_here/filtre.php");
 }
 
 

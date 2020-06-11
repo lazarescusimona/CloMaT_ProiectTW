@@ -3,8 +3,8 @@ if(isset($_GET['vkey']))
 {
     $vkey = $_GET['vkey'];
     global $conn;
-    //$conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
-    $conn = oci_connect('student', 'student', 'localhost:1521/xe'); //Asta e pentru , simona
+    $conn = oci_connect('Student', 'STUDENT', 'localhost:1521/xe'); //Asta e pentru , Roxana
+    //$conn = oci_connect('student', 'student', 'localhost:1521/xe'); //Asta e pentru , simona
     $query = oci_parse($conn, "SELECT * FROM utilizatori WHERE verification_key ='$vkey'");
     oci_execute($query);
     $rows1 = oci_fetch_array($query);
@@ -20,8 +20,8 @@ if(isset($_GET['vkey']))
         $_SESSION['birthday'] = $rows1[4];
         $_SESSION['sex'] = $rows1[5];
 
-        header("location: profile-back.php");
-
+        header("location: http://localhost/CloMaT_ProiectTW/profile-back.php");
+//daca nu merge ,scrie asa      $_SERVER['DOCUMENT_ROOT']."/CloMaT_ProiectTW/profile-back.php"
     }
     else
     {

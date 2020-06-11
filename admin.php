@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Login</title>
 
-    <link rel="stylesheet" href="login_css/admin.css" type="text/css" >
+    <link rel="stylesheet" href="http://localhost/CloMaT_ProiectTW/login_css/admin.css" type="text/css" >
     
 </head>
 <body>
@@ -17,16 +17,16 @@
 
             <ul id="menu">
 
-                <li><a href="admin.php">Home</a></li>
-                <li><a href="statistici.php">Statistici useri</a></li>
-                <li><a href="statistica_filtre.php">Statistici filtre</a></li>
-                <li><a href="users.php">Users</a></li>
-                <li><a href="articole.php">Articole</a></li>
-                <li><a href="admin_filtre.php">Filtre</a></li>
-                <li><a href="export.php">Export</a></li>
-                <li><a href="import.php">Import</a></li>
-                <li><a href="match_culori.php">Match culori</a></li>
-                <li><a href="match_material.php">Match material</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/admin.php">Home</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/statistici.php">Statistici useri</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/statistica_filtre.php">Statistici filtre</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/users.php">Users</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/articole.php">Articole</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/admin_filtre.php">Filtre</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/export.php">Export</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/import.php">Import</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/match_culori.php">Match culori</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/match_material.php">Match material</a></li>
 
             </ul>
 
@@ -39,7 +39,7 @@
 
         <header id="topnav">
             <div id="links">
-                <a href="deconectare.php">Logout</a> <!-- pastreaza link-ul asa pentru ca deconectarea sa se realizeze-->
+                <a href="http://localhost/CloMaT_ProiectTW/Not_here/deconectare.php">Logout</a> <!-- pastreaza link-ul asa pentru ca deconectarea sa se realizeze-->
             </div>
         </header>
 
@@ -51,7 +51,7 @@
 
         </main>
         
-        <form method="post"  style="background-image: url('images/original.gif');height: 100%; width:100% background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <form method="post"  style="background-image: url('http://localhost/CloMaT_ProiectTW/images/original.gif');height: 100%; width:100% background-position: center; background-repeat: no-repeat; background-size: cover;">
         <div id="user">
             
         </div>
@@ -60,7 +60,7 @@
     </div>
 
     <div class="bg"></div>
-    <script src="js/login_js/admin.js"></script>
+    <script src="http://localhost/CloMaT_ProiectTW/js/login_js/admin.js"></script>
 
 </body>
 </html>

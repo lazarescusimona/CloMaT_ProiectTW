@@ -1,4 +1,4 @@
-<?php  include('php_code_users.php');
+<?php  include($_SERVER['DOCUMENT_ROOT']."/CloMaT_ProiectTW/Not_here/php_code_users.php");
 
 	
 ?>
@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Login</title>
-    <link rel="stylesheet" href="login_css/admin.css" type="text/css" >
+    <link rel="stylesheet" href="http://localhost/CloMaT_ProiectTW/login_css/admin.css" type="text/css" >
     
 </head>
 <body>
@@ -20,16 +20,16 @@
 
             <ul id="menu">
 
-            <li><a href="admin.php">Home</a></li>
-            <li><a href="statistici.php">Statistici useri</a></li>
-            <li><a href="statistica_filtre.php">Statistici filtre</a></li>
-                <li><a href="users.php">Users</a></li>
-                <li><a href="articole.php">Articole</a></li>
-                <li><a href="admin_filtre.php">Filtre</a></li>
-                <li><a href="export.php">Export</a></li>
-                <li><a href="import.php">Import</a></li>
-                <li><a href="match_culori.php">Match culori</a></li>
-                <li><a href="match_material.php">Match material</a></li>
+            <li><a href="http://localhost/CloMaT_ProiectTW/admin.php">Home</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/statistici.php">Statistici useri</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/statistica_filtre.php">Statistici filtre</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/users.php">Users</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/articole.php">Articole</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/admin_filtre.php">Filtre</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/export.php">Export</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/import.php">Import</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/match_culori.php">Match culori</a></li>
+                <li><a href="http://localhost/CloMaT_ProiectTW/match_material.php">Match material</a></li>
 
             </ul>
 
@@ -42,7 +42,7 @@
 
         <header id="topnav">
             <div id="links">
-                <a href="deconectare.php">Logout</a> <!-- pastreaza link-ul asa pentru ca deconectarea sa se realizeze-->
+                <a href="http://localhost/CloMaT_ProiectTW/Not_here/deconectare.php">Logout</a> <!-- pastreaza link-ul asa pentru ca deconectarea sa se realizeze-->
             </div>
         </header>
 
@@ -64,7 +64,7 @@
                 </div>
                 <?php endif ?>
 
-            <form method="post" action="php_code_users.php" >
+            <form method="post" action="http://localhost/CloMaT_ProiectTW/Not_here/php_code_users.php" >
             <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-group">
                     <label>Username</label>
@@ -124,10 +124,10 @@
                             <td><?php echo $row['SEX']; ?></td>
                             <td><?php echo $row['TIP_UTILIZATOR']; ?></td>
                             <td>
-                                <a href="users.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
+                                <a href="http://localhost/CloMaT_ProiectTW/users.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>
                             </td>
                             <td>
-                                <a href="php_code_users.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
+                                <a href="http://localhost/CloMaT_ProiectTW/Not_here/php_code_users.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -139,7 +139,7 @@
     </div>
 
 
-    <script src="js/login_js/admin.js"></script>
+    <script src="http://localhost/CloMaT_ProiectTW/js/login_js/admin.js"></script>
 
 </body>
 </html>

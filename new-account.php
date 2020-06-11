@@ -8,13 +8,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CloMatchTool</title>
-  <link rel="icon" type="image/png" href="images/icon.png" /> 
-  <link rel="stylesheet" type="text/css" href="css/filtre.css">
-  <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
-  <link rel="stylesheet" type="text/css" href="css/new-account.css">
-  <script src="js/lightbox-plus-jquery.min.js"></script>
-  <link rel="stylesheet" href="login_css/style.css" type="text/css" >
-  <script src="js/showError.js"></script>
+  <link rel="icon" type="image/png" href="http://localhost/CloMaT_ProiectTW/images/icon.png" /> 
+  <link rel="stylesheet" type="text/css" href="http://localhost/CloMaT_ProiectTW/css/filtre.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost/CloMaT_ProiectTW/css/lightbox.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost/CloMaT_ProiectTW/css/new-account.css">
+  <script src="http://localhost/CloMaT_ProiectTW/js/lightbox-plus-jquery.min.js"></script>
+  <link rel="stylesheet" href="http://localhost/CloMaT_ProiectTW/login_css/style.css" type="text/css" >
+  <script src="http://localhost/CloMaT_ProiectTW/js/showError.js"></script>
 </head>
 <body>
 
@@ -27,18 +27,18 @@
 
     <ul class="nav-links">
       <li>
-        <a href="index.php">
-          Acasa
-        </a>
-      </li>
-      <li>
-        <a href="filtre-back.php">
-          Inspiratie
-        </a>
-      </li>
-      <li>
-        <a href="login-switch.php">
-        <?php
+      <a href="http://localhost/CloMaT_ProiectTW/index.php">
+            Acasa
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/CloMaT_ProiectTW/filtre-back.php">
+            Inspiratie
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/CloMaT_ProiectTW/Not_here/login-switch.php">
+            <?php
             if (isset($_SESSION['username'])) {
               echo 'Profil';
             } else {
@@ -59,7 +59,7 @@
 
   <div class="account-box">
     <h2>Cont nou</h2>
-    <form action="new-account.inc.php" method="POST" id="from" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+    <form action="http://localhost/CloMaT_ProiectTW/Not_here/new-account.inc.php" method="POST" id="from" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
       <div class="user-box">
         <input type="text" name="username" required>
         <label>Username</label>

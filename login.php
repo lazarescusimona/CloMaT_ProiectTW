@@ -8,12 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CloMatchTool</title>
-  <link rel="icon" type="image/png" href="images/icon.png" /> 
-  <link rel="stylesheet" type="text/css" href="css/filtre.css">
-  <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
-  <link rel="stylesheet" type="text/css" href="css/new-account.css">
-  <script src="js/lightbox-plus-jquery.min.js"></script>
-  <script src="js/new_filtre.js"></script>
+  <link rel="icon" type="image/png" href="http://localhost/CloMaT_ProiectTW/images/icon.png" /> 
+  <link rel="stylesheet" type="text/css" href="http://localhost/CloMaT_ProiectTW/css/filtre.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost/CloMaT_ProiectTW/css/lightbox.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost/CloMaT_ProiectTW/css/new-account.css">
+  <script src="http://localhost/CloMaT_ProiectTW/js/lightbox-plus-jquery.min.js"></script>
+  <script src="http://localhost/CloMaT_ProiectTW/js/new_filtre.js"></script>
 
 </head>
 <body>
@@ -27,18 +27,18 @@
 
     <ul class="nav-links">
       <li>
-        <a href="index.php">
-          Acasa
-        </a>
-      </li>
-      <li>
-        <a href="filtre-back.php">
-          Inspiratie
-        </a>
-      </li>
-      <li>
-        <a href="login-switch.php">
-        <?php
+      <a href="http://localhost/CloMaT_ProiectTW/index.php">
+            Acasa
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/CloMaT_ProiectTW/filtre-back.php">
+            Inspiratie
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/CloMaT_ProiectTW/Not_here/login-switch.php">
+            <?php
             if (isset($_SESSION['username'])) {
               echo 'Profil';
             } else {
@@ -59,7 +59,7 @@
 
   <div class="account-box">
     <h2>Autentificare</h2>
-    <form action = "login.inc.php" method="POST" id="form">
+    <form action = "http://localhost/CloMaT_ProiectTW/Not_here/login.inc.php" method="POST" id="form">
       <div class="user-box">
         <input type="text" name="username" required>
         <label>Username</label>
@@ -78,7 +78,7 @@
           <input type="submit" name="submit"> 
       </a>
 
-      <a href="new-account.php">
+      <a href="http://localhost/CloMaT_ProiectTW/new-account.php">
         Cont nou
       </a>
 
@@ -101,6 +101,6 @@
           exit();
         }
   ?>
-<script src="js/script.js"></script> 
+<script src="http://localhost/CloMaT_ProiectTW/js/script.js"></script> 
 </body>
 </html>
