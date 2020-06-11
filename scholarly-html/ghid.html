@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>CloMat Project</h1>
+    </header>
+    <!--
+      XXX
+      - check refs
+      - the math example has too much maths
+      - bring back some of the old style
+      - make semantics, validation, processing sub-sections of each structural element
+      - have a section before that for general constructs
+        - explain why use RDFa
+        - explain our patterns: RDFa, roles
+      - figure captions need to get set throughout
+      - dedication? see doc-dedication
+      - syntactic constraints (prefix)
+      - needs more sthenurines
+      - examples of everything
+      - some notes on using Semantic CSS
+      - needs more RDFa in the spec itself
+    -->
+    <div role="contentinfo">
+      <dl>
+        <dt>Autori</dt>
+        <dd>
+          Goldan Anamaria
+          &amp;
+          Lazarescu Simona-Maria
+          &amp;
+          Salavastru Roxana-Maria
+          
+        </dd>
+
+        <dt>Discussion Group</dt>
+        <dd>
+          The <a href="https://www.w3.org/community/scholarlyhtml/">Scholarly HTML Community
+          Group</a> at <a href="https://w3.org/">W3C</a>
+          (<a href="https://lists.w3.org/Archives/Public/public-scholarlyhtml/">email archives</a>)
+        </dd>
+        <dt>License</dt>
+        <dd>
+          <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        </dd>
+        <dt>Open template</dt>
+        <dd>
+          <a href="https://github.com/w3c/scholarly-html">Scholarly Html </a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Despre document</h2>
+      <p>
+        Aplicatia vine in ajutorul celor care sunt pasionati de fashion si doresc sa fie la curent cu ultimele tendinte in privinta outfiturilor sau a asortarilor de culori si materiale.
+      </p>
+      <p>Scopul acestui ghid de utilizare este de a oferi supert utilizatorilor si de a le prezenta functionalitatile oferite de aplicatie.</p>
+      <h2>Accesul la aplicatie</h2>
+      <p>
+        Aplicatia poate fi accesata din browsere precum Googke Chrome, Edge, Mozilla Firefox, Opera.
+      </p>
+      <p>Linkul catre repository-ul unde se gaseste aplicatia:</p>
+      <a href="https://github.com/lazarescusimona/CloMaT_ProiectTW.git">Clomat</a>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Dictionar de termeni</h2>
+       
+      <ul>
+        <li>Refresh - actiune ce reprezinta reimprosparea paginii.</li>
+        <li>Redirectare - schimbarea paginii in urma unor actiuni ale utilizatorului.</li>
+        <li>Galerie - o colectie de imagini accesibila utilizatorului
+        </li>
+        <li>Link - Text care reprezinta o legatura catre o pagina/resursa</li>
+      </ul>
+    </section>
+    <section id="structure">
+      <!-- review? -->
+      <h2>Inregistrarea in sistem si autentificarea</h2>
+      
+      <section id="Root">
+        <!-- review? -->
+        <h3>Inregistrarea</h3>
+        <p>
+          Pentru a realiza inregistrarea se va merge in pagina Login si se va apasa butonul "Cont nou". 
+        </p>
+        <img src="images/1.png" alt="Cont nou">
+        <p>
+          In pagina de inregistrare catre care va fi redirectat, utilizatorul va completa campurile dorite, descrise mai jos.
+        <ul>
+                  <li>Username-ul ales trebuie sa fie unic, astfel neexistand doi utilizatori cu acelsi username, daca este introdus un username deja existent in baza de date, utilizatorul va fi anuntat printr-un mesaj de eroare ca trebuie sa isi aleaga alt username</li>
+                  <li>Parola trebuie sa contina minim 8 caractere pentru a nu fi usor de "ghicit" de catre un posibil atacator, iar aceasta trebuie scrisa de 2 ori in campuri pentru ca utilizatorul sa fie sigur pe parola introdusa, daca acestea nu coincid, un semnal de eroare va fi afisat. In plus, pentru o mai mare securitate, parolele cunt criptate cu o functie hash, si anume md5, pe 30 bytes, astfel incat efortul computational sa fie foarte mare pentru a putea fi gasita o coliziune iar parola sa fie furata.</li>
+                  <li>Emailul trebuie sa fie folosit de catre un singur utilizator, pentru a impiedica usurinta de a crea foarte multe conturi de catre un singur om, astfel, emailul introdus nu trebuie sa se regaseasca in baza de date, altfel, utilizatorul va primi un mesaj de eroare. Se va face o confirmare a emailului introdus. Pagina CloMatchTool, avand un gmail personal, va trimite de pe acesta, mesaje de validare a contului cu o cheie speciala, unic formata la fiecare creare de cont in parte, care tine cont de timpul la care este creat contul, si username-ul ales. </li>
+                  <li>Sexul utilizatorului va respecta formatul precizat in paranteze (Female/Male/Other), la fel si data de mastere (YYYY/MM/DD), ex: 1999/12/24</li>
+                  <li>In plus, toate datele introduse vor fi trecute printr-o functie care converteste anumite caractere speciale, pentru a nu fi interpretate gresit de catre pagina, si pentru a nu permite atacatorilor sa deterioreze site-ul</li>
+        </ul>
+        <img src="images/2.png" alt="Campuri inregistrare">
+        <p>
+            Dupa completarea datelor cerute se va apasa butonul Submit pentru a crea noul cont care urmeaza a fi folosit in aplicatie.
+        </p>
+      </section>
+
+      <section id="Root">
+        <!-- review? -->
+        <h3>Emailul de confirmare si finalizarea inregistrarii</h3>
+        <p>
+          Dupa ce s-a completat formularul de inregistrare si s-a creat nout cont, utilizatorul va primi un email de confirmare pe adresa pe care a folosit-o la creare. Dupa ce va accesa linkul din email, acesta va fi redirectat pe pagina principala a aplicatiei de unde se poate apoi loga si o poate utiliza.
+        </p>
+        
+      </section>
+
+      <section id="Root">
+        <!-- review? -->
+        <h3>Autentificarea utilizatorului</h3>
+        <p>
+          Autentificarea se va face pe baza username-ului si a parolei completata in formularul de inregistrare. Dupa completarea corecta a datelor si verificarea acestui lucru se va apasa butonul Submit pentru a avea acces in aplicatie. 
+        </p>
+        <img src="images/3.png" alt="Campuri inregistrare">
+        <p>In cazul in care utilizatorul nu a completat corect datele, acesta va fi notificat corespunzator.</p>
+        <img src="images/5.png" alt="Campuri inregistrare">
+        <p>De asemenea, in cazul in care utilizatorul nu introduce date in campurile cerute, va fi notificat si rugat sa le introduca.</p>
+        <img src="images/4.png" alt="Campuri inregistrare">
+    </section> 
+
+    <section id="Root">
+        <!-- review? -->
+        <h3>Pagina de profil a utilizatorului</h3>
+
+        <img src="images/6.png" alt="Campuri inregistrare">
+        <p>Dupa ce utilizatorul s-a logat cu succes, acesta va fi redirectat catre pagina de profil, unde isi poate visualiza datele personale, poate adauga rude , sterge articole pe care anterior le-a salvat si deconcta din aplicatie</p>
+        
+    </section> 
+
+    <section id="Root">
+        <!-- review? -->
+        <h3>Pagina principala a aplicatiei</h3>
+
+        <img src="images/7.png" alt="Campuri inregistrare">
+        <p>Utilizatorul aplicatiei va avea la dispozitie in pagina principala a aplicatie sugestii de asortari pentru articolele ce compun un outfit in functie de criterii cromatice si ce tin de materiale.</p>
+        <p>Daca utilizatorul este unul autentificat atunci el va avea la dispozitie optiunea de a selecta articole si de a le salva. Articolele salvate vor fi ulterior puse la dispozitie in pagina de profil.</p>
+        <img src="images/8.png" alt="selectare articol">
+    </section>
+
+    <section id="Root">
+        <!-- review? -->
+        <h3>Pagina de inspiratie</h3>
+
+        <img src="images/9.png" alt="Campuri inregistrare">
+        <p>Utilizatorul are la dispozitie in cadrul paginii de inspiratie posibilitatea de a cauta si vizualiza articole</p>
+        <p>Acesta poate realiza cautarea in functie de mai multe criterii, spre exemplu : eveniment, culoare, material, anotimp, etc.</p>
+        <img src="images/10.png" alt="selectare articol">
+        <p>Dupa selectarea filtrelor si apasarea butonului de cautare, utilizatorul va putea vizualiza rezultate obtinute sub forma unor imagini reprezentative. De asemenea, daca vorbim de un utilizator autentificat, acesta poate selecta si salva articole.</p>
+        <img src="images/11.png" alt="selectare articol">
+    </section>
+
+    <section id="Root">
+        <!-- review? -->
+        <h3>Administrare</h3>
+
+        <img src="images/12.png" alt="Campuri inregistrare">
+        <p>Aplicatia are la dispozitie si un modul de administrare, la care administratorul va avea acces doar dupa o logare.</p>
+        <p>In cadrul dashboardului, administratorul poate vizualiza statistici si poate face managementul utilizatorilor, articolelor, filtrelor de cautare si a regulilor de asortare.De asemenea, poate face import(in format xml/json) si export( in format csv) de date.</p>
+        <img src="images/13.png" alt="selectare articol">
+        
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - statistica vizualizari</h3>
+    
+            <img src="images/14.png" alt="Campuri inregistrare">
+            <p>Administratorul poate vedea care a fost traficul in aplicatie in fiecare zi sub forma unui grafic. Astfel, acesta poate avea o evidenta asupra numarului de pasionati de fashion care folosesc aplicatia.</p>
+            
+        </section>
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - statistica filtre</h3>
+    
+            <img src="images/15.png" alt="Campuri inregistrare">
+            <p>Deoarece tendintele in moda se schimba des si preferintele utilizatorilor se vor modifica la fel de rapid. Astfel, administatorul are la dispozitie o statistica a celor mai utilizate filtre, statistica pe baza careia poate mai tarziu sa aduca imbunatatiri aplicatiei si se poate adapta la cerintele utilizatorilor.</p>
+            
+        </section>
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - utilizatori</h3>
+    
+            <img src="images/16.png" alt="Campuri inregistrare">
+            <p>Modulul de administrare pune la dispozitia administratorului optiunea de a realiza managementul utilizatorilor. Astfel el poate adauga sau sterge utilizatori si poate adauga de asemenea alti administratori care il pot ajuta.</p>
+            
+        </section>
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - articole</h3>
+    
+            <img src="images/17.png" alt="Campuri inregistrare">
+            <p>Deoarece se doreste ca utilizatorii sa aiba o experienta cat mai placuta atucni cand utilizeaza aplicatia, administratorul poate adauga, sterge sau modifica articole, oferind astfel o gama larga de alegere.</p>
+            
+        </section>
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - filtre</h3>
+    
+            <img src="images/18.png" alt="Campuri inregistrare">
+            <p>Utilizatorii doresc sa obtina sugestii de outfituri cat mai deosebite, de aceea se impune ca administratorul sa poata adauga, stege sau edita filtrele pe baza carora de vor realiza cautarile.</p>
+            
+        </section>
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - export</h3>
+    
+            <img src="images/19.png" alt="Campuri inregistrare">
+            <p>Administratorul poate de asemenea sa realizaze exportul datelor in format csv.</p>
+            
+        </section>
+
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - import</h3>
+    
+            <img src="images/20.png" alt="Campuri inregistrare">
+            <p>Avand o aplicatie destul de complexa, pentru a usura munca administratorului in ceea ce priveste adaugarea de articole, acesta are la dispozitie importul de date in format xml sau json.</p>
+            
+        </section>
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - Match culori</h3>
+    
+            <img src="images/21.png" alt="Campuri inregistrare">
+            <p>Bazandu-ne pe faptul ca sugestiile de outfituri se realizeaza pe un match de culori, aceste matchuri se pot administra in cadrul dashboardului in sectiunea Match culori.</p>
+            
+        </section>
+
+        <section id="Root">
+            <!-- review? -->
+            <h3>Administrare - Match materiale</h3>
+    
+            <img src="images/22.png" alt="Campuri inregistrare">
+            <p>Sugerarea outfiturilor se realizeaza si pe baza asocierilor de materiale, prin urma se impune o administrare si pentru matchurile de materialE. Acestea pot fi adaugate, sterse sau editate.</p>
+            
+        </section>
+
+    </section>
+
+
+  </body>
+</html>
