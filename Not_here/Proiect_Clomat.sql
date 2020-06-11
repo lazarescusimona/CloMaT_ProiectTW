@@ -79,7 +79,7 @@ commit;
 
 
 
-  CREATE TABLE "STUDENT"."ARTICOLE" 
+ CREATE TABLE "STUDENT"."ARTICOLE" 
    (	"ID" NUMBER(*,0), 
 	"SEXUL" VARCHAR2(100 BYTE) DEFAULT NULL, 
 	"EVENIMENT" VARCHAR2(100 BYTE) DEFAULT NULL, 
@@ -98,6 +98,16 @@ commit;
   TABLESPACE "USERS" ;
 REM INSERTING into STUDENT.ARTICOLE
 SET DEFINE OFF;
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (39,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/download234.jpg','Visiniu','Material Bijuterii','Accesorii','Toamna');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (40,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloadsd1.jpg','Negru','Piele','Imbracaminte bottom','Vara');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (41,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images7r81.jpg','Albastru','In','Accesorii','Toamna');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (42,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images671.jpg','Albastru','Bumbac','Imbracaminte top','Vara');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (43,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/imagh1.jpg','Albastru','Material Bijuterii','Accesorii','Primavara');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (44,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images9981.jpg','Verde','In','Incaltaminte','Toamna');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (45,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloagg1.jpg','Negru','Piele','Imbracaminte top','Primavara');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (46,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloadas1.jpg','Alb','Dantela','Imbracaminte top','Primavara');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (47,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/imagesss.jpg','Gri','Catifea','Imbracaminte bottom','Toamna');
+Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (48,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloaduu1.jpg','Mov','Piele','Imbracaminte top','Vara');
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (49,'Femei','Inmormantare','Elegant','http://localhost/CloMaT_ProiectTW/images/images81.jpg','Visiniu','Catifea','Incaltaminte','Primavara');
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (50,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images34.jpg','Negru','Matase','Imbracaminte top','Primavara');
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (51,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images3.jpg','Negru','Bumbac','Imbracaminte top','Primavara');
@@ -154,16 +164,6 @@ Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATER
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (36,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/download888.jpg','Visiniu','Piele','Imbracaminte bottom','Primavara');
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (37,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images891.jpg','Bej','Bumbac','Imbracaminte top','Primavara');
 Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (38,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/download54.jpg','Negru','Bumbac','Incaltaminte','Toamna');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (39,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/download234.jpg','Visiniu','Material Bijuterii','Accesorii','Toamna');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (40,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloadsd1.jpg','Negru','Piele','Imbracaminte bottom','Vara');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (41,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images7r81.jpg','Albastru','In','Accesorii','Toamna');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (42,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images671.jpg','Albastru','Bumbac','Imbracaminte top','Vara');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (43,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/imagh1.jpg','Albastru','Material Bijuterii','Accesorii','Primavara');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (44,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/images9981.jpg','Verde','In','Incaltaminte','Toamna');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (45,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloagg1.jpg','Negru','Piele','Imbracaminte top','Primavara');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (46,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloadas1.jpg','Alb','Dantela','Imbracaminte top','Primavara');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (47,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/imagesss.jpg','Gri','Catifea','Imbracaminte bottom','Toamna');
-Insert into STUDENT.ARTICOLE (ID,SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values (48,'Femei','Plimbare pe plaja','Elegant','http://localhost/CloMaT_ProiectTW/images/downloaduu1.jpg','Mov','Piele','Imbracaminte top','Vara');
 commit;
 --------------------------------------------------------
 --  DDL for Index PK
@@ -244,7 +244,7 @@ commit;
 --------------------------------------------------------
 
 
-  CREATE TABLE "STUDENT"."MENIU_FILTRARE" 
+ CREATE TABLE "STUDENT"."MENIU_FILTRARE" 
    (	"ID" NUMBER(*,0), 
 	"NUME_FILTRU" VARCHAR2(50 BYTE), 
 	"SUBCATEGORII" VARCHAR2(500 BYTE)
