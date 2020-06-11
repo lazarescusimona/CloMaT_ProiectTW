@@ -64,15 +64,11 @@
         Utilizatorii (autentificati sau nu) pot cauta inspiratie de tinute pentru tot felul de ocazii, tinute pe gusturile lor, acestea alese cu mare grija pe baza unor reguli de asortare cromatica si pe baza materialelor din care sunt confectionate hainele. Iar pentru ca moda se schimba de la o zi la alta, administratorul paginii poate supraveghea care a fost cel mai cautat trend, poate schimba oricand regulile de asortare pentru a oferi utilizatorilor cea mai placuta experienta.
       </p>
     </section>
-    <section id="introduction" role="doc-introduction">
-      <!-- review? -->
-      <h2>Diagrama use-case</h2>
-      VOI PUNE O POZA AICI
-    </section>
+   
     <section id="structure">
       <!-- review? -->
       <h2>Diagrama de clase UML</h2>
-      
+      <img src="uml.png" alt="Digrama UML">
         
       </section>
       <section id="structura">
@@ -108,13 +104,17 @@
         <section id="componenta3">
           <h3>Contul de administrare</h3>
           <p>
-            Text descriptiv
+            In ceea ce priveste contul de administrare, deoarece dorim sa realizam un management cat mai bun al aplicatiei am implementat urmatoarele functionalitati:
             </p><ul>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
+              <li>Statistici privind vizionarile</li>
+              <li>Statistici privind filtrele utilizate in cautari de catre useri</li>
+              <li>Administrare useri</li>
+              <li>Administrare articole</li>
+              <li>Administrare filtre</li>
+              <li>Administrare match culori</li>
+              <li>Administrare match materiale</li>
+              <li>Import date in format json/xml</li>
+              <li>Export date in format csv</li>
             </ul>
   
           <p></p>
@@ -220,14 +220,12 @@
 
         <section id="componenta8">
           <h3>Lazarescu Simona</h3>
-          <p>
-            Text descriptiv
-            </p><ul>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
+          <ul>
+              <li>Am inceput lucrul la dashboard cu administrarea userilor. Am realizat partea de adaugare de useri cu criptarea parolei, editarea datelor utilizatorilor si stergerea acestora. De asemenea pentru a face redirectarile corect in functie de tipul de utilizator am adaugat un nou camp in tabele Utilizatori numit tip_utilizator. Astfel, permit accesul la dashboard doar userilor care au ca tip_utilizator doar admin.</li>
+              <li>Am continuat dashboardul cu partea de articole si filtre. Pentru articole permit, in functie de datele care se completeaza in formular, uploadul de imagini si salvarea datelor in baza de date. De asemenea permit stergerea si editarea de articole. Acelasi principiu se aplica si in cadrul filtrelor. Administratorul are posibilitatea de a face managementul filtrelor.</li>
+              <li>Urmatorul pas a fost partea de import. In acest sens, permit incarcarea de articole in din fisiere in format xml,dar si din format json. Se verifica pentru fiecare caz daca extensie fisierului este cea corespunzatoare. In caz afirmativ, datele se insereaza in baza de date si se face uploadul la imagini, altfel administratorul va fi notificat cu un mesaj de eroare. De asemenea am implementat si partea de export de date in format csv pentru datele despre utilizatori, filtre si articole.</li>
+              <li>Deoarece aplicatia noastra ofera suport pentru a recomanda outfit-uri in functie de anumite criterii de asociere, am implementata si administrarea regulilor pe baza carora se fac matchurile dintre culori si materiale.</li>
+              <li>Ultimul pas a fost sa realizez statistici utilizand google charts. Am realizat statistici pentru numarul zilnic de vizionari pe site si numarul de cautari folosind un anumit filtru. Prin urmare, am implementat insertul unei date noi in tabela de statistici daca aceasta nu exista, respectiv update-ul numarului de vizionari pentru fiecare zi in parte. In ceea ce priveste filtrele, am implementat inserturile in tabela de statistici pentru filtrele care nu existau deja, respectiv update-uri la fiecare utilizare a lor in cadrul search-urilor pe care le realizeaza userii in aplicatie.</li>
             </ul>
   
           <p></p>
@@ -245,6 +243,11 @@
   
           <p></p>
         </section>
+      </section>
+
+      <section id="componenta9">
+        <h3>Demo aplicatie</h3>
+        <a href="https://www.youtube.com/watch?v=c_nzPyyt1aU">here</a>    
       </section>
 
   </body>
