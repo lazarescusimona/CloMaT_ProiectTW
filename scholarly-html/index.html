@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>Clothing Matcher Tool</h1>
+    </header>
+    <!--
+      XXX
+      - check refs
+      - the math example has too much maths
+      - bring back some of the old style
+      - make semantics, validation, processing sub-sections of each structural element
+      - have a section before that for general constructs
+        - explain why use RDFa
+        - explain our patterns: RDFa, roles
+      - figure captions need to get set throughout
+      - dedication? see doc-dedication
+      - syntactic constraints (prefix)
+      - needs more sthenurines
+      - examples of everything
+      - some notes on using Semantic CSS
+      - needs more RDFa in the spec itself
+    -->
+    <div role="contentinfo">
+      <dl>
+        <dt>Autori</dt>
+        <dd>
+          Lazarescu Simona & Goldan Anamaria & Salavastru Roxana-Maria 
+        </dd>
+        <dt>Discussion Group</dt>
+        <dd>
+          The <a href="https://www.w3.org/community/scholarlyhtml/">Scholarly HTML Community
+          Group</a> at <a href="https://w3.org/">W3C</a>
+          (<a href="https://lists.w3.org/Archives/Public/public-scholarlyhtml/">email archives</a>)
+        </dd>
+        <dt>License</dt>
+        <dd>
+          <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        </dd>
+        <dt>Sursa template</dt>
+        <a href="https://github.com/w3c/scholarly-html">https://github.com/w3c/scholarly-html</a>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Tematica propusa si detaliile siteului</h2>
+      <p>
+        Să se conceapă o aplicație Web capabilă să furnizeze utilizatorilor (autentificati sau nu) sfaturi referitoare la asortarea – cromatică, pe baza materialelor și/sau a stilului personal – a garderobei proprii (piese de îmbrăcăminte și de încălțăminte, plus accesorii) si a rudelor apropiate, in funcție de sezon, moment al zilei, eveniment, factori culturali și alte restrictii specifice (dress code).
+        Se vor pune la dispoziție garderobe predefinite – editabile și preluate din surse externe (se va implementa suportul pentru import al datelor disponibile în format JSON și XML). Sistemul va realiza, de asemenea, managementul utilizatorilor și a regulilor de asortare vestimentară la nivel de individ sau grup.
+        <br>
+        Functionalitati de baza pe care le indeplineste siteul:
+        <br>
+        Permite utilizatorilor sa isi creeze conturi, si sa isi inspire tinutele din cele ale prietenilor/rudelor pe care ii are adaugati.
+        Utilizatorii (autentificati sau nu) pot cauta inspiratie de tinute pentru tot felul de ocazii, tinute pe gusturile lor, acestea alese cu mare grija pe baza unor reguli de asortare cromatica si pe baza materialelor din care sunt confectionate hainele. Iar pentru ca moda se schimba de la o zi la alta, administratorul paginii poate supraveghea care a fost cel mai cautat trend, poate schimba oricand regulile de asortare pentru a oferi utilizatorilor cea mai placuta experienta.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Diagrama use-case</h2>
+      VOI PUNE O POZA AICI
+    </section>
+    <section id="structure">
+      <!-- review? -->
+      <h2>Diagrama de clase UML</h2>
+      
+        
+      </section>
+      <section id="structura">
+        <!-- review? -->
+        <h2>Structura siteului</h2>
+        <p>
+          Siteul a fost impartit in trei parti privind functionalitatea acestuia, pentru ca munca echipei sa fie distribuita uniform, astfel siteul este format din partea de autentificare, creare cont, pagina de profil de care s-au ocupat Salavastru Roxana-Maria, partea de administrare a datelor, pagina administratorului care cuprinde mai multe subpagini si informatii despre activitatea utilizatorilor, componenta de care s-a ocupat Lazarescu Simona si partea de filtrare a tinutelor, manipulare a garderobelor si pagina de filtrare a tinutelor de care s-a ocupat Goldan Anamaria.
+
+        </p>
+        <section id="componenta1">
+          <h3>Utilizarea siteului de catre utilizatorii neautentificati</h3>
+          <p>
+            Utilizatorii care au ajuns pentru prima data pe aceasta pagina, si inca nu au un cont, sau utilizatorii care inca nu si-au facut un cont au in continuare posibilitatea de a vizualiza tinute pe placul si necesitatile lor, cu dezavantajul ca atunci cand revin pe pagina, articole pe care acestia le-au vizualizat in trecut, s-ar putea sa nu mai apara sau sa fie greu de gasit din moment ce nu au un cont pe care sa le salveze. Deci este o optiune inca convenabila pentru a satisface necesitatea unei tinute pe moment.
+          </p>
+          <p></p>
+        </section>
+
+        <section id="componenta2">
+          <h3>Crearea unui nou cont</h3>
+          <p>
+            Pentru a-si crea un nou cont, utilizatorii trebuie sa apese pe butonul de Login din meniul situat in partea de sus a ecranului, si din moment ce nu au deja un cont, vor trebui sa apese butonul "new account" pentru a-si crea unul. Pentru ca tinem la securitatea si integritatea datelor, dar si cea a siteului, datele de intrare din acest formular de autentificare vor fi manipulate cu grija astfel incat un eventual atac sa fie prevenit. Urmatoarele restrictii asupra datelor de intrare sunt inpuse: 
+            </p><ul>
+              <li>Username-ul ales trebuie sa fie unic, astfel neexistand doi utilizatori cu acelsi username, daca este introdus un username deja existent in baza de date, utilizatorul va fi anuntat printr-un mesaj de eroare ca trebuie sa isi aleaga alt username</li>
+              <li>Parola trebuie sa contina minim 8 caractere pentru a nu fi usor de "ghicit" de catre un posibil atacator, iar aceasta trebuie scrisa de 2 ori in campuri pentru ca utilizatorul sa fie sigur pe parola introdusa, daca acestea nu coincid, un semnal de eroare va fi afisat. In plus, pentru o mai mare securitate, parolele cunt criptate cu o functie hash, si anume md5, pe 30 bytes, astfel incat efortul computational sa fie foarte mare pentru a putea fi gasita o coliziune iar parola sa fie furata.</li>
+              <li>Emailul trebuie sa fie folosit de catre un singur utilizator, pentru a impiedica usurinta de a crea foarte multe conturi de catre un singur om, astfel, emailul introdus nu trebuie sa se regaseasca in baza de date, altfel, utilizatorul va primi un mesaj de eroare. Se va face o confirmare a emailului introdus. Pagina CloMatchTool, avand un gmail personal, va trimite de pe acesta, mesaje de validare a contului cu o cheie speciala, unic formata la fiecare creare de cont in parte, care tine cont de timpul la care este creat contul, si username-ul ales. </li>
+              <li>Sexul utilizatorului va respecta formatul precizat in paranteze (Female/Male/Other), la fel si data de mastere (YYYY/MM/DD), ex: 1999/12/24</li>
+              <li>In plus, toate datele introduse vor fi trecute printr-o functie care converteste anumite caractere speciale, pentru a nu fi interpretate gresit de catre pagina, si pentru a nu permite atacatorilor sa deterioreze site-ul</li>
+            </ul>
+  
+          <p></p>
+        </section>
+
+        <section id="componenta3">
+          <h3>Contul de administrare</h3>
+          <p>
+            Text descriptiv
+            </p><ul>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+            </ul>
+  
+          <p></p>
+        </section>
+
+        <section id="componenta4">
+          <h3>Pagina principala (index.html)</h3>
+          <p>
+            Text descriptiv
+            </p><ul>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+            </ul>
+  
+          <p></p>
+        </section>
+
+        <section id="componenta5">
+          <h3>Pagina de filtrare a articolelor</h3>
+          <p>
+            Text descriptiv
+            </p><ul>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+            </ul>
+  
+          <p></p>
+        </section>
+
+  </section>
+      <section id="references">
+        <!-- review? -->
+        <h3>Detaliile bazei de date</h3>
+        <p>
+          Bazele de date sunt stocate local, este urilizat limbajul pl/sql;
+          Tabela Utizlizatori - contine informatiile necesare pentru crearea contului unui utilizator.
+          <img src="utilizatori.jpg" alt="utilizatori">
+          </p><br><p>
+            Tabela articole contine toate detaliile necesare unei poze pentru a putea fi utilizata si afisata in cazul in care se potriveste cu filtrele aplicate sau cu regulile de asortare
+
+          <img src="articole.jpg" alt="articole">
+        </p>
+        <br><p>
+          Tabela articole_preferate face legatura intre fiecare utilizator si articolele salvate de acesta ca fiind articole preferate.
+          <br>
+        <img src="ap.jpg" alt="articole_preferate">
+      </p>
+      <br><p>
+        Tabela rude retine ce prieteni/rude are adaugat fiecare utilizator, pentru a ii putea recomanda sugestii de outfit inspirate din preferintele acestora.
+        <br>
+      <img src="rude.jpg" alt="rude">
+    </p>
+    <br><p>
+      Tabela match_cromatic retine legatura intre culori care se potrivesc intre ele.
+
+    <img src="match.jpg" alt="match cromatic">
+  </p>
+  <br><p>
+    Tabela match_material retine ce materiale se potricesc intre ele, pentru a furniza tinute in care materialele se potrivesc.
+    <br>
+  <img src="mm.jpg" alt="material">
+</p>
+
+<br><p>
+  Tabela statistica_vizitatori retine ce trafic are pagina.
+  <br>
+<img src="su.jpg" alt="statistica_utilizatori">
+</p>
+
+<br><p>
+  Tabela statistica_filtre retine care sunt cele mai folosite filtre, deci, cele mai la moda tendinte ale momentului.
+  <br>
+<img src="statistica.jpg" alt="statistica">
+</p>
+      </section>
+
+      <section id="references">
+        <!-- review? -->
+        <h3>Analiza dezvoltarii paginii</h3>
+        <section id="componenta7">
+          <h3>Roxana Salavastru</h3>
+          <p>
+            Pentru a avea o mica baza, am creat un schelet al paginii, care ulterior a fost modificat si extins dupa necesitati. Acest prim plan mi-a permis sa ma focusez pe partea de logare, creare a conturilor.
+            <br>
+            Initial am creat meniul din partea superioara a paginii si cateva pagini in care urmau sa lucreze colegele mele.
+            Am realizat conexiunea cu baza de date si am inceput sa verific daca toate datele sunt stocate si nu exista probleme dupa care 
+            a urmat validarea datelor pe care utilizatorii le introduc, pentru a nu compromite site-ul si pentru a salva intr-o maniera sigura datele lor in tabela utilizatori.
+            Urmeaza sa semnalez problemele care apar atunci cand utilizatorii introduc date neadecvate, prin mesaje de eroare catre acestia.
+            Pentru o mai buna gestiune a conturilor, am impus restrictia de a avea fiecare utilizator un email/gmail unic si valid, verificarea facandu-se prin trimiterea unui link cu cod unic pe emailul folosit in crearea contului.
+            Urmeaza etapa de creare a unei pagini de profil pentru utilizatori astfel incat utilizarea siteului sa fie mai intuitiva si comoda.
+            Pe partea tehnica, a venit momentul in care retin date in variabilele $_SESSION pentru a supraveghea pe toate paginile siteului daca utilizatorul este autentificat sau nu. Butonul de Login din meniul de sus va avea o dubla intrebuintare, va conduce utilizatorul la pagina de profil, daca acesta este autentificat, sau la pagina de autentificare in caz contrar.
+            A urmat partea de dezvoltare a paginii de profil, pentru a adauga rude si prieteni daca acesta doreste, si sa le stearga.
+            Termin cu ultime detalii de css responsive pentru pagina de utilizatori, adaugarea unor detalii de securitate, cum ar fi utilizarea functiei htmlspecialchars() pentru ca un eventual atacator sa nu poata compromite integritatea paginii si inserarea datelor in tabela astfel incat sa prevenim tentativele de tipul sql injection.
+  
+          <p></p>
+        </section>
+
+        <section id="componenta8">
+          <h3>Lazarescu Simona</h3>
+          <p>
+            Text descriptiv
+            </p><ul>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+            </ul>
+  
+          <p></p>
+        </section>
+
+        <section id="componenta9">
+          <h3>Goldan Anamaria</h3>
+          <p>
+            Text descriptiv
+            </p><ul>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+              <li>puncticele</li>
+            </ul>
+  
+          <p></p>
+        </section>
+      </section>
+
+  </body>
+</html>
