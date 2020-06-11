@@ -48,7 +48,7 @@
         $anotimp = htmlspecialchars($_POST['anotimp']);
         if(empty($sexul) || empty($eveniment) || empty($stil) || empty($articol_path) || empty($culoare) || empty($material) || empty($tip_piesa) || empty($anotimp)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
-            header('location: http://localhost/CloMaT_ProiectTW/Not_here/articole.php');
+            header('location: http://localhost/CloMaT_ProiectTW/articole.php');
             
         }
         else{
@@ -58,7 +58,7 @@
             $query = oci_parse($conn,"Insert into STUDENT.ARTICOLE (SEXUL,EVENIMENT,STIL,ARTICOL_PATH,CULOARE,MATERIAL,TIP_PIESA,ANOTIMP) values ('$sexul', '$eveniment', '$stil', '$articol_path', '$culoare', '$material', '$tip_piesa', '$anotimp')"); 
             oci_execute($query);
             $_SESSION['message'] = "Object saved!";
-            header('location: http://localhost/CloMaT_ProiectTW/Not_here/articole.php');
+            header('location: http://localhost/CloMaT_ProiectTW/articole.php');
         }
     }
 
@@ -79,14 +79,14 @@
         $anotimp = htmlspecialchars($_POST['anotimp']);
         if(empty($sexul) || empty($eveniment) || empty($stil) || empty($articol_path) || empty($culoare) || empty($material) || empty($tip_piesa) || empty($anotimp)){
             $_SESSION['message'] = "Toate campurile trebuie completate!"; 
-            header('location: http://localhost/CloMaT_ProiectTW/Not_here/articole.php');
+            header('location: http://localhost/CloMaT_ProiectTW/articole.php');
             
         }
         else{
             $query=oci_parse($conn, "UPDATE STUDENT.ARTICOLE SET SEXUL='$sexul', EVENIMENT='$eveniment', STIL='$stil', ARTICOL_PATH='$articol_path', CULOARE='$culoare', MATERIAL='$material', TIP_PIESA='$tip_piesa', ANOTIMP='$anotimp' WHERE id=$id");
             oci_execute($query);
             $_SESSION['message'] = "Object updated!"; 
-            header('location: http://localhost/CloMaT_ProiectTW/Not_here/articole.php');
+            header('location: http://localhost/CloMaT_ProiectTW/articole.php');
         }
     }
     
@@ -96,7 +96,7 @@
         $query=oci_parse($conn, "DELETE FROM STUDENT.ARTICOLE WHERE id=$id");
         oci_execute($query);
         $_SESSION['message'] = "Object deleted!"; 
-        header('location: http://localhost/CloMaT_ProiectTW/Not_here/articole.php');
+        header('location: http://localhost/CloMaT_ProiectTW/articole.php');
     }
 ?>
 
