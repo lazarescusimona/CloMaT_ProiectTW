@@ -79,7 +79,7 @@
         <!-- review? -->
         <h2>Structura siteului</h2>
         <p>
-          Siteul a fost impartit in trei parti privind functionalitatea acestuia, pentru ca munca echipei sa fie distribuita uniform, astfel siteul este format din partea de autentificare, creare cont, pagina de profil de care s-au ocupat Salavastru Roxana-Maria, partea de administrare a datelor, pagina administratorului care cuprinde mai multe subpagini si informatii despre activitatea utilizatorilor, componenta de care s-a ocupat Lazarescu Simona si partea de filtrare a tinutelor, manipulare a garderobelor si pagina de filtrare a tinutelor de care s-a ocupat Goldan Anamaria.
+          Siteul a fost impartit in trei parti privind functionalitatea acestuia, pentru ca munca echipei sa fie distribuita uniform, astfel siteul este format din partea de autentificare, creare cont, pagina de profil de care s-au ocupat Salavastru Roxana-Maria, partea de administrare a datelor, pagina administratorului care cuprinde mai multe subpagini si informatii despre activitatea utilizatorilor, componenta de care s-a ocupat Lazarescu Simona si partea de filtrare a tinutelor, manipulare a garderobelor, pagina de filtrare a tinutelor si optiunea de a salva articolele preferate sau de la sterge pe cele deja preferate de care s-a ocupat Goldan Anamaria.
 
         </p>
         <section id="componenta1">
@@ -235,14 +235,12 @@
 
         <section id="componenta9">
           <h3>Goldan Anamaria</h3>
-          <p>
-            Text descriptiv
-            </p><ul>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
-              <li>puncticele</li>
+          <ul>
+              <li>Am inceput lucrul cu pagina pentru cautarea unui articol pe baza filtrelor selectate (pagina filtre-back.php). In prima faza, am creat si populat tabelele necesare ( tabela 'MENIU_FILTRARE' pentru determinarea filtrelor care pot fi aplicate si tabela 'ARTICOLE' pentru articolele noatre din baza de date asupra carora se pot aplica respectivele filtre. A urmat crearea meniului cu filtre din partea stanga a paginii pe baza doar a filtrelor gasite in tabela 'MENIU_FILTRARE'. Dupa ce acest meniu a fost creat, am inceput sa prelucrez data conform alegerii user-ului astfel incat, in urma apasarii butonului "CAUTA" de sub meniul de filtrare, in partea dreapta a paginii sa apara articolele din baza de date care indeplinesc filtrele cerute de user.</li>
+              <li>Dupa ce am finalizat puntcul anterior cu succes, am decis sa implementez optiunea de "Salveaza rticolele selectate", astfel, in urma cautarii unor articole cu meniul de filtarre din partea stanga a paginii, daca un user este logat, are optiunea de a bifa articolele care i-au placut cel mai mult si astfel de a le salva. Pentru aceasta parte am creat tabelul "ARTICOLE_PREFERATE" care face legatura dintre un user si articolele salvate de el. ARticolele salvate de user apar in sectiunea 'Articole salvate' din pagina de profil a user-ului. Dupa ce aceasta a fost implementat, a urmat sa implementez optiunea prin care, un user, poate sterge din 'Articolele preferate' : astfel, pe pagina de profil a user-ului, acesta poate selecta articolele pe care nu le mai doreste a fi 'Articole preferate', urmand sa apese pe butonul "Sterge articolele selectate" si astfel aceastea sa se stearga.</li>
+              <li>A urmat crearea sugestiilor pe baza preferintelor rudelor. Astfel, un user (logat), dupa ce selecteaza filtrele dorite, prima data i se sugereaza artcolele care respecta acele filtre si care se afla si in lista de articole preferate a rudelor user-ului , abia dupa sunt sugerate celelalte articole care respecta filtrele cerute de user. Pentru aceasta parte am lucrat cu tabelul "RUDE" si "ARTICOLE_PREFERATE".</li>
+              <li>Dupa acestea, am inceput lucrul pentru sugestia de garderobe complete in functie de asortarea cromatica si a materialelor pe pagina principala (index.php). Pentru aceasta parte, am avut nevoie de tabelele "MATCH_CROMATIC" si "MATCH_MATERIALE". Pe pagina principala am sugerat cate 2 carderobe pentru fiecare tip de asortare ( astfel : 2 garderobe pentru asortarea cromatica si 2 garderobe pentru asortarea materialelor ). La fiecare intrare pe aceasta pagina, sugestiile se schimba ( respectand in continuare match-urile ). Se iau match-rui de cate 2 ( fie culori, fie materiale ) si se sugereaza o garderoba completa ( imbracaminte - partea de sus si partea de jos, incaltaminte si accesorii ) care bineinteles respecta culorile/materialele din match. </li>
+              <li>Si pe pagina principala, daca un user este logat, are optiunea de a bifa articolele care i-au placut cel mai mult si astfel sa le salveze.</li>
             </ul>
   
           <p></p>
