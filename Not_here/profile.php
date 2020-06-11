@@ -13,6 +13,8 @@
 </head>
 
 <body>
+     <!-- meniul de sus - bara meniului -->
+
    <div class="banner-fixed" style="z-index: 2;">
       <nav>
          <div class="logo">
@@ -152,6 +154,7 @@
          echo '<div class = "favs">';
          if (isset($_SESSION['username'])) {
             foreach ($favs as &$value) {
+               //aici e lista cu articlele preferate ale userului conectat
                echo '<div class = "img-cell">';
                echo '<a href="' . $value . '" data-lightbox = "mygallery"><img src="' . $value . '"></a> ';
                $temp = str_replace("http://localhost/CloMaT_ProiectTW/images/", "", $value);
@@ -161,6 +164,7 @@
             }
             echo '<br>';
             if (!empty($favs)) {
+               //butonul de stergere a articolelor selectate
                echo '<input type="submit" value=" Sterge articolele selectate " class="delete-btn"/>';
             }
          }

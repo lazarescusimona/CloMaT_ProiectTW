@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    <!-- meniul de sus - bara meniului -->
+
   <div class="banner-fixed">
     <nav>
 
@@ -60,7 +62,7 @@
   <p> Sugestii de garderobe complete : imbracaminte (partea de sus si spartea de jos), incaltaminte si accesorii. </p>
   <p> Aici aveti cateva sugestii de garderobe pe baza asortarii cromatice si a materialelor. </p></div>';
   // PRIMA GARDEROBA - culoare
-  //mai intai determinam culorile
+  //mai intai determinam culorile din gardeorba
   $culoareText="";
   $culoare_matchText="";
   foreach ($primaGarderoda as &$value){
@@ -119,6 +121,7 @@
   }
 
   //a Treia garderoba - material
+  //mai intai determinam materialele
   $materialText="";
   $material_matchText="";
   $a=0;
@@ -153,7 +156,7 @@
 
 
   //a 4-a garedroba - material
-
+//mai intai determinam materialele
   $materialText="";
   $material_matchText="";
   $a=0;

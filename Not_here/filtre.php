@@ -17,6 +17,7 @@
 <script src="http://localhost/CloMaT_ProiectTW/js/script.js"></script>
 
 <body>
+  <!-- meniul de sus - bara meniului -->
   <div class="banner-fixed">
     <nav>
 
@@ -62,15 +63,18 @@
   </div>
   <br>
   <div id="main-articole">
-
+<!-- meniul din partea stanga a paginii -->
     <div id="filter-bar">
       <form name="form-filter" method="post">
 
         <?php
         foreach ($data as &$value) {
+          //datele se iau din listele returnate in filtre-back.php
           echo '
           <div class="filter-cell"> ' . str_replace("_", " ", $value->nume_filtru);
+          //aici e numele categoriei/filtrului principal : ex: CULOARE
           foreach ($value->subcategorii  as &$cat) {
+            //aici sunt subcategoriile filtrului de mai su : ex : MARO, ROSU, etc.
             echo '
             <div class="radio-input">
             <input type="radio" id="' . $cat . '" name="' . str_replace("_", " ", $value->nume_filtru) . '" value="' . $cat . '" method="post">
@@ -82,7 +86,7 @@
         }
 
         ?>
-
+<!-- butonul pt cautarea articolelor care respecta acele filtre -->
         <input type="submit" value=" Cauta articole " id="submit-btn" />
       </form>
 
@@ -91,9 +95,11 @@
     <div class="gototop">TOP</div>
 
     <?php
+    //partea din dreapta - aici se afiseaza articolele in urma alegerii filtrelor
     echo '<form method="post" id = "container-articole" >';
     if (isset($_SESSION['username']) && isset($_SESSION['areRuda']) && !empty($imgListRelatives)) {
       echo '<div class="text-despre-articole">Rudelor tale le-au placut : </div>';
+      //dar mai intai afisam articolele preferate de rude (daca user-ul e logat ) care respecta filtrele cerute
       foreach ($imgListRelatives as &$value) {
         echo '<div class = "img-cell">';
         echo '<a href="' . $value . '" data-lightbox = "mygallery"><img src="' . $value . '"></a> ';
@@ -110,6 +116,7 @@
     }
     if (!empty($imgListOther)) {
       echo '<div class="text-despre-articole">Celelate artciole : </div>';
+      //dupa carea fisam si celalte artcole care respecta filtrele cerute
       foreach ($imgListOther as &$value1) {
         echo '<div class = "img-cell">';
         echo '<a href="' . $value1 . '" data-lightbox = "mygallery"><img src="' . $value1 . '"></a> ';
@@ -121,6 +128,7 @@
         echo '</div>';
       }
       if (isset($_SESSION['username']) && !empty($imgListOther)) {
+        //butonul pt salvarea rticolelor
         echo '<input type="submit" value=" Salveaza articolele selectate " class="add-btn"/>';
       }
     }
